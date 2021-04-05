@@ -1,6 +1,6 @@
 import React from "react"
 import './App.css';
-import Warehouse from "./components/Warehouse"
+import Warehouse from "./components/Warehouse/Warehouse"
 
 function App() {
   return (
