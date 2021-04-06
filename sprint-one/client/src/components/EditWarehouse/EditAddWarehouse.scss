@@ -1,23 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-$mobile: 320px;
-$tablet: 768px;
-$desktop: 1280px;
-
-@mixin tablet {
-  @media (min-width: $tablet) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
+@import '../../partials/fonts';
+@import '../../partials/mixins';
+@import '../../partials/partials';
 
 .edit-container {
   display: flex;
@@ -26,9 +9,6 @@ $desktop: 1280px;
   border-radius: 3px;
   height: 922px;
   width: 343px;
-  left: 16px;
-  top: 136px;
-  border-radius: 3px;
   @include tablet {
     width: 704px;
     height: 612px;
@@ -38,9 +18,9 @@ $desktop: 1280px;
   }
 
   &__title-cont {
+    display: flex;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    display: flex;
     @include tablet {
       border-bottom: 1px solid #bdc5d5;
       padding-bottom: 21px;
@@ -56,6 +36,8 @@ $desktop: 1280px;
       }
     }
     &--title {
+      font-family: Titillium-bold;
+      color: $instock-black;
       font-size: 28px;
       line-height: 36px;
       font-weight: 600;
@@ -73,17 +55,13 @@ $desktop: 1280px;
       }
     }
     &__warehouse {
-      margin-left: 24px;
-      margin-right: 24px;
       display: flex;
       flex-direction: column;
       text-align: left;
       @include tablet {
-        width: 320px;
         border-right: 1px solid #bdc5d5;
+        width: 320px;
         padding-right: 31px;
-        margin-left: 32px;
-        margin-right: 0;
       }
       @include desktop {
         width: 469px;
@@ -91,99 +69,53 @@ $desktop: 1280px;
         margin-left: 40px;
       }
       &--title {
-        font-size: 20px;
-        line-height: 28px;
-        border-top: 1px solid #bdc5d5;
-        margin-bottom: 1.5rem;
-        padding-top: 1rem;
-        height: 2.25rem;
-        @include tablet {
-          border: none;
-          padding-top: 0;
-          margin-bottom: 2rem;
-        }
-        @include desktop {
-          font-size: 24px;
-          line-height: 32px;
-        }
+        @include formTitle;
       }
       &--name-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--name-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--address-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--address-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--city-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--city-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--country-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--country-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 0;
         }
       }
     }
     &__contact {
-      border-top: 1px solid #bdc5d5;
-      margin-left: 24px;
-      margin-right: 24px;
       display: flex;
       flex-direction: column;
       text-align: left;
-      padding-top: 1.5rem;
       @include tablet {
         width: 320px;
         border: none;
@@ -196,82 +128,44 @@ $desktop: 1280px;
         margin-right: 40px;
       }
       &--title {
-        font-size: 20px;
-        line-height: 28px;
-        margin-bottom: 1.5rem;
-        height: 2.25rem;
-        @include tablet {
-          margin-bottom: 2rem;
-        }
-        @include desktop {
-          font-size: 24px;
-          line-height: 32px;
-        }
+        @include formTitle;
       }
       &--name-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--name-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--position-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--position-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--phone-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--phone-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
       &--email-label {
-        color: #13182c;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        @include formLabel;
         margin-bottom: 4px;
       }
       &--email-input {
-        background: #ffffff;
-        border: 1px solid #bdc5d5;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        height: 2.25rem;
+        @include formInput;
         @include tablet {
           margin-bottom: 0;
         }
@@ -281,43 +175,33 @@ $desktop: 1280px;
   .button {
     display: flex;
     margin-left: 24px;
+    height: 68px;
     @include tablet {
-      width: 704px;
-      height: 70px;
       justify-content: flex-end;
       align-items: center;
+      width: 704px;
+      height: 70px;
     }
     @include desktop {
       width: 1020px;
     }
     &__cancel {
-      margin-top: 40px;
-      border: none;
-      width: 139px;
-      height: 36px;
-      border-radius: 20px;
-      margin-right: 17px;
+      @include button;
       background-color: #ffffff;
       border: 1px solid #bdc5d5;
+      margin-top: 40px;
+      margin-right: 17px;
       @include tablet {
-        width: 72px;
-        height: 38px;
         margin-top: 0;
       }
     }
     &__save {
-      margin-top: 40px;
-      border: none;
-      color: #ffffff;
-      min-width: 139px;
-      width: auto;
-      height: 36px;
+      @include button;
       background: #2e66e6;
-      border-radius: 20px;
+      color: #ffffff;
+      margin-top: 40px;
       @include tablet {
-        min-width: 72px;
         padding: 0.5rem;
-        height: 38px;
         margin-right: 32px;
         margin-top: 0;
       }

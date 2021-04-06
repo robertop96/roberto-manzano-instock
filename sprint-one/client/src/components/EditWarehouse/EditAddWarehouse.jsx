@@ -30,7 +30,7 @@ function EditWarehouse({ formInfo }) {
               id="warehouse-name"
               required
             />
-            <label className="form__warehouse-address-label" htmlFor="address">
+            <label className="form__warehouse--address-label" htmlFor="address">
               Street Address
             </label>
             <input
