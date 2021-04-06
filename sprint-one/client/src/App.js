@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
+// import Home from './pages/Home/Home';
+import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
       <div className="App">
         {/* <Header /> */}
         <Switch>
-          <Route path="/" component={Home} />
+          {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
+          <Route path="/warehouse/:action" component={WarehouseModify} />
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
