@@ -1,17 +1,23 @@
-import React from "react"
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Warehouse from "./components/Warehouse/Warehouse"
 
 function App() {
   return (
-    <div>
-      <header>
-
-      </header>
-      <body>
+    
+    <Router>
+      <div className="App">
         <Warehouse />
-      </body>
-    </div>
+        {/* <Header /> */}
+        <Switch>
+          {/* <Route path="/" component={HOME} /> */}
+          <Route path="/warhouses" component={Warehouse} />
+          {/* <Route path="/inventory" component={Inventory} /> */}
+          {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
