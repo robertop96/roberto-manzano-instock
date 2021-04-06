@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 
 function EditWarehouse({ formInfo }) {
-  console.log(formInfo);
   return (
     <section className="edit-container">
       <article className="edit-container__title-cont">

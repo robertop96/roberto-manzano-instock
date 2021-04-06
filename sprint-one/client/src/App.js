@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Header /> */}
+        <h1>NavbarMockup</h1>
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
@@ -16,6 +16,7 @@ function App() {
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
+        <h1>Footer Mockup</h1>
       </div>
     </Router>
   );

@@ -17,9 +17,7 @@ function WarehouseEdit() {
 
   return (
     <section>
-      <h1>NavbarMockup</h1>
       <EditAddWarehouse formInfo={formInfo} />
-      <h1>Footer Mockup</h1>
     </section>
   );
 }
