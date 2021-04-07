@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+@font-face {
+  font-family: titillium-bold;
+  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+}
+@font-face {
+  font-family: titillium-regular;
+  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+}
+.warehouse {
+  border: 2px solid red;
+}
+
+.search {
+  border: 2px solid green;
+  margin: 0 1rem;
+}
+.search__title {
+  font-family: titillium-bold;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+.card {
+  border: 2px solid blue;
+  height: 12.25rem;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.card__label {
+  font-family: titillium-regular;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  color: #5c667e;
+  margin: 0 0 0.25rem 0;
+}
+.card__text--name {
+  font-family: titillium-regular;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: #2e66e5;
+  margin: 0 0 1rem 0;
+}
+.card__text {
+  font-family: titillium-regular;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+.card__text--br {
+  font-family: titillium-regular;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  margin: 0;
+}/*# sourceMappingURL=Warehouse.css.map */
