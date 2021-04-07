@@ -12,10 +12,10 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" component={WarehouseDeatils} />
+          {/* <Route path="/warehouse/:id" component={WarehouseDeatils} /> */}
           <Route path="/warehouse/:action" component={WarehouseModify} />
-          {/* <Route path="/warhouses" component={Warehouses} />
-          <Route path="/inventory" component={Inventory} />
-          <Route path="/placeholder" component={PLACEHOLDER} /> */}
+          {/* <Route path="/warhouses" component={Warehouses} /> */}
+          {/* <Route path="/inventory" component={Inventory} /> */}
         </Switch>
         <h1>Footer Mockup</h1>
       </div>
