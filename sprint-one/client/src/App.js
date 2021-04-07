@@ -3,12 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import Home from './pages/Home/Home';
 import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <h1>NavbarMockup</h1>
+      <section>
+        <Header />
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
@@ -16,8 +17,7 @@ function App() {
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
-        <h1>Footer Mockup</h1>
-      </div>
+      </section>
     </Router>
   );
 }

@@ -16,7 +16,7 @@ function WarehouseEdit() {
   const [formInfo, setFormInfo] = useState(edit);
 
   return (
-    <section>
+    <section className="position">
       <EditAddWarehouse formInfo={formInfo} />
     </section>
   );
