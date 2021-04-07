@@ -1,0 +1,65 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/partials";
+.nav {
+  background-color: $graphite;
+  display: flex;
+  flex-direction: column;
+  height: 7rem;
+  justify-content: center;
+  gap: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav__logo {
+  @include tablet {
+    margin-left: 2rem;
+  }
+
+  @include desktop {
+    margin-left: 11.25rem;
+  }
+}
+
+.nav__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-family: $font-regular;
+  align-items: center;
+  @include tablet {
+    margin-right: 1rem;
+  }
+  @include desktop {
+    margin-right: 4rem;
+  }
+}
+
+.nav__link {
+  color: $cloud;
+  text-decoration: none;
+  width: 8rem;
+  @include tablet {
+    width: 5rem;
+
+    padding: 0 1rem;
+  }
+}
+.nav__link:hover {
+  text-decoration: underline;
+  color: white;
+}
+.active {
+  background-color: $instock-black;
+  border-radius: 2rem;
+  padding-bottom: 0.2rem;
+  color: $white;
+}
+.active:hover {
+  text-decoration: underline;
+}
