@@ -1,11 +1,17 @@
 import './WarehouseModify.scss';
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
 
 function WarehouseEdit() {
+  const location = useLocation();
+  console.log(location.pathname);
   const edit = {
     title: 'Edit Warehouse',
-    button: 'save'
+    button: 'save',
+    handleEdit: () => {
+      console.log(5);
+    }
   };
 
   const add = {
