@@ -1,21 +1,6 @@
-@mixin mobile {
-    @media screen and (min-width: 375px) {
-      @content;
-    }
-  }
-
-@mixin tablet {
-    @media screen and (min-width: 768px) {
-      @content;
-    }
-  }
-  @mixin desktop {
-    @media screen and (min-width: 1080px) {
-      @content;
-    }
-  }
-
-  @import "../../../partials/fonts";
+@import "../../partials/fonts.scss";
+@import "../../partials/_mixins.scss";
+@import "../../partials/partials.scss";
 $instock-black: #13182c;
 $instock-indigo: #2e66e5;
 $white: #fff;
@@ -30,18 +15,27 @@ $font-bold: titillium-bold;
 $font-regular: titillium-regular;
 
 
+
 .warehouse{
-    border: 2px solid red;
+    position: absolute;
+    left: 4.27%;
+    right: 4.27%;
+    top: 7.53%;
+    
+    margin: 4.9875rem 0 2.5rem 0;
+    background-color: $white;
+    box-shadow: 0rem .125rem .3125rem rgba(19, 24, 44, 0.1);
 }
 
 .search{
-    border: 2px solid green;
-    margin: 0 1rem;
+   
+    margin: 0 1.5rem;
 
     &__title{
         font-family: $font-bold;
         font-size: 1.75rem;
         line-height: 2.25rem;
+        margin-top: 2rem;
         @include tablet{
 
         }
@@ -49,19 +43,48 @@ $font-regular: titillium-regular;
 
         }
     }
+
+    &__bar{
+      height: 2.25rem;
+      width: 18.4375rem;
+      padding: 0 0 0 1rem;
+      border-radius: 1.25rem;
+      font-family: $font-regular;
+      font-size: .8125rem;
+      margin: 1rem 0 ;
+    }
+
+    &__button{
+     height: 2.25rem;
+     width: 18.4375rem;
+     padding: .5rem 5.25rem;
+     background-color: $instock-indigo;
+     border-radius: 1.25rem;
+     font-family: $font-regular;
+     font-size: .8125rem;
+     color: $white;
+     border-style: none;
+     margin-bottom: 1.5rem;
+    }
     
 }
-
+input[type=text]{
+  background-image: url(../../Assets/Icons/search-24px.svg);
+  background-repeat:no-repeat;
+  background-position-y: center;
+  background-position-x: 16.125rem;
+}
 .card{
-    border: 2px solid blue;
+    border-top: .0625rem solid $cloud;
     height: 12.25rem;
-    // width: 21.4375rem;
-    margin: 0 1rem;
+    // width: fit-content;
+    // margin: 0 1rem;
     display:flex;
-    // justify-content: space-between;
+    // justify-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 1rem 0;
+    padding: 1rem 1.5rem;
+    // align-items: center;
     
 
     &__label{
@@ -86,6 +109,7 @@ $font-regular: titillium-regular;
         font-size: .8125rem;
         line-height: 1.25rem;
         margin:0 0 1rem 0;
+        
     }
 
     &__text--br{
@@ -95,5 +119,36 @@ $font-regular: titillium-regular;
         margin:0 ;
     }
 
+    &__img--delete{
+      margin: 0 0 0 .3125rem;
+    }
 
+    &__img--edit{
+      margin: 1.1875rem 1.6875rem 0 7.875rem;
+    }
+
+    &__address{
+      width: 7.5rem;
+      margin-right: 2rem;
+    }
+
+}
+
+.arrow{
+  height: 20px;
+  width: 20px;
+  margin-left: .6975rem;
+  &__align{
+    display:flex;
+  }
+  
+}
+.card2{
+  margin: 1rem 1.5rem;
+}
+
+.align{
+  
+  display: flex;
+  
 }

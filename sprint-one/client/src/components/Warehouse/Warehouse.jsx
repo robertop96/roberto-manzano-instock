@@ -1,9 +1,12 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import del from "../../Assets/Icons/delete_outline-24px.svg";
 import edit from "../../Assets/Icons/edit-24px.svg";
+import search from "../../Assets/Icons/search-24px.svg"
+import arrow from "../../Assets/Icons/chevron_right-24px.svg"
 import axios from "axios";
 import "./Warehouse.css"
-// import {Link} from "react-router-dom"
+// import Header from "../Header/Header"
+import {Link} from "react-router-dom"
 
 const Warehouse=(props)=> {
     let [responseData, data] = useState(null);
@@ -29,16 +32,19 @@ const Warehouse=(props)=> {
 
     console.log(responseData)
     return (
+        <div>
+        {/* <Header /> */}
         <div className="warehouse">
             <div className="search">
                 <div>
                     <h1 className="search__title">Warehouses</h1>
                 </div>
                 <div>
-                    <input className="search__bar" type="text" name="search"  placeholder= "Search" />
+                    <input className="search__bar" type="text" name="search"  placeholder= "Search..." />
+                    
                 </div>
                 <div>
-                    <button className="search__button">+ Add New Warehouse </button>
+                   <Link> <button className="search__button">+ Add New Warehouse </button></Link>
                 </div>
             </div>
         {responseData?.map((data)=>{
@@ -48,16 +54,20 @@ const Warehouse=(props)=> {
                     <div className="card">           
                         <div>
                             <h4 className="card__label">WAREHOUSE</h4>
-                            <p className="card__text--name">{data.name}</p>
+                            <div className="arrow__align">
+                                <p className="card__text--name">{data.name}</p>
+                                <img className="arrow" src={arrow}/>
+                            </div>
                         </div>
-                        <div>
+                        <div className="card__address">
                             <h4 className="card__label">ADDRESS</h4>
-                            <p className="card__text--br">{data.address}</p>
-                            <p className="card__text--br">{data.city} {data.counrty}</p>
+                            <p className="card__text">{data.address}, {""}
+                            {data.city},{""} {data.country}</p>
                         </div>
                         <div>
-                            <img className="card__img--delete" src={del} />
+                            <Link><img className="card__img--delete" src={del} /></Link>
                         </div>
+                  
                         <div>
                             <h4 className="card__label">CONTACT NAME</h4>
                             <p className="card__text">{data.contact.name}</p>
@@ -68,13 +78,14 @@ const Warehouse=(props)=> {
                             <p className="card__text--br">{data.contact.email}</p>
                         </div>
                         <div>
-                            <img className="card__img--edit" src={edit} />
+                           <Link> <img className="card__img--edit" src={edit} /></Link>
                         </div>
                     </div>
                 </div>
                 )
 
             })}
+     </div>
      </div>
     )
 }

@@ -8,27 +8,67 @@
   font-family: titillium-regular;
   src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .warehouse {
-  border: 2px solid red;
+  position: absolute;
+  left: 4.27%;
+  right: 4.27%;
+  top: 7.53%;
+  margin: 4.9875rem 0 2.5rem 0;
+  background-color: #fff;
+  box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
 }
 
 .search {
-  border: 2px solid green;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 .search__title {
   font-family: titillium-bold;
   font-size: 1.75rem;
   line-height: 2.25rem;
+  margin-top: 2rem;
 }
+.search__bar {
+  height: 2.25rem;
+  width: 18.4375rem;
+  padding: 0 0 0 1rem;
+  border-radius: 1.25rem;
+  font-family: titillium-regular;
+  font-size: 0.8125rem;
+  margin: 1rem 0;
+}
+.search__button {
+  height: 2.25rem;
+  width: 18.4375rem;
+  padding: 0.5rem 5.25rem;
+  background-color: #2e66e5;
+  border-radius: 1.25rem;
+  font-family: titillium-regular;
+  font-size: 0.8125rem;
+  color: #fff;
+  border-style: none;
+  margin-bottom: 1.5rem;
+}
+
+input[type=text] {
+  background-image: url(../../Assets/Icons/search-24px.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 16.125rem;
+}
+
 .card {
-  border: 2px solid blue;
+  border-top: 0.0625rem solid #bdc5d5;
   height: 12.25rem;
-  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
 }
 .card__label {
   font-family: titillium-regular;
@@ -55,4 +95,31 @@
   font-size: 0.8125rem;
   line-height: 1.25rem;
   margin: 0;
+}
+.card__img--delete {
+  margin: 0 0 0 0.3125rem;
+}
+.card__img--edit {
+  margin: 1.1875rem 1.6875rem 0 7.875rem;
+}
+.card__address {
+  width: 7.5rem;
+  margin-right: 2rem;
+}
+
+.arrow {
+  height: 20px;
+  width: 20px;
+  margin-left: 0.6975rem;
+}
+.arrow__align {
+  display: flex;
+}
+
+.card2 {
+  margin: 1rem 1.5rem;
+}
+
+.align {
+  display: flex;
 }/*# sourceMappingURL=Warehouse.css.map */

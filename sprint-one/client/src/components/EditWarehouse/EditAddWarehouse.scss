@@ -1,0 +1,214 @@
+@import '../../partials/fonts';
+@import '../../partials/mixins';
+@import '../../partials/partials';
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  height: 922px;
+  width: 343px;
+  @include tablet {
+    width: 704px;
+    height: 612px;
+  }
+  @include desktop {
+    width: 1020px;
+  }
+
+  &__title-cont {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      border-bottom: 1px solid #bdc5d5;
+      padding-bottom: 21px;
+    }
+    &--img {
+      margin-left: 24px;
+      margin-right: 12px;
+      @include tablet {
+        margin-left: 36px;
+      }
+      @include desktop {
+        margin-left: 44px;
+      }
+    }
+    &--title {
+      font-family: Titillium-bold;
+      color: $instock-black;
+      font-size: 28px;
+      line-height: 36px;
+      font-weight: 600;
+      @include desktop {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  }
+  .form {
+    &__wrapper {
+      @include tablet {
+        display: flex;
+        margin-bottom: 32px;
+      }
+    }
+    &__warehouse {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      @include tablet {
+        border-right: 1px solid #bdc5d5;
+        width: 320px;
+        padding-right: 31px;
+      }
+      @include desktop {
+        width: 469px;
+        padding-right: 40px;
+        margin-left: 40px;
+      }
+      &--title {
+        @include formTitle;
+      }
+      &--name-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--name-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--address-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--address-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--city-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--city-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--country-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--country-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      @include tablet {
+        width: 320px;
+        border: none;
+        margin-left: 2rem;
+        padding-top: 0;
+      }
+      @include desktop {
+        width: 470px;
+        padding-left: 40px;
+        margin-right: 40px;
+      }
+      &--title {
+        @include formTitle;
+      }
+      &--name-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--name-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--position-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--position-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--phone-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--phone-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+      &--email-label {
+        @include formLabel;
+        margin-bottom: 4px;
+      }
+      &--email-input {
+        @include formInput;
+        @include tablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .button {
+    display: flex;
+    margin-left: 24px;
+    height: 68px;
+    @include tablet {
+      justify-content: flex-end;
+      align-items: center;
+      width: 704px;
+      height: 70px;
+    }
+    @include desktop {
+      width: 1020px;
+    }
+    &__cancel {
+      @include button;
+      background-color: #ffffff;
+      border: 1px solid #bdc5d5;
+      margin-top: 40px;
+      margin-right: 17px;
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+    &__save {
+      @include button;
+      background: #2e66e6;
+      color: #ffffff;
+      margin-top: 40px;
+      @include tablet {
+        padding: 0.5rem;
+        margin-right: 32px;
+        margin-top: 0;
+      }
+      @include desktop {
+        min-width: 72px;
+        margin-right: 40px;
+      }
+    }
+  }
+}
