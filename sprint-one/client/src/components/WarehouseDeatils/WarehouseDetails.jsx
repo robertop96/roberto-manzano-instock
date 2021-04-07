@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./warehouseDeatils.scss";
-import locationJson from "../../data/warehouses.json";
-import itemJson from "../../data/inventories.json";
+// import locationJson from "../../data/warehouses.json";
+// import itemJson from "../../data/inventories.json";
 import backArrow from "../../Assets/Icons/arrow_back-24px.svg";
 import chevronRight from "../../Assets/Icons/chevron_right-24px.svg";
 import editInfo from "../../Assets/Icons/edit-24px.svg";

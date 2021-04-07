@@ -8,7 +8,7 @@ import Header from "../src/components/Header/Header.jsx";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <section>
         <Header />
         <Switch>
           <Route path="/" component={WarehouseDeatils} />
@@ -17,8 +17,7 @@ function App() {
           {/* <Route path="/warhouses" component={Warehouses} /> */}
           {/* <Route path="/inventory" component={Inventory} /> */}
         </Switch>
-        <h1>Footer Mockup</h1>
-      </div>
+      </section>
     </Router>
   );
 }

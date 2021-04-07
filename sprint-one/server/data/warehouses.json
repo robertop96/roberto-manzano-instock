@@ -102,5 +102,18 @@
       "phone": "+1 (646) 123-1234",
       "email": "vmendoza@instock.com"
     }
+  },
+  {
+    "id": "u8t5p3lfwkn7ivet0",
+    "name": "John",
+    "address": "215 Essex Street",
+    "city": "Washintong",
+    "country": "USA",
+    "contact": {
+      "name": "Roberto Manzano",
+      "position": "Warehouse cleaner",
+      "phone": "+1 (837) 837-5309",
+      "email": "whothis@instock.com"
+    }
   }
 ]

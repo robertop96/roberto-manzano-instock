@@ -9,6 +9,3 @@ app.use('/', routes);
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
-
-const cat = 5;
-console.log(cat);
