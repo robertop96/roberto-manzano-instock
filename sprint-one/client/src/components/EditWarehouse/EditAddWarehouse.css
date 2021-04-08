@@ -28,7 +28,7 @@
     height: 612px;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container {
     width: 1020px;
   }
@@ -53,7 +53,7 @@
     margin-left: 36px;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container__title-cont--img {
     margin-left: 44px;
   }
@@ -65,7 +65,7 @@
   line-height: 36px;
   font-weight: 600;
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container__title-cont--title {
     font-size: 32px;
     line-height: 40px;
@@ -89,7 +89,7 @@
     padding-right: 31px;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .form__warehouse {
     width: 469px;
     padding-right: 40px;
@@ -114,7 +114,7 @@
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .form__warehouse--title {
     font-size: 24px;
     line-height: 32px;
@@ -305,7 +305,7 @@
     padding-top: 0;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .form__contact {
     width: 470px;
     padding-left: 40px;
@@ -330,7 +330,7 @@
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .form__contact--title {
     font-size: 24px;
     line-height: 32px;
@@ -521,7 +521,7 @@
     height: 70px;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .button {
     width: 1020px;
   }
@@ -575,7 +575,7 @@
     margin-top: 0;
   }
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1280px) {
   .edit-container .button__save {
     min-width: 72px;
     margin-right: 40px;
