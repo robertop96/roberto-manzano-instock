@@ -9,12 +9,27 @@ const warehouse = (object) => {
     city: object.city,
     country: object.country,
     contact: {
-      name: object.contact.cName,
-      position: object.contact.cPosition,
-      phone: object.contact.cPhone,
-      email: object.contact.cEmail
+      name: object.contact.name,
+      position: object.contact.position,
+      phone: object.contact.phone,
+      email: object.contact.email
     }
   };
 };
 
-module.exports = { warehouse };
+const editWarehouse = (object) => {
+  return {
+    name: object.name,
+    address: object.address,
+    city: object.city,
+    country: object.country,
+    contact: {
+      name: object.contact.name,
+      position: object.contact.position,
+      phone: object.contact.phone,
+      email: object.contact.email
+    }
+  };
+};
+
+module.exports = { warehouse, editWarehouse };
