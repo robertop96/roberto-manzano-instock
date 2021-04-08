@@ -86,7 +86,7 @@ const Warehouse=(props)=> {
                             {data.city},{""} {data.country}</p>
                         </div>
                         <div>
-                            <Link><img className="card__img--delete" src={del} /></Link>
+                            <Link to={`/`}><img className="card__img--delete" src={del} /></Link>
                         </div>
                   
                         <div className="card__name">
@@ -103,7 +103,7 @@ const Warehouse=(props)=> {
                             <Link> <img className="card__img--delete2" src={del} />
                             </Link>
                             </div>
-                           <Link> <img className="card__img--edit" src={edit} /></Link>
+                           <Link to={`/warehouses/${data.id}`}> <img className="card__img--edit" src={edit} /></Link>
                         </div>
                     </div>
                 </div>

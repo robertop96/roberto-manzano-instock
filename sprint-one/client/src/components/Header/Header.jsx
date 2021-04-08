@@ -1,7 +1,7 @@
-import { NavLink, Link } from "react-router-dom";
-import logo from "../../Assets/Logo/InStock-Logo.svg";
-import React, { Component } from "react";
-import "./Header.scss";
+import { NavLink, Link } from 'react-router-dom';
+import logo from '../../Assets/Logo/InStock-Logo.svg';
+import React, { Component } from 'react';
+import './Header.scss';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
         <div className="nav__links">
           <NavLink
-            to="/warhouses"
+            to="/warehouse"
             className="nav__link"
             activeClassName="active"
           >

@@ -10,19 +10,17 @@ function App() {
   return (
     
     <Router>
-      <Header/>
-      <Warehouse/>
-      <div className="App">
-        {/* <h1>NavbarMockup</h1> */}
+      <section>
+        <Header />
+        
         <Switch>
           {/* <Route path="/" component={Home} /> */}
-          <Route path="/warhouse" component={Warehouse} />
-          <Route path="/warehouse/:action" component={WarehouseModify} />
+          <Route path="/warehouse" component={Warehouse} />
+          <Route path="/warehouses/:action" component={WarehouseModify} />
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
-        {/* <h1>Footer Mockup</h1> */}
-      </div>
+      </section>
     </Router>
   );
 }
