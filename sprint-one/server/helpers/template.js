@@ -32,4 +32,16 @@ const editWarehouse = (object) => {
   };
 };
 
-module.exports = { warehouse, editWarehouse };
+const inventory = (obj) => {
+  return {
+    id: id,
+    warehouseID: obj.warehouseID,
+    warehouseName: obj.warehouseName,
+    itemName: obj.itemName,
+    description: obj.description,
+    category: obj.category,
+    status: obj.status,
+    quantity: obj.quantity
+  };
+};
+module.exports = { warehouse, editWarehouse, inventory };
