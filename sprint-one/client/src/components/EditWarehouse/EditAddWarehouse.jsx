@@ -1,8 +1,8 @@
 import './EditAddWarehouse.scss';
-import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
-
 function EditWarehouse({ formInfo }) {
+  const location = useLocation();
   return (
     <section className="edit-container">
       <article className="edit-container__title-cont">
@@ -113,7 +113,14 @@ function EditWarehouse({ formInfo }) {
           <button type="submit" className="button__cancel">
             Cancel
           </button>
-          <button type="submit" className="button__save">
+          <button
+            type="submit"
+            className={
+              location.pathname === '/warehouse/edit'
+                ? 'button__save'
+                : 'button__add'
+            }
+          >
             {formInfo.button}
           </button>
         </article>

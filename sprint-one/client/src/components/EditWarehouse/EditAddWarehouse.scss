@@ -216,5 +216,22 @@
         margin-right: 40px;
       }
     }
+    &__add {
+      @include button;
+      background: #2e66e6;
+      width: 140px;
+      color: #ffffff;
+      margin-top: 40px;
+      @include tablet {
+        width: 138px;
+        padding: 0.5rem;
+        margin-right: 32px;
+        margin-top: 0;
+      }
+      @include desktop {
+        min-width: 72px;
+        margin-right: 40px;
+      }
+    }
   }
 }

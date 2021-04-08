@@ -5,12 +5,15 @@ import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
 
 function WarehouseEdit() {
   const location = useLocation();
-  console.log(location.pathname);
+
   const edit = {
     title: 'Edit Warehouse',
     button: 'save',
-    handleEdit: () => {
-      console.log(5);
+    handleEdit: (e) => {
+      e.preventDefault();
+      // if (all input == "" ){
+      //   alert()
+      // }
     }
   };
 
@@ -19,7 +22,7 @@ function WarehouseEdit() {
     button: '+ Add Warehouse'
   };
 
-  const [formInfo, setFormInfo] = useState(edit);
+  const [formInfo, setFormInfo] = useState(add);
 
   return (
     <section className="position">
