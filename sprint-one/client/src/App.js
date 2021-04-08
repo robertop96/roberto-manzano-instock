@@ -1,15 +1,17 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Home from './pages/Home/Home';
-import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
-import Header from './components/Header/Header';
+import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
+import Header from "./components/Header/Header";
+import DeleteInventory from "./components/DeleteInventory/DeleteInventory";
 
 function App() {
   return (
     <Router>
       <section>
         <Header />
+        <DeleteInventory />
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
