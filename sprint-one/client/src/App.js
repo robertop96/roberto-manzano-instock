@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
 import Warehouse from "./components/Warehouse/Warehouse"
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
+        <Footer />
       </section>
     </Router>
   );
