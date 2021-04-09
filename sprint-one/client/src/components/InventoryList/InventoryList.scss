@@ -1,5 +1,5 @@
 @import "../../partials/fonts.scss";
-@import "../../partials/mixins.scss";
+@import "../../partials/_mixins.scss";
 @import "../../partials/partials.scss";
 $instock-black: #13182c;
 $instock-indigo: #2e66e5;
@@ -17,7 +17,7 @@ $font-regular: titillium-regular;
 	font-family: "Titillium Web", sans-serif;
 }
 
-.warehouse {
+.inventory {
 	@include mobile {
 		position: absolute;
 		left: 4.27%;
@@ -37,7 +37,7 @@ $font-regular: titillium-regular;
 	}
 }
 
-.search {
+.searchI {
 	@include mobile {
 		margin: 0 1.5rem;
 	}
@@ -119,10 +119,10 @@ input[type="text"] {
 		background-position-x: 15rem;
 	}
 }
-.card {
+.cardI {
 	@include mobile {
 		border-top: 0.0625rem solid $cloud;
-		height: 12.25rem;
+		height: 14.75rem;
 		// width: fit-content;
 		// margin: 0 1rem;
 		display: flex;
@@ -193,7 +193,7 @@ input[type="text"] {
 			font-family: $font-regular;
 			font-size: 0.8125rem;
 			line-height: 1.25rem;
-			margin: 0;
+			margin-bottom: 1rem;
 		}
 		@include tablet {
 			font-size: 0.875rem;
@@ -202,9 +202,10 @@ input[type="text"] {
 		}
 	}
 
+    
 	&__img--delete {
 		@include mobile {
-			margin: 0 0 0 0.3125rem;
+			margin: 3.5rem 0 0 0;
 		}
 		@include tablet {
 			display: none;
@@ -215,7 +216,7 @@ input[type="text"] {
 
 	&__img--edit {
 		@include mobile {
-			margin: 1rem 0 0 7.875rem;
+			margin: 10.75rem 0 1.5rem 0;
 		}
 		@include tablet {
 			margin: 0;
@@ -224,35 +225,44 @@ input[type="text"] {
 		}
 	}
 
-	&__address {
+	&__category {
 		@include mobile {
 			width: 7.5rem;
 			margin-right: 2rem;
 		}
 		@include tablet {
 			font-size: 0.875rem;
-			width: 5.9375rem;
-			margin: 0 1.2rem 0 2.1rem;
+			width: 4.375rem;
+			margin: 0 2.8rem 0 1.9rem;
 		}
 		@include desktop {
-			width: 13.0625rem;
-			margin: 0 3.2rem 0 8.125rem;
+			margin: 0 6rem 0 6.4rem;
 		}
 	}
 
-	&__name {
+	&__status {
 		@include tablet {
-			width: 6.3125rem;
-			margin-right: 1.9rem;
+			width: 5.75rem;
+			margin-right: 1.7rem;
 		}
 		@include desktop {
 			margin-right: 5.2rem;
 		}
 	}
 
-	&__info {
+	&__qty {
 		@include tablet {
-			width: 9rem;
+			width: 2.5rem;
+            margin-right: 1.1rem;
+		}
+		@include desktop {
+            margin-right: 2.5rem;
+		}
+	}
+
+    &__item {
+		@include tablet {
+			width: 7.1875rem;
 		}
 		@include desktop {
 		}
@@ -260,7 +270,7 @@ input[type="text"] {
 
 	&__warehouse {
 		@include mobile {
-			width: 5.8225rem;
+			width: 4.375rem;
 		}
 		@include tablet {
 			width: 6.208125rem;
@@ -273,7 +283,7 @@ input[type="text"] {
     }
 		@include tablet {
 			display: flex;
-			margin-left: 3rem;
+			margin-left: 2rem;
 		}
 		@include desktop {
 			margin-left: 3.5rem;
@@ -316,7 +326,7 @@ input[type="text"] {
 
 }
 
-.bar {
+.barI {
 	@include mobile {
 		display: none;
 	}
@@ -345,40 +355,54 @@ input[type="text"] {
 		@include tablet {
 			height: 1rem;
 			width: 1rem;
-			margin-right: 2.5rem;
+			margin-right: 4rem;
 		}
 		@include desktop {
-			margin-right: 8.25rem;
+			margin-right: 6rem;
 		}
 	}
 
-	&__arrows--address {
+	&__arrows--category {
 		@include tablet {
 			height: 1rem;
 			width: 1rem;
-			margin-right: 2.5rem;
+			margin-right: 2.8125rem;
 		}
 		@include desktop {
-			margin-right: 11.9375rem;
+			margin-right: 6.125rem;
+		}
+	}
+    
+	&__arrows--status {
+		@include tablet {
+			height: 1rem;
+			width: 1rem;
+			margin-right: 3.875rem;
+		}
+		@include desktop {
+			margin-right: 7.125rem;
 		}
 	}
 
-	&__arrows--name {
+	&__arrows--item {
 		@include tablet {
 			height: 1rem;
 			width: 1rem;
-			margin-right: 1.0625rem;
+			margin-right: 2.4375rem;
 		}
 		@include desktop {
-			margin-right: 4.375rem;
+			margin-right: 6.875rem;
 		}
 	}
 
-	&__arrows--info {
+	&__arrows--qty {
 		@include tablet {
 			height: 1rem;
 			width: 1rem;
-			margin-right: 2.5rem;
+			margin-right: 1.25rem;
 		}
+        @include desktop{
+            margin-right: 2.875rem;
+        }
 	}
 }
