@@ -6,7 +6,10 @@
   display: flex;
   flex-direction: column;
   height: 7rem;
-  // justify-content: center;
+
+  justify-content: center;
+  align-items: center;
+
   gap: 1rem;
   width:100vw;
   @include mobile{
@@ -35,8 +38,9 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  font-family: $font-regular;
+  @include font-regular;
   align-items: center;
+
   @include tablet {
     margin-right: 1rem;
   }
@@ -49,8 +53,9 @@
   color: $cloud;
   text-decoration: none;
   width: 8rem;
+  text-align: center;
   @include tablet {
-    width: 5rem;
+    width: 7rem;
 
     padding: 0 1rem;
   }
