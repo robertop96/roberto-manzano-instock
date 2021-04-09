@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Home from './pages/Home/Home';
 import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
 import Header from "./components/Header/Header";
-import DeleteInventory from "./components/DeleteInventory/DeleteInventory";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
   return (
     <Router>
       <section>
         <Header />
-        <DeleteInventory />
+        <DeleteModal />
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
