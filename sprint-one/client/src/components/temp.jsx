@@ -97,13 +97,7 @@ const WarehouseDeatils = () => {
                       <img src={chevronRight} alt="chevron" />
                     </div>
                   </div>
-                  <div className="category-container">
-                    <h4 className="mobile-info">CATEGORY</h4>
-                    <p>{inv.category}</p>
-                  </div>
-                </div>
 
-                <div className="inv-stat-flex">
                   <div className="staus-container">
                     <h4 className="mobile-info"> STATUS</h4>
                     <button
@@ -114,15 +108,24 @@ const WarehouseDeatils = () => {
                       {inv.status}
                     </button>
                   </div>
+                </div>
+
+                <div className="inv-stat-flex">
+                  <div className="category-container">
+                    <h4 className="mobile-info">CATEGORY</h4>
+                    <p>{inv.category}</p>
+                  </div>
+
                   <div className="qty-container">
                     <h4 className="mobile-info">QTY</h4>
                     <p>{inv.quantity}</p>
                   </div>
                 </div>
-              </div>
-              <div className="icon-container">
-                <img className="trash" src={trash} alt="trash" />
-                <img src={pencil} alt="pencil" />
+
+                <div className="icon-container">
+                  <img className="trash" src={trash} alt="trash" />
+                  <img src={pencil} alt="pencil" />
+                </div>
               </div>
             </section>
           );

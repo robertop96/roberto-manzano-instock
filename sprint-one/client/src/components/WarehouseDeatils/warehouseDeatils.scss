@@ -140,7 +140,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 2px solid $cloud;
+  border-bottom: 1px solid $cloud;
   @include tablet {
     width: 704px;
   }
@@ -150,7 +150,6 @@ h6 {
 }
 
 .address-contact__container {
-  // border: 2px solid magenta;
   display: flex;
   flex-direction: column;
   @include tablet {
@@ -164,14 +163,13 @@ h6 {
   }
 }
 .address-container {
-  // border: 2px solid red;
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 16px 24px;
   @include tablet {
-    border-right: 2px solid $cloud;
+    border-right: 1px solid $cloud;
     width: 278px;
     margin: 0px;
     padding: 0px 32px;
@@ -196,7 +194,6 @@ h6 {
 }
 
 .contact-container {
-  // border: 2px solid turquoise;
   width: 348px;
   display: flex;
   border-bottom: 1px solid $cloud;
@@ -209,7 +206,6 @@ h6 {
     width: 609px;
   }
   &__left {
-    // border: 2px solid navy;
     width: 171.5px;
     display: flex;
     flex-direction: column;
@@ -226,7 +222,6 @@ h6 {
     }
   }
   &__right {
-    // border: 2px solid orange;
     width: 171.5px;
     display: flex;
     flex-direction: column;
@@ -243,53 +238,62 @@ h6 {
 }
 
 // Items Styling
-
 .invetory-container {
-  // border: 1px solid crimson;
   width: 343px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid $cloud;
-  &:hover {
-    background: rgba(46, 102, 230, 0.07);
-  }
+
   @include tablet {
     width: 704px;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row;
   }
   @include desktop {
     width: 1020px;
+    &:hover {
+      background: rgba(46, 102, 230, 0.07);
+    }
   }
 }
 
 .inventory-flex-container {
-  // border: 1px solid black;
   width: 300px;
+  display: flex;
   margin: 10px 24px 0px;
   border-bottom: $cloud;
   @include tablet {
+    margin: 10px 20px 0px;
+    width: 598px;
     display: flex;
+  }
+  @include desktop {
+    width: 914px;
   }
 }
 
 .inv-stat-flex {
-  // border: 3px solid green;
   display: flex;
+  flex-direction: column;
   margin: 0.5rem 0rem;
+  @include tablet {
+    flex-direction: row;
+  }
 }
 
 .item-container {
-  // border: 1px solid blue;
-  width: 171.5px;
+  width: 141.5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0px 0px 16px 0px;
   @include tablet {
-    width: 175px;
+    width: 188px;
+    margin: 0px;
   }
   @include desktop {
-    width: 255px;
+    width: 268px;
   }
 }
 
@@ -323,13 +327,14 @@ h6 {
 }
 
 .staus-container {
-  // border: 1px solid gold;
-  width: 171.5px;
+  width: 141.5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0px 0px 16px 0px;
   @include tablet {
-    width: 152px;
+    width: 135px;
+    margin: 0px;
   }
   @include desktop {
     width: 222px;
@@ -354,22 +359,7 @@ h6 {
 }
 
 .category-container {
-  // border: 1px solid hotpink;
-  width: 171.5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @include tablet {
-    width: 125px;
-  }
-  @include desktop {
-    width: 210px;
-  }
-}
-
-.qty-container {
-  // border: 1px solid lawngreen;
-  width: 171.5px;
+  width: 141.5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -377,17 +367,34 @@ h6 {
     width: 140px;
   }
   @include desktop {
-    width: 222px;
+    width: 210px;
+  }
+}
+
+.qty-container {
+  width: 141.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include tablet {
+    width: 125px;
+  }
+  @include desktop {
+    width: 190px;
   }
 }
 
 .icon-container {
-  // border: 1px solid yellow;
   display: flex;
   justify-content: space-between;
   margin: 0px 0px 27px 0px;
+  width: 300px;
   @include tablet {
-    margin: 0px 0px 0px 0px;
+    margin: 0px 18px 0px 0px;
+    flex-direction: row;
+  }
+  @include desktop {
+    margin-right: 22px;
   }
 }
 
