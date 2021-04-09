@@ -1,12 +1,13 @@
 @import "../../partials/fonts";
 @import "../../partials/_mixins.scss";
 @import "../../partials/partials";
+
 .warehouse {
   @include mobile {
     position: absolute;
     left: 4.27%;
     right: 4.27%;
-    top: 7.53%;
+    top: 10%;
 
     margin: 4.9875rem 0 2.5rem 0;
     background-color: $white;
@@ -14,10 +15,12 @@
   }
   @include tablet {
     margin: 0;
+    top: 25%;
   }
   @include desktop {
     margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
+    left: 5%;
   }
 }
 
@@ -362,5 +365,14 @@ input[type="text"] {
       width: 1rem;
       margin-right: 2.5rem;
     }
+  }
+}
+
+.hide {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: block;
   }
 }

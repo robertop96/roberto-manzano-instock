@@ -4,19 +4,19 @@ import edit from "../../Assets/Icons/edit-24px.svg";
 import sort from "../../Assets/Icons/sort-24px.svg";
 import arrow from "../../Assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
-import "./Warehouse.scss"
+import "./Warehouse.scss";
 // import Header from "../Header/Header"
 import { Link } from "react-router-dom";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-const Warehouse = (props) => {
+const Warehouse = () => {
   let [responseData, setResponseData] = useState(null);
   let [modalData, setModalData] = useState(null);
   let [showModal, setShowModal] = useState(false);
   const fetchData = useCallback(() => {
     axios({
       method: "GET",
-      url: "/api/warehouse/list",
+      url: "/api/warehouse/list/all",
       params: {
         language_code: "en",
       },
@@ -40,7 +40,7 @@ const Warehouse = (props) => {
       )}
       {/* <Header /> */}
 
-      <div className="warehouse">
+      <div className={showModal ? "warehouse hide" : "warehouse"}>
         <div className="search">
           <div>
             <h1 className="search__title">Warehouses</h1>
@@ -101,11 +101,14 @@ const Warehouse = (props) => {
                   </p>
                 </div>
                 <div>
-                  <img  onClick={() => {
-                        setModalData(data);
-                        setShowModal(true);
-                      }}
-                      className="card__img--delete" src={del} />
+                  <img
+                    className="card__img--delete"
+                    src={del}
+                    onClick={() => {
+                      setModalData(data);
+                      setShowModal(true);
+                    }}
+                  />
                 </div>
 
                 <div className="card__name">

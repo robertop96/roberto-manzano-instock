@@ -7,7 +7,6 @@ import closeIcon from "../../Assets/Icons/close-24px.svg";
 
 import axios from "axios";
 
-
 const DeleteModal = ({ data, setShowModal }) => {
   const { pathname } = useLocation();
 
@@ -17,7 +16,6 @@ const DeleteModal = ({ data, setShowModal }) => {
         data.id
       }`
     );
-
   };
 
   return (
@@ -25,8 +23,12 @@ const DeleteModal = ({ data, setShowModal }) => {
       <div className="modal__bg">
         <div className="modal__box">
           <div className="modal__text">
-            <img className="modal__close" src={closeIcon} alt="close icon" />
-
+            <img
+              className="modal__close"
+              src={closeIcon}
+              alt="close icon"
+              onClick={() => setShowModal(false)}
+            />
 
             <h1 className="modal__title">
               Delete {data.name}{" "}
@@ -46,7 +48,6 @@ const DeleteModal = ({ data, setShowModal }) => {
               name="cancel"
               onClick={() => setShowModal(false)}
             >
-
               Cancel
             </button>
             <button
