@@ -1,0 +1,424 @@
+@use '../../partials/fonts' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/partials' as *;
+
+* {
+  font-family: $font-regular;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: $font-regular;
+  font-size: 28px;
+  line-height: 36px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+h2 {
+  font-family: $font-regular;
+  font-size: 20px;
+  line-height: 28px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h3 {
+  font-family: $font-regular;
+  font-size: 13px;
+  line-height: 20px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+h4 {
+  font-family: $font-regular;
+  font-size: 11px;
+  line-height: 16px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+h5 {
+  // used as the P1 font
+  font-family: $font-regular;
+  font-size: 15px;
+  line-height: 26px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+p {
+  // used as the P2 font
+  font-family: $font-regular;
+  font-size: 13px;
+  line-height: 20px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+h6 {
+  // used as the P3 font
+  font-family: $font-regular;
+  font-size: 11px;
+  line-height: 16px;
+  @include tablet {
+    font-family: $font-regular;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+//  Location Styling
+.big-box {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-container {
+  background-color: $graphite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 96px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.card-container {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 343px;
+  z-index: 1;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  @include tablet {
+    width: 704px;
+    height: 719px;
+  }
+  @include desktop {
+    width: 1020px;
+    height: 719px;
+  }
+}
+
+.arrow-box {
+  display: flex;
+  width: 250px;
+}
+
+.warehouse-container {
+  width: 343px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid $cloud;
+  @include tablet {
+    width: 704px;
+  }
+  @include desktop {
+    width: 1020px;
+  }
+}
+
+.address-contact__container {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    width: 704px;
+    padding: 24px 0px;
+  }
+  @include desktop {
+    width: 1020px;
+    padding: 24px 0px;
+  }
+}
+.address-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px 24px;
+  @include tablet {
+    border-right: 1px solid $cloud;
+    width: 278px;
+    margin: 0px;
+    padding: 0px 32px;
+  }
+  @include desktop {
+    width: 410px;
+    padding: 2px 40px;
+  }
+}
+
+.btn {
+  border-radius: 20px;
+  background-color: $instock-indigo;
+  border: none;
+  width: 36px;
+  height: 36px;
+  @include tablet {
+    width: 81px;
+    height: 38px;
+  }
+}
+.edit-img-flex {
+  @include tablet {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-left: 11px;
+  }
+}
+
+.edit-text {
+  display: none;
+  @include tablet {
+    display: initial;
+    color: $white;
+    padding-left: 4px;
+  }
+}
+
+.edit {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(70deg)
+    brightness(200%) contrast(200%);
+}
+
+.contact-container {
+  width: 348px;
+  display: flex;
+  border-bottom: 1px solid $cloud;
+  @include tablet {
+    width: 425px;
+    margin: 0px;
+    border-bottom: none;
+  }
+  @include desktop {
+    width: 609px;
+  }
+  &__left {
+    width: 171.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 0px 16px 24px;
+    @include tablet {
+      width: 206px;
+      padding: 0px 0px 0px 40px;
+      margin: 0px;
+    }
+    @include desktop {
+      width: 285px;
+      padding: 0px 40px;
+    }
+  }
+  &__right {
+    width: 171.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include tablet {
+      width: 219px;
+      padding: 0px 24px;
+    }
+    @include desktop {
+      width: 324px;
+      padding: 0px 28px;
+    }
+  }
+}
+
+// Items Styling
+.invetory-container {
+  width: 343px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $cloud;
+
+  @include tablet {
+    width: 704px;
+    align-items: center;
+    flex-direction: row;
+  }
+  @include desktop {
+    width: 1020px;
+    &:hover {
+      background: rgba(46, 102, 230, 0.07);
+    }
+  }
+}
+
+.inventory-flex-container {
+  width: 300px;
+  display: flex;
+  margin: 10px 24px 0px;
+  border-bottom: $cloud;
+  @include tablet {
+    margin: 10px 20px 0px;
+    width: 598px;
+    display: flex;
+  }
+  @include desktop {
+    width: 914px;
+  }
+}
+
+.inv-stat-flex {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0rem;
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.item-container {
+  width: 141.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0px 0px 16px 0px;
+  @include tablet {
+    width: 188px;
+    margin: 0px;
+  }
+  @include desktop {
+    width: 268px;
+  }
+}
+
+.chevron-box {
+  display: flex;
+}
+
+.tablet-label {
+  display: none;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 1.5rem;
+  }
+
+  &__container {
+    background-color: $light-grey;
+    display: flex;
+    justify-content: space-between;
+    width: 707px;
+    @include desktop {
+      width: 1020px;
+    }
+  }
+}
+
+.mobile-info {
+  @include tablet {
+    display: none;
+  }
+}
+
+.staus-container {
+  width: 141.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0px 0px 16px 0px;
+  @include tablet {
+    width: 135px;
+    margin: 0px;
+  }
+  @include desktop {
+    width: 222px;
+  }
+}
+
+.status-btn {
+  border-radius: 10px;
+  border: none;
+  width: 65px;
+  height: 26px;
+  color: $green;
+  background: rgba(21, 132, 99, 0.07);
+}
+.status-out {
+  border-radius: 10px;
+  border: none;
+  width: 92px;
+  height: 26px;
+  color: $red;
+  background: rgba(201, 69, 21, 0.07);
+}
+
+.category-container {
+  width: 141.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include tablet {
+    width: 140px;
+  }
+  @include desktop {
+    width: 210px;
+  }
+}
+
+.qty-container {
+  width: 141.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include tablet {
+    width: 125px;
+  }
+  @include desktop {
+    width: 190px;
+  }
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 27px 0px;
+  width: 300px;
+  @include tablet {
+    margin: 0px 18px 0px 0px;
+    flex-direction: row;
+  }
+  @include desktop {
+    margin-right: 22px;
+  }
+}
+
+.trash {
+  margin: 0px 12px 0px 0px;
+}
