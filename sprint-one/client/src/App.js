@@ -14,7 +14,6 @@ function App() {
     <Router>
       <section>
         <Header />
-
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           <Route path="/warehouse" component={Warehouse} />

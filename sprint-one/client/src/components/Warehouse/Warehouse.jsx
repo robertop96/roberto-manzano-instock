@@ -9,7 +9,7 @@ import "./Warehouse.scss";
 import { Link } from "react-router-dom";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-const Warehouse = (props) => {
+const Warehouse = () => {
   let [responseData, setResponseData] = useState(null);
   let [modalData, setModalData] = useState(null);
   let [showModal, setShowModal] = useState(false);
@@ -40,7 +40,7 @@ const Warehouse = (props) => {
       )}
       {/* <Header /> */}
 
-      <div className="warehouse">
+      <div className={showModal ? "warehouse hide" : "warehouse"}>
         <div className="search">
           <div>
             <h1 className="search__title">Warehouses</h1>
@@ -101,7 +101,14 @@ const Warehouse = (props) => {
                   </p>
                 </div>
                 <div>
-                  <img className="card__img--delete" src={del} />
+                  <img
+                    className="card__img--delete"
+                    src={del}
+                    onClick={() => {
+                      setModalData(data);
+                      setShowModal(true);
+                    }}
+                  />
                 </div>
 
                 <div className="card__name">
