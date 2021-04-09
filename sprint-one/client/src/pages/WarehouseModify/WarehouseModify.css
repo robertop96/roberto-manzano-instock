@@ -1,2 +1,9 @@
-
-/*# sourceMappingURL=WarehouseModify.css.map *//*# sourceMappingURL=WarehouseModify.css.map */
+.position {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 4.27%;
+  right: 4.27%;
+  top: 11.79%;
+  bottom: 8.32%;
+}/*# sourceMappingURL=WarehouseModify.css.map */
