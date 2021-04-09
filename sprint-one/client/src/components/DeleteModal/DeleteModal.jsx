@@ -31,7 +31,7 @@ const DeleteModal = ({ data, setShowModal }) => {
             />
 
             <h1 className="modal__title">
-              Delete {data.name}{" "}
+              Delete {data.name} {data.itemName}{" "}
               {pathname === "/warehouse" ? "warehouse" : "inventory item"}?
             </h1>
 

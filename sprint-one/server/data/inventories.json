@@ -704,11 +704,9 @@
     "warehouseID": "u8t5p4bkakn83efot",
     "warehouseName": "Trying the Add Inventory",
     "itemName": "imagination",
-    "description": "Nothing you would like to play",
-    "category": "Nothing",
-    "status": "lost af",
-    "quantity": 0,
-    "name": "Geuss Who",
-    "warehouse": "enigma station"
+    "description": "Imagine it",
+    "category": "Ethereal",
+    "status": "In-Stock",
+    "quantity": 0
   }
 ]

@@ -13,8 +13,12 @@
   font-weight: 400;
 }
 
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
 @media screen and (min-width: 375px) {
-  .warehouse {
+  .inventory {
     position: absolute;
     left: 4.27%;
     right: 4.27%;
@@ -25,61 +29,59 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .warehouse {
+  .inventory {
     margin: 0;
   }
 }
 @media screen and (min-width: 1280px) {
-  .warehouse {
+  .inventory {
     margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
   }
 }
 
 @media screen and (min-width: 375px) {
-  .search {
+  .searchI {
     margin: 0 1.5rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .search {
+  .searchI {
     display: flex;
   }
 }
 @media screen and (min-width: 375px) {
-  .search__title {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 600;
+  .searchI__title {
+    font-family: titillium-bold;
     font-size: 1.75rem;
     line-height: 2.25rem;
     margin-top: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .search__title {
+  .searchI__title {
     font-size: 2rem;
     margin: 2rem 6.25rem 1.375rem 0;
   }
 }
 @media screen and (min-width: 1280px) {
-  .search__title {
+  .searchI__title {
     margin: 2rem 19.4375rem 1.375rem 1rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .search__bar {
+  .searchI__bar {
     height: 2.25rem;
     width: 18.4375rem;
     padding: 0 0 0 1rem;
     border-radius: 1.25rem;
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+    font-family: titillium-regular;
     font-size: 0.8125rem;
     margin: 1rem 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .search__bar {
+  .searchI__bar {
     font-size: 0.875rem;
     height: 2.375rem;
     width: 11.5625rem;
@@ -87,19 +89,18 @@
   }
 }
 @media screen and (min-width: 1280px) {
-  .search__bar {
+  .searchI__bar {
     width: 17.125rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .search__button {
+  .searchI__button {
     height: 2.25rem;
     width: 18.4375rem;
     padding: 0.5rem 5.25rem;
     background-color: #2e66e5;
     border-radius: 1.25rem;
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+    font-family: titillium-regular;
     font-size: 0.8125rem;
     color: #fff;
     border-style: none;
@@ -107,7 +108,7 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .search__button {
+  .searchI__button {
     font-size: 0.875rem;
     height: 2.375rem;
     width: 10.5rem;
@@ -133,9 +134,9 @@ input[type=text] {
 }
 
 @media screen and (min-width: 375px) {
-  .card {
+  .cardI {
     border-top: 0.0625rem solid #bdc5d5;
-    height: 12.25rem;
+    height: 14.75rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -143,7 +144,7 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 768px) {
-  .card {
+  .cardI {
     flex-direction: row;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -154,9 +155,8 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 375px) {
-  .card__label {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+  .cardI__label {
+    font-family: titillium-regular;
     font-size: 0.6875rem;
     line-height: 1rem;
     color: #5c667e;
@@ -164,14 +164,13 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 768px) {
-  .card__label {
+  .cardI__label {
     display: none;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__text--name {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+  .cardI__text--name {
+    font-family: titillium-regular;
     font-size: 0.8125rem;
     line-height: 1.25rem;
     color: #2e66e5;
@@ -179,127 +178,135 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 768px) {
-  .card__text--name {
+  .cardI__text--name {
     font-size: 0.875rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__text {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+  .cardI__text {
+    font-family: titillium-regular;
     font-size: 0.8125rem;
     line-height: 1.25rem;
     margin: 0 0 1rem 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__text {
+  .cardI__text {
     font-size: 0.875rem;
     margin: 0;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__text--br {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+  .cardI__text--br {
+    font-family: titillium-regular;
     font-size: 0.8125rem;
     line-height: 1.25rem;
-    margin: 0;
+    margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__text--br {
+  .cardI__text--br {
     font-size: 0.875rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__img--delete {
-    margin: 0 0 0 0.3125rem;
+  .cardI__img--delete {
+    margin: 3.5rem 0 0 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__img--delete {
+  .cardI__img--delete {
     display: none;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__img--edit {
-    margin: 1rem 0 0 7.875rem;
+  .cardI__img--edit {
+    margin: 10.75rem 0 1.5rem 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__img--edit {
+  .cardI__img--edit {
     margin: 0;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__address {
+  .cardI__category {
     width: 7.5rem;
     margin-right: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__address {
+  .cardI__category {
     font-size: 0.875rem;
-    width: 5.9375rem;
-    margin: 0 1.2rem 0 2.1rem;
+    width: 4.375rem;
+    margin: 0 2.8rem 0 1.9rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .card__address {
-    width: 13.0625rem;
-    margin: 0 3.2rem 0 8.125rem;
+  .cardI__category {
+    margin: 0 6rem 0 6.4rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__name {
-    width: 6.3125rem;
-    margin-right: 1.9rem;
+  .cardI__status {
+    width: 5.75rem;
+    margin-right: 1.7rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .card__name {
-    margin-right: 5.2rem;
+  .cardI__status {
+    margin-right: 4.9rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__info {
-    width: 9rem;
+  .cardI__qty {
+    width: 2.5rem;
+    margin-right: 1.1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cardI__qty {
+    margin-right: 2.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__item {
+    width: 7.1875rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__warehouse {
-    width: 5.8225rem;
+  .cardI__warehouse {
+    width: 4.375rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__warehouse {
+  .cardI__warehouse {
     width: 6.208125rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__icons {
+  .cardI__icons {
     margin: 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__icons {
+  .cardI__icons {
     display: flex;
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .card__icons {
-    margin-left: 3.5rem;
+  .cardI__icons {
+    margin-left: 7rem;
   }
 }
 @media screen and (min-width: 375px) {
-  .card__img--delete2 {
+  .cardI__img--delete2 {
     display: none;
   }
 }
 @media screen and (min-width: 768px) {
-  .card__img--delete2 {
+  .cardI__img--delete2 {
     display: list-item;
     margin-right: 1rem;
   }
@@ -308,6 +315,24 @@ input[type=text] {
   .card:hover {
     background-color: #f7f8f9;
   }
+}
+
+.status-btn {
+  border-radius: 10px;
+  border: none;
+  width: 65px;
+  height: 26px;
+  color: #158463;
+  background: rgba(21, 132, 99, 0.07);
+}
+
+.status-out {
+  border-radius: 10px;
+  border: none;
+  width: 92px;
+  height: 26px;
+  color: #c94515;
+  background: rgba(201, 69, 21, 0.07);
 }
 
 @media screen and (min-width: 375px) {
@@ -325,12 +350,12 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 375px) {
-  .bar {
+  .barI {
     display: none;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar {
+  .barI {
     display: flex;
     padding: 0 2rem;
     background-color: #f7f8f9;
@@ -340,59 +365,75 @@ input[type=text] {
   }
 }
 @media screen and (min-width: 1280px) {
-  .bar {
+  .barI {
     width: 63.75rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar__labels {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+  .barI__labels {
+    font-family: titillium-regular;
     color: #5c667e;
     display: flex;
     font-size: 0.75rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar__arrows--warehouse {
+  .barI__arrows--warehouse {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 4rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .bar__arrows--warehouse {
-    margin-right: 8.25rem;
+  .barI__arrows--warehouse {
+    margin-right: 8.75rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar__arrows--address {
+  .barI__arrows--category {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 2.8125rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .bar__arrows--address {
-    margin-right: 11.9375rem;
+  .barI__arrows--category {
+    margin-right: 6.125rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar__arrows--name {
+  .barI__arrows--status {
     height: 1rem;
     width: 1rem;
-    margin-right: 1.0625rem;
+    margin-right: 3.875rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .bar__arrows--name {
-    margin-right: 4.375rem;
+  .barI__arrows--status {
+    margin-right: 7.125rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .bar__arrows--info {
+  .barI__arrows--item {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 2.4375rem;
   }
-}/*# sourceMappingURL=Warehouse.css.map */
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--item {
+    margin-right: 6.875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--qty {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 1.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--qty {
+    margin-right: 2.875rem;
+  }
+}/*# sourceMappingURL=InventoryList.css.map */
