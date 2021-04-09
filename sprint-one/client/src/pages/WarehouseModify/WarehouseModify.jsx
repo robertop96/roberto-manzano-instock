@@ -22,7 +22,11 @@ function WarehouseEdit() {
     button: '+ Add Warehouse'
   };
 
-  const [formInfo, setFormInfo] = useState(add);
+  const [formInfo, setFormInfo] = useState(edit);
+
+  // useEffect(() => {
+  //   setFormInfo(add);
+  // }, [location.pathname]);
 
   return (
     <section className="position">

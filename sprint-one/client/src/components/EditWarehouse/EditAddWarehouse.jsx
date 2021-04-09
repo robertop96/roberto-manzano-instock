@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 function EditWarehouse({ formInfo }) {
   const location = useLocation();
+
   return (
     <section className="edit-container">
       <article className="edit-container__title-cont">
