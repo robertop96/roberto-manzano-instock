@@ -31,6 +31,8 @@ const InventoryList=(props)=> {
     }, [fetchData])
 
     console.log(responseData)
+
+   
     return (
         <div>
         {/* <Header /> */}
@@ -94,7 +96,13 @@ const InventoryList=(props)=> {
                   
                         <div className="cardI__status">
                             <h4 className="cardI__label">STATUS</h4>
-                            <p className="cardI__text">{data.status}</p>
+                            <button
+                      className={
+                        data.status === "In Stock" ? "status-btn" : "status-out"
+                      }
+                    >
+                      {data.status}
+                    </button>
                         </div>
                         <div className="cardI__qty">
                             <h4 className="cardI__label">QTY</h4>

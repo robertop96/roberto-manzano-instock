@@ -1,17 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
-@font-face {
-  font-family: titillium-bold;
-  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+* {
+  font-family: "Titillium Web", sans-serif;
 }
-@font-face {
-  font-family: titillium-regular;
-  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
-}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+* {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
 }
 
 * {
@@ -256,7 +255,7 @@ input[type=text] {
 }
 @media screen and (min-width: 1280px) {
   .cardI__status {
-    margin-right: 5.2rem;
+    margin-right: 4.9rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -267,7 +266,7 @@ input[type=text] {
 }
 @media screen and (min-width: 1280px) {
   .cardI__qty {
-    margin-right: 2.5rem;
+    margin-right: 2.6rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -298,7 +297,7 @@ input[type=text] {
 }
 @media screen and (min-width: 1280px) {
   .cardI__icons {
-    margin-left: 3.5rem;
+    margin-left: 7rem;
   }
 }
 @media screen and (min-width: 375px) {
@@ -316,6 +315,24 @@ input[type=text] {
   .card:hover {
     background-color: #f7f8f9;
   }
+}
+
+.status-btn {
+  border-radius: 10px;
+  border: none;
+  width: 65px;
+  height: 26px;
+  color: #158463;
+  background: rgba(21, 132, 99, 0.07);
+}
+
+.status-out {
+  border-radius: 10px;
+  border: none;
+  width: 92px;
+  height: 26px;
+  color: #c94515;
+  background: rgba(201, 69, 21, 0.07);
 }
 
 @media screen and (min-width: 375px) {
@@ -369,7 +386,7 @@ input[type=text] {
 }
 @media screen and (min-width: 1280px) {
   .barI__arrows--warehouse {
-    margin-right: 6rem;
+    margin-right: 8.75rem;
   }
 }
 @media screen and (min-width: 768px) {

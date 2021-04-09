@@ -246,7 +246,7 @@ input[type="text"] {
 			margin-right: 1.7rem;
 		}
 		@include desktop {
-			margin-right: 5.2rem;
+			margin-right: 4.9rem;
 		}
 	}
 
@@ -256,7 +256,7 @@ input[type="text"] {
             margin-right: 1.1rem;
 		}
 		@include desktop {
-            margin-right: 2.5rem;
+            margin-right: 2.6rem;
 		}
 	}
 
@@ -286,7 +286,7 @@ input[type="text"] {
 			margin-left: 2rem;
 		}
 		@include desktop {
-			margin-left: 3.5rem;
+			margin-left: 7rem;
 		}
 	}
 
@@ -308,6 +308,23 @@ input[type="text"] {
 	background-color: $light-grey;
   }
 }
+
+.status-btn {
+	border-radius: 10px;
+	border: none;
+	width: 65px;
+	height: 26px;
+	color: $green;
+	background: rgba(21, 132, 99, 0.07);
+  }
+  .status-out {
+	border-radius: 10px;
+	border: none;
+	width: 92px;
+	height: 26px;
+	color: $red;
+	background: rgba(201, 69, 21, 0.07);
+  }
 
 .arrow {
 	@include mobile {
@@ -358,7 +375,7 @@ input[type="text"] {
 			margin-right: 4rem;
 		}
 		@include desktop {
-			margin-right: 6rem;
+			margin-right: 8.75rem;
 		}
 	}
 
