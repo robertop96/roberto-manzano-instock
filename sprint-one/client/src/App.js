@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import Home from './pages/Home/Home';
 import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
+import InventoryModify from './pages/InventoryModify/InventoryModify';
 import Header from './components/Header/Header';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/warhouses" component={Warehouses} /> */}
           <Route path="/warehouse/:action" component={WarehouseModify} />
+          <Route path="/inventory/:action" component={InventoryModify} />
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>

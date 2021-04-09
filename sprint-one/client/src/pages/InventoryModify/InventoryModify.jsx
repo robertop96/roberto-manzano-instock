@@ -1,15 +1,15 @@
-import './WarehouseModify.scss';
+import './InventoryModify.sass';
+import EditAddInventory from '../../components/EditAddInventory/EditAddInventory';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
 
-function WarehouseEdit(props) {
+function InventoryModify(props) {
   const location = useLocation();
   console.log(location.pathname);
   console.log(props.match.path);
 
   const edit = {
-    title: 'Edit Warehouse',
+    title: 'Edit Inventory',
     button: 'save',
     handleSubmit: (e) => {
       e.preventDefault();
@@ -18,8 +18,8 @@ function WarehouseEdit(props) {
   };
 
   const add = {
-    title: 'Add New Warehouse',
-    button: '+ Add Warehouse',
+    title: 'Add New Inventory Item',
+    button: '+ Add Item',
     handleSubmit: (e) => {
       e.preventDefault();
       console.log('add');
@@ -29,18 +29,18 @@ function WarehouseEdit(props) {
   const [formInfo, setFormInfo] = useState(add);
 
   useEffect(() => {
-    if (location.pathname === '/warehouse/edit') {
+    if (location.pathname === '/inventory/edit') {
       setFormInfo(edit);
-    } else if (location.pathname === '/warehouse/add') {
+    } else if (location.pathname === '/inventory/add') {
       setFormInfo(add);
     }
   }, [props.match.path]);
 
   return (
     <section className="position">
-      <EditAddWarehouse formInfo={formInfo} />
+      <EditAddInventory formInfo={formInfo} />
     </section>
   );
 }
 
-export default WarehouseEdit;
+export default InventoryModify;

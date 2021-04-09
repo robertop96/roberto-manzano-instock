@@ -14,7 +14,7 @@ function EditWarehouse({ formInfo }) {
         />
         <h2 className="edit-container__title-cont--title">{formInfo.title}</h2>
       </article>
-      <form onSubmit={formInfo.handleEdit} className="form">
+      <form onSubmit={formInfo.handleSubmit} className="form">
         <article className="form__wrapper">
           <article className="form__warehouse">
             <h2 className="form__warehouse--title">Warehouse Details</h2>
