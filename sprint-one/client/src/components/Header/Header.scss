@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   height: 7rem;
+  justify-content: center;
+  align-items: center;
+
 
   gap: 1rem;
   width: 100vw;
@@ -37,6 +40,7 @@
   justify-content: center;
   @include font-regular;
   align-items: center;
+
   @include tablet {
     margin-right: 1rem;
   }
@@ -49,6 +53,7 @@
   color: $cloud;
   text-decoration: none;
   width: 8rem;
+  text-align: center;
   @include tablet {
     width: 7rem;
 

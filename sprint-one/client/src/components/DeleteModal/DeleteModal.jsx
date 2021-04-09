@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+
 import { useLocation } from "react-router-dom";
+
 import "./DeleteModal.scss";
 import closeIcon from "../../Assets/Icons/close-24px.svg";
 
 import axios from "axios";
+
 
 const DeleteModal = ({ data, setShowModal }) => {
   const { pathname } = useLocation();
@@ -14,6 +17,7 @@ const DeleteModal = ({ data, setShowModal }) => {
         data.id
       }`
     );
+
   };
 
   return (
@@ -22,6 +26,7 @@ const DeleteModal = ({ data, setShowModal }) => {
         <div className="modal__box">
           <div className="modal__text">
             <img className="modal__close" src={closeIcon} alt="close icon" />
+
 
             <h1 className="modal__title">
               Delete {data.name}{" "}
@@ -41,6 +46,7 @@ const DeleteModal = ({ data, setShowModal }) => {
               name="cancel"
               onClick={() => setShowModal(false)}
             >
+
               Cancel
             </button>
             <button
