@@ -1,15 +1,21 @@
 @import "../../partials/fonts";
-@import "../../partials/mixins";
+@import "../../partials/_mixins.scss";
 @import "../../partials/partials";
 .nav {
   background-color: $graphite;
   display: flex;
   flex-direction: column;
   height: 7rem;
+
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 
+  gap: 1rem;
+  width:100vw;
+  @include mobile{
+    height: 12.5rem;
+    position: absolute;
+  }
   @include tablet {
     flex-direction: row;
     align-items: center;
@@ -18,6 +24,7 @@
 }
 
 .nav__logo {
+  padding: 1.899375rem 7.713125rem 0 7.6875rem;
   @include tablet {
     margin-left: 2rem;
   }
