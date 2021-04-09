@@ -37,7 +37,10 @@ const WarehouseDeatils = () => {
           </div>
           <div className="edit-box">
             <button className="btn">
-              <img className="edit" src={editInfo} alt="edit" />
+              <div className="edit-img-flex">
+                <img className="edit" src={editInfo} alt="edit" />
+                <h3 className="edit-text">Edit</h3>
+              </div>
             </button>
           </div>
         </div>

@@ -186,6 +186,27 @@ h6 {
   border: none;
   width: 36px;
   height: 36px;
+  @include tablet {
+    width: 81px;
+    height: 38px;
+  }
+}
+.edit-img-flex {
+  @include tablet {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-left: 11px;
+  }
+}
+
+.edit-text {
+  display: none;
+  @include tablet {
+    display: initial;
+    color: $white;
+    padding-left: 4px;
+  }
 }
 
 .edit {
