@@ -4,7 +4,7 @@ import edit from "../../Assets/Icons/edit-24px.svg";
 import sort from "../../Assets/Icons/sort-24px.svg";
 import arrow from "../../Assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
-import "./Warehouse.css";
+import "./Warehouse.scss";
 // import Header from "../Header/Header"
 import { Link } from "react-router-dom";
 import DeleteModal from "../DeleteModal/DeleteModal";
