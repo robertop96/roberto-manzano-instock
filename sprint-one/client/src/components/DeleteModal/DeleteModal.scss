@@ -28,8 +28,12 @@
   background-color: white;
   height: 100vh;
   @include tablet {
-    width: 50%;
-    height: 40%;
+    width: 30rem;
+    height: 15rem;
+  }
+  @include desktop {
+    width: 40rem;
+    height: 15rem;
   }
 }
 
