@@ -11,8 +11,8 @@ function App() {
       <section>
         <Header />
         <Switch>
-          <Route path="/" component={WarehouseDeatils} />
-          {/* <Route path="/warehouse/:id" component={WarehouseDeatils} /> */}
+          {/* <Route path="/" component={Home} /> */}
+          <Route path="/warehouse/:id" component={WarehouseDeatils} />
           <Route path="/warehouse/:action" component={WarehouseModify} />
           {/* <Route path="/warhouses" component={Warehouses} /> */}
           {/* <Route path="/inventory" component={Inventory} /> */}
