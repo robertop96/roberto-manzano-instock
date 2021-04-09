@@ -1,4 +1,4 @@
-// @import "./fonts";
+// @import "./mixins";
 $instock-black: #13182c;
 $instock-indigo: #2e66e5;
 $white: #fff;
@@ -9,8 +9,6 @@ $light-grey: #f7f8f9;
 $green: #158463;
 $red: #c94515;
 
-
-* {
-  @include font-regular;
-}
-
+// * {
+//   @include font-regular;
+// }

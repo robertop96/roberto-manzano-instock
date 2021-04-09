@@ -3,7 +3,7 @@
 @use '../../partials/partials' as *;
 
 * {
-  font-family: $font-regular;
+  @include font-regular;
   margin: 0rem;
   padding: 0rem;
 }
@@ -13,44 +13,44 @@ a {
 }
 
 h1 {
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 28px;
   line-height: 36px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 32px;
     line-height: 40px;
   }
 }
 
 h2 {
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 20px;
   line-height: 28px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 24px;
     line-height: 32px;
   }
 }
 
 h3 {
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 13px;
   line-height: 20px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 14px;
     line-height: 22px;
   }
 }
 
 h4 {
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 11px;
   line-height: 16px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 12px;
     line-height: 18px;
   }
@@ -58,11 +58,11 @@ h4 {
 
 h5 {
   // used as the P1 font
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 15px;
   line-height: 26px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 16px;
     line-height: 28px;
   }
@@ -70,11 +70,11 @@ h5 {
 
 p {
   // used as the P2 font
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 13px;
   line-height: 20px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 20px;
     line-height: 28px;
   }
@@ -82,11 +82,11 @@ p {
 
 h6 {
   // used as the P3 font
-  font-family: $font-regular;
+  @include font-regular;
   font-size: 11px;
   line-height: 16px;
   @include tablet {
-    font-family: $font-regular;
+    @include font-regular;
     font-size: 12px;
     line-height: 18px;
   }

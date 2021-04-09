@@ -16,7 +16,7 @@ const Warehouse = () => {
   const fetchData = useCallback(() => {
     axios({
       method: "GET",
-      url: "/api/warehouse/list",
+      url: "/api/warehouse/list/all",
       params: {
         language_code: "en",
       },
