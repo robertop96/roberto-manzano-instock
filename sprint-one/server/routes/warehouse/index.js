@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const functionExample = require('./functionExample');
+const warehouseList = require('./warehouseList')
+
+router.get('/', functionExample);
+router.get('/list', warehouseList);
 const addWarehouse = require('./addWarehouse');
 const editWarehouse = require('./editWarehouse');
 

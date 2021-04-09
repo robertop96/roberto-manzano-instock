@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+@font-face {
+  font-family: titillium-bold;
+  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+}
+@font-face {
+  font-family: titillium-regular;
+  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: #232940;
+  display: flex;
+  flex-direction: column;
+  height: 7rem;
+  gap: 1rem;
+  width: 100vw;
+}
+@media screen and (min-width: 375px) {
+  .nav {
+    height: 12.5rem;
+    position: absolute;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav__logo {
+  padding: 1.899375rem 7.713125rem 0 7.6875rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__logo {
+    margin-left: 11.25rem;
+  }
+}
+
+.nav__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-family: titillium-regular;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__links {
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__links {
+    margin-right: 4rem;
+  }
+}
+
+.nav__link {
+  color: #bdc5d5;
+  text-decoration: none;
+  width: 8rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__link {
+    width: 5rem;
+    padding: 0 1rem;
+  }
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.active {
+  background-color: #13182c;
+  border-radius: 2rem;
+  padding-bottom: 0.2rem;
+  color: #fff;
+}
+
+.active:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Header.css.map */
