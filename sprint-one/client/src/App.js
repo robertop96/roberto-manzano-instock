@@ -3,7 +3,10 @@ import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WarehouseDeatils from "../src/components/WarehouseDeatils/WarehouseDetails.jsx";
 import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
-import Header from "../src/components/Header/Header.jsx";
+import Warehouse from "./components/Warehouse/Warehouse";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
   return (
@@ -13,10 +16,12 @@ function App() {
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           <Route path="/warehouse/:id" component={WarehouseDeatils} />
-          <Route path="/warehouse/:action" component={WarehouseModify} />
           {/* <Route path="/warhouses" component={Warehouses} /> */}
+          <Route path="/warehouse" component={Warehouse} />
+          <Route path="/warehouses/:action" component={WarehouseModify} />
           {/* <Route path="/inventory" component={Inventory} /> */}
         </Switch>
+        <Footer />
       </section>
     </Router>
   );
