@@ -21,7 +21,12 @@ const DeleteModal = ({ data, setShowModal }) => {
       <div className="modal__bg">
         <div className="modal__box">
           <div className="modal__text">
-            <img className="modal__close" src={closeIcon} alt="close icon" />
+            <img
+              className="modal__close"
+              src={closeIcon}
+              alt="close icon"
+              onClick={() => setShowModal(false)}
+            />
 
             <h1 className="modal__title">
               Delete {data.name}{" "}
