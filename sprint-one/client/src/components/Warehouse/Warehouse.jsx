@@ -20,6 +20,7 @@ const Warehouse = () => {
       params: {
         language_code: "en",
       },
+      
     })
       .then((response) => {
         setResponseData(response.data);
