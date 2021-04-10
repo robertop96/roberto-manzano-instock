@@ -1,21 +1,30 @@
 import { useState, useEffect } from "react";
-
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 import "./DeleteModal.scss";
 import closeIcon from "../../Assets/Icons/close-24px.svg";
 
 import axios from "axios";
 
-const DeleteModal = ({ data, setShowModal }) => {
+const DeleteModal = ({ data, setShowModal, setResponseData }) => {
   const { pathname } = useLocation();
+  const history= useHistory()
 
   const handleDelete = () => {
     axios.delete(
       `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
         data.id
       }`
-    );
+    )
+    .then((response) => {
+      setResponseData(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+    setShowModal(false);
+
   };
 
   return (
