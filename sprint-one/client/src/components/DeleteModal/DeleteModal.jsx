@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { useLocation, useHistory } from "react-router-dom";
 
 import "./DeleteModal.scss";
@@ -10,6 +9,7 @@ import axios from "axios";
 const DeleteModal = ({ data, setShowModal, setResponseData }) => {
   const { pathname } = useLocation();
   const history= useHistory()
+
   const handleDelete = () => {
     axios.delete(
       `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
@@ -24,6 +24,7 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
     });
 
     setShowModal(false);
+
   };
 
   return (
@@ -39,7 +40,7 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
             />
 
             <h1 className="modal__title">
-              Delete {data.name}{" "}
+              Delete {data.name} {data.itemName}{" "}
               {pathname === "/warehouse" ? "warehouse" : "inventory item"}?
             </h1>
 
