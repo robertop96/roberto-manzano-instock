@@ -2,12 +2,13 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WarehouseDeatils from "../src/components/WarehouseDeatils/WarehouseDetails.jsx";
-import InventoryList from "./components/InventoryList/InventoryList"
+import InventoryList from "./components/InventoryList/InventoryList";
 import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
 import Warehouse from "./components/Warehouse/Warehouse";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
           <Route path="/warehouse" component={Warehouse} />
           <Route path="/warehouses/:action" component={WarehouseModify} />
           <Route path="/inventory" component={InventoryList} />
+          <Route
+            path="/InventoryItemDetails"
+            component={InventoryItemDetails}
+          />
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
         <Footer />
