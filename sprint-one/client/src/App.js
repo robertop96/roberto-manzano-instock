@@ -7,7 +7,7 @@ import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
 import Warehouse from "./components/Warehouse/Warehouse";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import DeleteModal from "./components/DeleteModal/DeleteModal";
+import WarehouseDetails from "./components/WarehouseDeatils/WarehouseDetails"
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route path="/warehouse" component={Warehouse} />
           <Route path="/warehouses/:action" component={WarehouseModify} />
           <Route path="/inventory" component={InventoryList} />
+           <Route path="/warehouseDetails" component={WarehouseDetails} />
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
         </Switch>
         <Footer />

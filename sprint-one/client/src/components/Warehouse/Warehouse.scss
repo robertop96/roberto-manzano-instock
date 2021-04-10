@@ -3,11 +3,12 @@
 @import "../../partials/partials";
 
 .warehouse {
+  height: auto;
   @include mobile {
     position: absolute;
     left: 4.27%;
     right: 4.27%;
-    top: 10%;
+    top: 5.85%;
 
     margin: 4.9875rem 0 2.5rem 0;
     background-color: $white;
@@ -15,12 +16,15 @@
   }
   @include tablet {
     margin: 0;
-    top: 25%;
+    top: 7%;
   }
   @include desktop {
     margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
-    left: 5%;
+    // left: 10.16%;
+    // right: 10.16%;
+    top: 5%;
+
   }
 }
 
@@ -172,6 +176,7 @@ input[type="text"] {
       margin: 0;
     }
     @include desktop {
+      width: 14rem
     }
   }
 
@@ -219,11 +224,11 @@ input[type="text"] {
     @include tablet {
       font-size: 0.875rem;
       width: 5.9375rem;
-      margin: 0 1.2rem 0 2.1rem;
+      margin: 0 1.2rem 0 1rem;
     }
     @include desktop {
       width: 13.0625rem;
-      margin: 0 3.2rem 0 8.125rem;
+      margin: 0 3.2rem 0 6.32rem;
     }
   }
 
@@ -247,10 +252,10 @@ input[type="text"] {
 
   &__warehouse {
     @include mobile {
-      width: 5.8225rem;
+      width: 6.25rem;
     }
     @include tablet {
-      width: 6.208125rem;
+      width: 7.25rem;
     }
   }
 
@@ -330,7 +335,7 @@ input[type="text"] {
     @include tablet {
       height: 1rem;
       width: 1rem;
-      margin-right: 2.5rem;
+      margin-right: 3rem;
     }
     @include desktop {
       margin-right: 8.25rem;
@@ -341,10 +346,10 @@ input[type="text"] {
     @include tablet {
       height: 1rem;
       width: 1rem;
-      margin-right: 2.5rem;
+      margin-right: 3rem;
     }
     @include desktop {
-      margin-right: 11.9375rem;
+      margin-right: 12.3rem;
     }
   }
 
@@ -352,10 +357,10 @@ input[type="text"] {
     @include tablet {
       height: 1rem;
       width: 1rem;
-      margin-right: 1.0625rem;
+      margin-right: 2rem;
     }
     @include desktop {
-      margin-right: 4.375rem;
+      margin-right: 5.3rem;
     }
   }
 
@@ -363,7 +368,10 @@ input[type="text"] {
     @include tablet {
       height: 1rem;
       width: 1rem;
-      margin-right: 2.5rem;
+      margin-right: 4rem;
+    }
+    @include desktop{
+      margin-right: 4.5rem;
     }
   }
 }

@@ -33,7 +33,7 @@ const WarehouseDeatils = () => {
         <div className="warehouse-container">
           <div className="arrow-box">
             <img src={backArrow} alt="back-arrow" />
-            <h1>{warehouse.name}</h1>
+            <h1>{warehouse?.name}</h1>
           </div>
           <div className="edit-box">
             <button className="btn">
@@ -50,7 +50,7 @@ const WarehouseDeatils = () => {
             <h4>WAREHOUSE ADDRESS:</h4>
             <p>{warehouse.address}</p>
             <p>
-              {warehouse.city}, {warehouse.country}
+              {warehouse.city}, {warehouse?.country}
             </p>
           </div>
 

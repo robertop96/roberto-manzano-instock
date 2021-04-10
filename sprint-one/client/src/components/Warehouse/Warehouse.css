@@ -8,17 +8,15 @@
   box-sizing: border-box;
 }
 
-* {
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 400;
+.warehouse {
+  height: auto;
 }
-
 @media screen and (min-width: 375px) {
   .warehouse {
     position: absolute;
     left: 4.27%;
     right: 4.27%;
-    top: 7.53%;
+    top: 5.85%;
     margin: 4.9875rem 0 2.5rem 0;
     background-color: #fff;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
@@ -27,12 +25,14 @@
 @media screen and (min-width: 768px) {
   .warehouse {
     margin: 0;
+    top: 7%;
   }
 }
 @media screen and (min-width: 1280px) {
   .warehouse {
     margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
+    top: 5%;
   }
 }
 
@@ -198,6 +198,11 @@ input[type=text] {
     margin: 0;
   }
 }
+@media screen and (min-width: 1280px) {
+  .card__text {
+    width: 14rem;
+  }
+}
 @media screen and (min-width: 375px) {
   .card__text--br {
     font-family: "Titillium Web", sans-serif;
@@ -242,13 +247,13 @@ input[type=text] {
   .card__address {
     font-size: 0.875rem;
     width: 5.9375rem;
-    margin: 0 1.2rem 0 2.1rem;
+    margin: 0 1.2rem 0 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .card__address {
     width: 13.0625rem;
-    margin: 0 3.2rem 0 8.125rem;
+    margin: 0 3.2rem 0 6.32rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -269,12 +274,12 @@ input[type=text] {
 }
 @media screen and (min-width: 375px) {
   .card__warehouse {
-    width: 5.8225rem;
+    width: 6.25rem;
   }
 }
 @media screen and (min-width: 768px) {
   .card__warehouse {
-    width: 6.208125rem;
+    width: 7.25rem;
   }
 }
 @media screen and (min-width: 375px) {
@@ -357,7 +362,7 @@ input[type=text] {
   .bar__arrows--warehouse {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -369,30 +374,46 @@ input[type=text] {
   .bar__arrows--address {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .bar__arrows--address {
-    margin-right: 11.9375rem;
+    margin-right: 12.3rem;
   }
 }
 @media screen and (min-width: 768px) {
   .bar__arrows--name {
     height: 1rem;
     width: 1rem;
-    margin-right: 1.0625rem;
+    margin-right: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .bar__arrows--name {
-    margin-right: 4.375rem;
+    margin-right: 5.3rem;
   }
 }
 @media screen and (min-width: 768px) {
   .bar__arrows--info {
     height: 1rem;
     width: 1rem;
-    margin-right: 2.5rem;
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar__arrows--info {
+    margin-right: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hide {
+    display: block;
   }
 }/*# sourceMappingURL=Warehouse.css.map */
