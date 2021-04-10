@@ -8,23 +8,23 @@ import axios from "axios";
 
 const DeleteModal = ({ data, setShowModal, setResponseData }) => {
   const { pathname } = useLocation();
-  const history= useHistory()
+  const history = useHistory();
 
   const handleDelete = () => {
-    axios.delete(
-      `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
-        data.id
-      }`
-    )
-    .then((response) => {
-      setResponseData(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    axios
+      .delete(
+        `/api/${pathname === "/warehouses" ? "/warehouses" : "/inventory"}/${
+          data.id
+        }`
+      )
+      .then((response) => {
+        setResponseData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     setShowModal(false);
-
   };
 
   return (
