@@ -36,7 +36,7 @@ const Warehouse = () => {
   return (
     <div>
       {showModal && (
-        <DeleteModal setShowModal={setShowModal} data={modalData} />
+        <DeleteModal setShowModal={setShowModal} data={modalData} setResponseData={setResponseData} />
       )}
       {/* <Header /> */}
 
