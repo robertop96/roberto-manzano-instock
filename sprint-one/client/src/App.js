@@ -18,8 +18,8 @@ function App() {
           {/* <Route path="/" component={Home} /> */}
           <Route path="/warehouse/:id" component={WarehouseDeatils} />
           {/* <Route path="/warhouses" component={Warehouses} /> */}
-          <Route path="/warehouse" component={Warehouse} />
-          <Route path="/warehouses/:action" component={WarehouseModify} />
+          <Route path="/warehouses" component={Warehouse} />
+          <Route path="/warehouse/:action" component={WarehouseModify} />
           <Route path="/inventory" component={InventoryList} />
            <Route path="/warehouseDetails" component={WarehouseDetails} />
           {/* <Route path="/placeholder" component={PLACEHOLDER} /> */}
