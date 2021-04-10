@@ -11,6 +11,7 @@ import axios from "axios";
 
 const WarehouseDeatils = () => {
   const { id } = useParams();
+  console.log(id);
   const [warehouse, setWarehouse] = useState([]);
   const [inventory, setInventory] = useState([]);
 
