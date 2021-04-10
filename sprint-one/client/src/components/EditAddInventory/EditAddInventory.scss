@@ -2,6 +2,10 @@
 @import '../../partials/mixins';
 @import '../../partials/partials';
 
+.hidden {
+  display: none;
+}
+
 .editInv-container {
   display: flex;
   flex-direction: column;
@@ -220,7 +224,6 @@
         margin-top: 0;
       }
       @include desktop {
-        // min-width: 72px;
         margin-right: 40px;
       }
     }

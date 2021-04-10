@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 import React from 'react';
 import error from '../../Assets/Icons/error-24px.svg';
 
-function EditInventory({ formInfo, errorMessage }) {
+function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
+  // console.log((stock = 'in-stock'));
   const location = useLocation();
   return (
     <section className="editInv-container">
@@ -84,7 +85,7 @@ function EditInventory({ formInfo, errorMessage }) {
             <h2 className="inv-form__item-availability--status-title">
               Status
             </h2>
-            <div>
+            <div onChange={handleChange}>
               <input
                 className="inv-form__item-availability--status-inStock"
                 type="radio"
@@ -117,18 +118,26 @@ function EditInventory({ formInfo, errorMessage }) {
               <h5> {errorMessage?.message}</h5>
             </div>
             <label
-              className="inv-form__item-availability--quantity-label"
+              className={
+                stock === 'in-stock'
+                  ? 'inv-form__item-availability--quantity-label'
+                  : ' hidden'
+              }
               htmlFor="quantity"
             >
               Quantity
             </label>
             <input
               type="text"
-              className="inv-form__item-availability--quantity-input"
+              className={
+                stock === 'in-stock'
+                  ? 'inv-form__item-availability--quantity-input'
+                  : ' hidden'
+              }
               id="quantity"
               name="quantity"
             />
-            <div className="error-message">
+            <div className={stock === 'in-stock' ? 'error-message' : 'hidden'}>
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
               <h5> {errorMessage?.message}</h5>
             </div>

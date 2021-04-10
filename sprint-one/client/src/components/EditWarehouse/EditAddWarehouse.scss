@@ -12,7 +12,7 @@
   line-height: 18px;
   color: red;
   margin-left: 24px;
-  margin-top: -20px;
+  margin-top: -10px;
   margin-bottom: 24px;
 }
 
@@ -121,7 +121,7 @@
       &--country-input {
         @include formInput;
         @include tablet {
-          margin-bottom: 0;
+          margin-bottom: 24px;
         }
       }
     }
@@ -180,7 +180,7 @@
       &--email-input {
         @include formInput;
         @include tablet {
-          margin-bottom: 0;
+          margin-bottom: 24px;
         }
       }
     }

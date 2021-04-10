@@ -117,7 +117,11 @@ function EditWarehouse({ formInfo, errorMessage }) {
               id="phone-number"
             />
             <div className="error-message">
-              {errorMessage ? <img src={error} alt="error" /> : ''}
+              {errorMessage?.phoneMessage || errorMessage?.message ? (
+                <img src={error} alt="error" />
+              ) : (
+                ''
+              )}
               <h5> {errorMessage?.message || errorMessage?.phoneMessage}</h5>
             </div>
             <label className="form__contact--email-label" htmlFor="email">
@@ -130,7 +134,11 @@ function EditWarehouse({ formInfo, errorMessage }) {
               id="email"
             />
             <div className="error-message">
-              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              {errorMessage?.emailMessage || errorMessage?.message ? (
+                <img src={error} alt="error" />
+              ) : (
+                ''
+              )}
               <h5> {errorMessage?.message || errorMessage?.emailMessage}</h5>
             </div>
           </article>

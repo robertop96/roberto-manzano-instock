@@ -7,6 +7,10 @@ import validator from 'validator';
 function InventoryModify(props) {
   const location = useLocation();
 
+  const handleChange = (e) => {
+    setStock(e.target.value);
+  };
+
   const edit = {
     title: 'Edit Inventory Item',
     button: 'save',
@@ -57,6 +61,7 @@ function InventoryModify(props) {
 
   const [formInfo, setFormInfo] = useState(add);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [stock, setStock] = useState(false);
 
   useEffect(() => {
     if (location.pathname === '/inventory/edit') {
@@ -68,7 +73,12 @@ function InventoryModify(props) {
 
   return (
     <section className="position">
-      <EditAddInventory formInfo={formInfo} errorMessage={errorMessage} />
+      <EditAddInventory
+        formInfo={formInfo}
+        errorMessage={errorMessage}
+        handleChange={handleChange}
+        stock={stock}
+      />
     </section>
   );
 }
