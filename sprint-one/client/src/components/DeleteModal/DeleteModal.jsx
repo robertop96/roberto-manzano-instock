@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
-import "./DeleteModal.scss";
-import closeIcon from "../../Assets/Icons/close-24px.svg";
-
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import './DeleteModal.scss';
+import closeIcon from '../../Assets/Icons/close-24px.svg';
 
 const DeleteModal = ({ data, setShowModal }) => {
   const { pathname } = useLocation();
   let history = useHistory();
   const handleDelete = () => {
     axios.delete(
-      `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
+      `/api/${pathname === '/warehouse' ? '/warehouse' : '/inventory'}/${
         data.id
       }`
     );
-    history.push("/");
+    history.push('/');
   };
 
   return (
@@ -32,13 +30,13 @@ const DeleteModal = ({ data, setShowModal }) => {
             />
 
             <h1 className="modal__title">
-              Delete {data.name} {data.itemName}{" "}
-              {pathname === "/warehouse" ? "warehouse" : "inventory item"}?
+              Delete {data.name} {data.itemName}{' '}
+              {pathname === '/warehouse' ? 'warehouse' : 'inventory item'}?
             </h1>
 
             <p className="modal__p">
-              Please confirm you want to delete {data.name} from the{" "}
-              {pathname === "/warehouse" ? "warehouse" : "inventory"} list? You
+              Please confirm you want to delete {data.name} from the{' '}
+              {pathname === '/warehouse' ? 'warehouse' : 'inventory'} list? You
               won't be able to undo this action.
             </p>
           </div>
