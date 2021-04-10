@@ -1,5 +1,5 @@
 @import "../../partials/fonts";
-@import "../../partials/mixins";
+@import "../../partials/_mixins.scss";
 @import "../../partials/partials";
 .nav {
   background-color: $graphite;
@@ -7,8 +7,16 @@
   flex-direction: column;
   height: 7rem;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
 
+  gap: 1rem;
+  width: 100vw;
+  height: 10rem;
+  position: absolute;
+  @include mobile {
+    height: 10rem;
+    position: absolute;
+  }
   @include tablet {
     flex-direction: row;
     align-items: center;
@@ -30,8 +38,9 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  font-family: $font-regular;
+  @include font-regular;
   align-items: center;
+
   @include tablet {
     margin-right: 1rem;
   }
@@ -44,8 +53,9 @@
   color: $cloud;
   text-decoration: none;
   width: 8rem;
+  text-align: center;
   @include tablet {
-    width: 5rem;
+    width: 7rem;
 
     padding: 0 1rem;
   }
@@ -59,6 +69,7 @@
   border-radius: 2rem;
   padding-bottom: 0.2rem;
   color: $white;
+  text-decoration: underline;
 }
 .active:hover {
   text-decoration: underline;

@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+@mixin mobile {
+  @media screen and (min-width: 375px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: 768px) {
     @content;
@@ -83,4 +89,14 @@
     width: 72px;
     height: 38px;
   }
+}
+
+@mixin font-bold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-regular {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
 }
