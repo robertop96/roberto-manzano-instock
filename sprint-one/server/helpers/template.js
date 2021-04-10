@@ -44,4 +44,15 @@ const inventory = (obj) => {
     quantity: obj.quantity
   };
 };
-module.exports = { warehouse, editWarehouse, inventory };
+
+const editItem = (object) => {
+  return {
+    name: object.name,
+    description: object.description,
+    category: object.category,
+    status: object.status,
+    warehouse: object.warehouse
+  };
+};
+
+module.exports = { warehouse, editWarehouse, inventory, editItem };
