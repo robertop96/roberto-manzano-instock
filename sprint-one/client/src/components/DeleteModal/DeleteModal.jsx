@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import "./DeleteModal.scss";
@@ -9,13 +9,14 @@ import axios from "axios";
 
 const DeleteModal = ({ data, setShowModal }) => {
   const { pathname } = useLocation();
-
+  let history = useHistory();
   const handleDelete = () => {
     axios.delete(
       `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
         data.id
       }`
     );
+    history.push("/");
   };
 
   return (
