@@ -134,7 +134,7 @@ const Warehouse = () => {
                       src={del}
                     />
                   </div>
-                  <Link to={`/warehouses/${data.id}`}>
+                  <Link to={`/warehouse/modify/${data.id}`}>
                     {" "}
                     <img className="card__img--edit" src={edit} />
                   </Link>

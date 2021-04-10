@@ -34,8 +34,6 @@ const InventoryList = (props) => {
     fetchData();
   }, [fetchData]);
 
-  console.log(responseData);
-
   return (
     <div>
       {showModal && (
