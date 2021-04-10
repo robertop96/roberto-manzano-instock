@@ -2,7 +2,6 @@ import './InventoryModify.sass';
 import EditAddInventory from '../../components/EditAddInventory/EditAddInventory';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import validator from 'validator';
 
 function InventoryModify(props) {
   const location = useLocation();
@@ -18,16 +17,9 @@ function InventoryModify(props) {
       e.preventDefault();
       const formData = new FormData(e.target);
       const formDataObj = Object.fromEntries(formData);
-
       for (const property in formDataObj) {
         if (formDataObj[property] === '') {
           setErrorMessage({ message: 'This field is required' });
-          break;
-        } else if (!validator.isMobilePhone(formDataObj['phone-number'] + '')) {
-          setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
-          break;
-        } else if (!validator.isEmail(formDataObj.email + '')) {
-          setErrorMessage({ emailMessage: 'Invalid Email' });
           break;
         }
         setErrorMessage(null);
@@ -42,16 +34,9 @@ function InventoryModify(props) {
       e.preventDefault();
       const formData = new FormData(e.target);
       const formDataObj = Object.fromEntries(formData);
-
       for (const property in formDataObj) {
         if (formDataObj[property] === '') {
           setErrorMessage({ message: 'This field is required' });
-          break;
-        } else if (!validator.isMobilePhone(formDataObj['phone-number'] + '')) {
-          setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
-          break;
-        } else if (!validator.isEmail(formDataObj.email + '')) {
-          setErrorMessage({ emailMessage: 'Invalid Email' });
           break;
         }
         setErrorMessage(null);

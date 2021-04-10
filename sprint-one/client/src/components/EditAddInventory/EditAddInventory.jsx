@@ -5,7 +5,6 @@ import React from 'react';
 import error from '../../Assets/Icons/error-24px.svg';
 
 function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
-  // console.log((stock = 'in-stock'));
   const location = useLocation();
   return (
     <section className="editInv-container">
