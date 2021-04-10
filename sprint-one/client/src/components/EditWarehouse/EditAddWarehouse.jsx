@@ -1,7 +1,9 @@
 import './EditAddWarehouse.scss';
 import { useLocation } from 'react-router-dom';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
-function EditWarehouse({ formInfo }) {
+import error from '../../Assets/Icons/error-24px.svg';
+
+function EditWarehouse({ formInfo, errorMessage }) {
   const location = useLocation();
 
   return (
@@ -29,8 +31,11 @@ function EditWarehouse({ formInfo }) {
               type="input"
               name="warehouse-name"
               id="warehouse-name"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label className="form__warehouse--address-label" htmlFor="address">
               Street Address
             </label>
@@ -39,8 +44,11 @@ function EditWarehouse({ formInfo }) {
               type="text"
               name="address"
               id="address"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label className="form__warehouse--city-label" htmlFor="city">
               City
             </label>
@@ -49,8 +57,11 @@ function EditWarehouse({ formInfo }) {
               type="text"
               name="city"
               id="city"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label className="form__warehouse--country-label" htmlFor="country">
               Country
             </label>
@@ -59,8 +70,11 @@ function EditWarehouse({ formInfo }) {
               type="text"
               name="country"
               id="country"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
           </article>
           <article className="form__contact">
             <h2 className="form__contact--title">Contact Details</h2>
@@ -72,8 +86,11 @@ function EditWarehouse({ formInfo }) {
               type="text"
               name="contact-name"
               id="contact-name"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label className="form__contact--position-label" htmlFor="position">
               Position
             </label>
@@ -82,8 +99,11 @@ function EditWarehouse({ formInfo }) {
               type="text"
               name="position"
               id="position"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label
               className="form__contact--phone-label"
               htmlFor="phone-number"
@@ -95,18 +115,24 @@ function EditWarehouse({ formInfo }) {
               type="tel"
               name="phone-number"
               id="phone-number"
-              required
             />
+            <div className="error-message">
+              {errorMessage ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message || errorMessage?.phoneMessage}</h5>
+            </div>
             <label className="form__contact--email-label" htmlFor="email">
               Email
             </label>
             <input
               className="form__contact--email-input"
-              type="email"
+              type="text"
               name="email"
               id="email"
-              required
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message || errorMessage?.emailMessage}</h5>
+            </div>
           </article>
         </article>
 

@@ -2,31 +2,63 @@ import './WarehouseModify.scss';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
+import validator from 'validator';
 
 function WarehouseEdit(props) {
   const location = useLocation();
-  console.log(location.pathname);
-  console.log(props.match.path);
 
   const edit = {
     title: 'Edit Warehouse',
     button: 'save',
     handleSubmit: (e) => {
       e.preventDefault();
-      console.log('edit');
+      const formData = new FormData(e.target);
+      const formDataObj = Object.fromEntries(formData);
+      console.log(formDataObj);
+
+      for (const property in formDataObj) {
+        if (formDataObj[property] === '') {
+          setErrorMessage({ message: 'This field is required' });
+          break;
+        } else if (!validator.isMobilePhone(formDataObj['phone-number'] + '')) {
+          setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
+          break;
+        } else if (!validator.isEmail(formDataObj.email + '')) {
+          setErrorMessage({ emailMessage: 'Invalid Email' });
+          break;
+        }
+        setErrorMessage(null);
+      }
     }
   };
 
   const add = {
-    title: 'Add New Warehouse',
-    button: '+ Add Warehouse',
+    title: 'Edit Warehouse',
+    button: 'save',
     handleSubmit: (e) => {
       e.preventDefault();
-      console.log('add');
+      const formData = new FormData(e.target);
+      const formDataObj = Object.fromEntries(formData);
+      console.log(formDataObj);
+
+      for (const property in formDataObj) {
+        if (formDataObj[property] === '') {
+          setErrorMessage({ message: 'This field is required' });
+          break;
+        } else if (!validator.isMobilePhone(formDataObj['phone-number'] + '')) {
+          setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
+          break;
+        } else if (!validator.isEmail(formDataObj.email + '')) {
+          setErrorMessage({ emailMessage: 'Invalid Email' });
+          break;
+        }
+        setErrorMessage(null);
+      }
     }
   };
 
   const [formInfo, setFormInfo] = useState(add);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
     if (location.pathname === '/warehouse/edit') {
@@ -38,7 +70,7 @@ function WarehouseEdit(props) {
 
   return (
     <section className="position">
-      <EditAddWarehouse formInfo={formInfo} />
+      <EditAddWarehouse formInfo={formInfo} errorMessage={errorMessage} />
     </section>
   );
 }

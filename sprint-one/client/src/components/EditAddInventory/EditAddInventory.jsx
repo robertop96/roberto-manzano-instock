@@ -1,10 +1,10 @@
 import './EditAddInventory.scss';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import { useLocation } from 'react-router-dom';
-
 import React from 'react';
+import error from '../../Assets/Icons/error-24px.svg';
 
-function EditInventory({ formInfo }) {
+function EditInventory({ formInfo, errorMessage }) {
   const location = useLocation();
   return (
     <section className="editInv-container">
@@ -34,6 +34,11 @@ function EditInventory({ formInfo }) {
               name="item-name"
               id="item-name"
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
+
             <label
               className="inv-form__item-details--description-label"
               htmlFor="description"
@@ -46,6 +51,10 @@ function EditInventory({ formInfo }) {
               name="description"
               id="description"
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label
               className="inv-form__item-details--category-label"
               htmlFor="category"
@@ -62,6 +71,10 @@ function EditInventory({ formInfo }) {
             })} */}
               <option value="choose">Please select</option>
             </select>
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
           </article>
 
           <article className="inv-form__item-availability">
@@ -99,6 +112,10 @@ function EditInventory({ formInfo }) {
                 Out of Stock
               </label>
             </div>
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label
               className="inv-form__item-availability--quantity-label"
               htmlFor="quantity"
@@ -111,6 +128,10 @@ function EditInventory({ formInfo }) {
               id="quantity"
               name="quantity"
             />
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
             <label
               className="inv-form__item-availability--warehouse-label"
               htmlFor="warehouse"
@@ -127,6 +148,10 @@ function EditInventory({ formInfo }) {
             })} */}
               <option value="choose">Please select</option>
             </select>
+            <div className="error-message">
+              {errorMessage?.message ? <img src={error} alt="error" /> : ''}
+              <h5> {errorMessage?.message}</h5>
+            </div>
           </article>
         </article>
 
@@ -137,7 +162,7 @@ function EditInventory({ formInfo }) {
           <button
             type="submit"
             className={
-              location.pathname === '/warehouse/edit'
+              location.pathname === '/inventory/edit'
                 ? 'button__save'
                 : 'button__add'
             }

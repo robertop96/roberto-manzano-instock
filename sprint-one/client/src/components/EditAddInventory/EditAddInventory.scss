@@ -11,7 +11,6 @@
   width: 343px;
   @include tablet {
     width: 704px;
-    height: 606px;
   }
   @include desktop {
     width: 1020px;
@@ -187,12 +186,13 @@
     }
   }
   .button {
+    margin-top: 16px;
     display: flex;
-    align-items: center;
     margin-left: 24px;
     height: 68px;
-    // margin-top: 40px;
     @include tablet {
+      padding-left: 16px;
+      margin-top: 0;
       justify-content: flex-end;
       align-items: center;
       width: 704px;
@@ -220,7 +220,7 @@
         margin-top: 0;
       }
       @include desktop {
-        min-width: 72px;
+        // min-width: 72px;
         margin-right: 40px;
       }
     }
@@ -229,12 +229,10 @@
       background: #2e66e6;
       width: 140px;
       color: #ffffff;
-      margin-top: 40px;
       @include tablet {
         width: 138px;
         padding: 0.5rem;
         margin-right: 32px;
-        margin-top: 0;
       }
       @include desktop {
         min-width: 72px;
