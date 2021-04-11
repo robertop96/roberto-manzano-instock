@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import "./warehouseDeatils.scss";
-import sort from "../../Assets/Icons/sort-24px.svg";
-import backArrow from "../../Assets/Icons/arrow_back-24px.svg";
-import chevronRight from "../../Assets/Icons/chevron_right-24px.svg";
-import editInfo from "../../Assets/Icons/edit-24px.svg";
-import trash from "../../Assets/Icons/delete_outline-24px.svg";
-import pencil from "../../Assets/Icons/edit-24px.svg";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import './warehouseDeatils.scss';
+import sort from '../../Assets/Icons/sort-24px.svg';
+import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
+import chevronRight from '../../Assets/Icons/chevron_right-24px.svg';
+import editInfo from '../../Assets/Icons/edit-24px.svg';
+import trash from '../../Assets/Icons/delete_outline-24px.svg';
+import pencil from '../../Assets/Icons/edit-24px.svg';
+import axios from 'axios';
 
 const WarehouseDeatils = () => {
   const { id } = useParams();
@@ -112,7 +112,7 @@ const WarehouseDeatils = () => {
                     <h4 className="mobile-info"> STATUS</h4>
                     <button
                       className={
-                        inv.status === "In Stock" ? "status-btn" : "status-out"
+                        inv.status === 'In Stock' ? 'status-btn' : 'status-out'
                       }
                     >
                       {inv.status}
