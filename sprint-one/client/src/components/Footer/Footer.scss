@@ -1,17 +1,17 @@
 @mixin tablet {
-    @media screen and (min-width: 768px) {
-      @content;
-    }
+  @media screen and (min-width: 768px) {
+    @content;
   }
-  @mixin desktop {
-    @media screen and (min-width: 1280px) {
-      @content;
-    }
+}
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
   }
-  @font-face {
-    font-family: titillium-regular;
-    src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
-  }
+}
+@font-face {
+  font-family: titillium-regular;
+  src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+}
 
 $instock-black: #13182c;
 $instock-indigo: #2e66e5;
@@ -26,17 +26,19 @@ $red: #c94515;
 $font-bold: titillium-bold;
 $font-regular: titillium-regular;
 
-.footer{
-        font-family: $font-regular;
-        font-size: .6875rem;
-        color:$slate;
-        background-color: $light-grey;
-        display: flex;
-        justify-content: center;
-    @include tablet{
-        font-size: .75rem;
-    }
-    @include desktop{
-
-    }
+.footer {
+  font-family: $font-regular;
+  font-size: 0.6875rem;
+  color: $slate;
+  background-color: $light-grey;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  @include tablet {
+    font-size: 0.75rem;
+  }
+  @include desktop {
+  }
 }

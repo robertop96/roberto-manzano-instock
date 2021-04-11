@@ -1,16 +1,13 @@
-import React from "react";
-import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import WarehouseDeatils from "../src/components/WarehouseDeatils/WarehouseDetails.jsx";
-import InventoryList from "./components/InventoryList/InventoryList";
-import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
-import Warehouse from "./components/Warehouse/Warehouse";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
-import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
-
-import WarehouseDetails from "./components/WarehouseDeatils/WarehouseDetails";
+import React from 'react';
+import './App.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import InventoryList from './components/InventoryList/InventoryList';
+import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
+import InventoryModify from './pages/InventoryModify/InventoryModify';
+import Warehouse from './components/Warehouse/Warehouse';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import WarehouseDetails from './components/WarehouseDeatils/WarehouseDetails';
 
 function App() {
   return (
@@ -18,17 +15,19 @@ function App() {
       <section>
         <Header />
         <Switch>
-          {/* <Route path="/" component={Home} /> */}
-          <Route path="/warehouse/:id" component={WarehouseDeatils} />
-
-          <Route path="/warehouses" component={Warehouse} />
-          <Route path="/warehouse/:action" component={WarehouseModify} />
-          <Route path="/inventory" component={InventoryList} />
-
+          <Route exact path="/warehouses" component={Warehouse} />
+          <Route exact path="/warehouse/:id" component={WarehouseDetails} />
           <Route
-            path="/InventoryItemDetails"
-            component={InventoryItemDetails}
+            exact
+            path="/warehouse/modify/:id/"
+            component={WarehouseModify}
           />
+          <Route
+            exact
+            path="/inventory/modify/:id"
+            component={InventoryModify}
+          />
+          <Route exact path="/inventory" component={InventoryList} />
         </Switch>
         <Footer />
       </section>
