@@ -9,11 +9,8 @@ function WarehouseEdit() {
   const edit = {
     title: 'Edit Warehouse',
     button: 'save',
-    handleEdit: (e) => {
-      e.preventDefault();
-      // if (all input == "" ){
-      //   alert()
-      // }
+    handleEdit: () => {
+      console.log(5);
     }
   };
 

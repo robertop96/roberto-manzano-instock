@@ -5,7 +5,7 @@ import sort from "../../Assets/Icons/sort-24px.svg";
 import arrow from "../../Assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
 import "./InventoryList.scss";
-// import Header from "../Header/Header"
+
 import { Link } from "react-router-dom";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
@@ -34,14 +34,12 @@ const InventoryList = (props) => {
     fetchData();
   }, [fetchData]);
 
-  console.log(responseData);
-
   return (
     <div>
       {showModal && (
         <DeleteModal setShowModal={setShowModal} data={modalData} />
       )}
-      {/* <Header /> */}
+
       <div className={showModal ? "inventory hide" : "inventory"}>
         <div className="searchI">
           <div>
