@@ -23,7 +23,6 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
       .catch((error) => {
         console.log(error);
       });
-
     setShowModal(false);
   };
 

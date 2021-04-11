@@ -51,7 +51,8 @@ const editItem = (object) => {
     description: object.description,
     category: object.category,
     status: object.status,
-    warehouse: object.warehouse
+    warehouse: object.warehouse,
+    quantity: object.quantity || 0
   };
 };
 

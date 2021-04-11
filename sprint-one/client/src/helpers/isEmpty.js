@@ -7,4 +7,4 @@ const isEmpty = (obj) => {
   return false;
 };
 
-module.exports = { isEmpty };
+export default isEmpty;

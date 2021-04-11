@@ -16,11 +16,15 @@ function App() {
       <section>
         <Header />
         <Switch>
-          <Route exact path="/" component={Warehouse} />
-          <Route path="/warehouse/details/:id" component={WarehouseDeatils} />
-          <Route path="/warehouses/:id" component={WarehouseModify} />
-          <Route path="/inventory" component={InventoryList} />
-          <Route path="/inventory/:id" component={InventoryModify} />
+          <Route exact path="/warehouses" component={Warehouse} />
+          <Route exact path="/warehouse/:id" component={WarehouseDeatils} />
+          <Route
+            exact
+            path="/warehouse/modify/:id/"
+            component={WarehouseModify}
+          />
+          <Route exact path="/inventory/:id" component={InventoryModify} />
+          <Route exact path="/inventory" component={InventoryList} />
         </Switch>
         <Footer />
       </section>

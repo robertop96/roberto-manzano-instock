@@ -1,7 +1,7 @@
 const fs = require('fs');
 const template = require('../../helpers/template');
 const write = require('../../helpers/writeFile');
-const check = require('../../helpers/isEmpty');
+const check = require('../../helpers/isCheck');
 const wareHousesLocation = __dirname + '/../../data/warehouses.json';
 const validator = require('validator');
 

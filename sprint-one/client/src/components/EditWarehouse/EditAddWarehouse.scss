@@ -34,6 +34,8 @@
     display: flex;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+    background-color: $white;
+    padding-top: 16px;
     @include tablet {
       border-bottom: 1px solid #bdc5d5;
       padding-bottom: 21px;

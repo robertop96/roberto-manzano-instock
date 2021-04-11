@@ -3,7 +3,7 @@ const { checkServerIdentity } = require('tls');
 const template = require('../../helpers/template');
 const write = require('../../helpers/writeFile');
 const inventoryLocation = __dirname + '/../../data/inventories.json';
-const check = require('../../helpers/isEmpty');
+const check = require('../../helpers/isCheck');
 
 const addInventory = (req, res) => {
   try {

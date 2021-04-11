@@ -36,7 +36,11 @@ const Warehouse = () => {
   return (
     <div>
       {showModal && (
-        <DeleteModal setShowModal={setShowModal} data={modalData} setResponseData={setResponseData} />
+        <DeleteModal
+          setShowModal={setShowModal}
+          data={modalData}
+          setResponseData={setResponseData}
+        />
       )}
       {/* <Header /> */}
 
@@ -54,7 +58,7 @@ const Warehouse = () => {
             />
           </div>
           <div>
-            <Link to="/warehouses/add">
+            <Link to="/warehouse/modify/add">
               <button className="search__button">+ Add New Warehouse </button>
             </Link>
           </div>
@@ -132,7 +136,7 @@ const Warehouse = () => {
                       alt="delete card"
                     />
                   </div>
-                  <Link to={`/warehouses/${data.id}`}>
+                  <Link to={`/warehouse/modify/${data.id}`}>
                     <img className="card__img--edit" src={edit} />
                   </Link>
                 </div>

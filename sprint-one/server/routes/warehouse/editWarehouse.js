@@ -2,7 +2,7 @@ const fs = require('fs');
 const wareHousesLocation = __dirname + '/../../data/warehouses.json';
 const template = require('../../helpers/template.js');
 const write = require('../../helpers/writeFile');
-const check = require('../../helpers/isEmpty');
+const check = require('../../helpers/isCheck');
 const validator = require('validator');
 
 const editWarehouse = (req, res) => {
@@ -10,7 +10,7 @@ const editWarehouse = (req, res) => {
     const templatedBody = template.editWarehouse(req.body);
     if (
       !check.isEmpty(req.body) &&
-      validator.isMobilePhone(req.body.phone + '') &&
+      check.isPhone(req.body.phone) &&
       validator.isEmail(req.body.email + '')
     ) {
       fs.readFile(wareHousesLocation, (err, data) => {
@@ -19,9 +19,11 @@ const editWarehouse = (req, res) => {
         } else {
           const warehouseData = JSON.parse(data);
           const foundWarehouse = warehouseData.find(
-            (warehouse) => warehouse.id === req.params.id
+            (warehouse) => warehouse.id == req.params.id
           );
+          console.log(foundWarehouse);
           Object.assign(foundWarehouse, templatedBody);
+          console.log(foundWarehouse);
           write.writeFile(wareHousesLocation, warehouseData);
           res.send(foundWarehouse);
         }

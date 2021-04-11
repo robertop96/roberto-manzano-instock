@@ -1,9 +1,9 @@
 fs = require('fs');
-const data= require('../../data/inventories.json')
+const data = require('../../data/inventories.json');
 
 const inventoryList = (req, res) => {
   try {
-    res.send(JSON.stringify(data));
+    res.json(data);
     console.log('received2');
   } catch (error) {
     console.log(error);

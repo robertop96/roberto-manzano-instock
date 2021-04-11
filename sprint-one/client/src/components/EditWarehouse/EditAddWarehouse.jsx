@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import error from '../../Assets/Icons/error-24px.svg';
 
-function EditWarehouse({ formInfo, errorMessage }) {
+function EditWarehouse({ formInfo, errorMessage, warehouse, handleClick }) {
   const location = useLocation();
 
   return (
@@ -20,17 +20,15 @@ function EditWarehouse({ formInfo, errorMessage }) {
         <article className="form__wrapper">
           <article className="form__warehouse">
             <h2 className="form__warehouse--title">Warehouse Details</h2>
-            <label
-              className="form__warehouse--name-label"
-              htmlFor="warehouse-name"
-            >
+            <label className="form__warehouse--name-label" htmlFor="name">
               Warehouse Name
             </label>
             <input
               className="form__warehouse--name-input"
               type="input"
-              name="warehouse-name"
-              id="warehouse-name"
+              name="name"
+              id="name"
+              defaultValue={warehouse?.name || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -44,6 +42,7 @@ function EditWarehouse({ formInfo, errorMessage }) {
               type="text"
               name="address"
               id="address"
+              defaultValue={warehouse?.address || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -57,6 +56,7 @@ function EditWarehouse({ formInfo, errorMessage }) {
               type="text"
               name="city"
               id="city"
+              defaultValue={warehouse?.city || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -70,6 +70,7 @@ function EditWarehouse({ formInfo, errorMessage }) {
               type="text"
               name="country"
               id="country"
+              defaultValue={warehouse?.country || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -78,14 +79,15 @@ function EditWarehouse({ formInfo, errorMessage }) {
           </article>
           <article className="form__contact">
             <h2 className="form__contact--title">Contact Details</h2>
-            <label className="form__contact--name-label" htmlFor="contact-name">
+            <label className="form__contact--name-label" htmlFor="cname">
               Contact Name
             </label>
             <input
               className="form__contact--name-input"
               type="text"
-              name="contact-name"
-              id="contact-name"
+              name="cname"
+              id="cname"
+              defaultValue={warehouse?.contact.name || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -99,22 +101,21 @@ function EditWarehouse({ formInfo, errorMessage }) {
               type="text"
               name="position"
               id="position"
+              defaultValue={warehouse?.contact.position || ''}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
               <h5> {errorMessage?.message}</h5>
             </div>
-            <label
-              className="form__contact--phone-label"
-              htmlFor="phone-number"
-            >
+            <label className="form__contact--phone-label" htmlFor="phone">
               Phone Number
             </label>
             <input
               className="form__contact--phone-input"
               type="tel"
-              name="phone-number"
-              id="phone-number"
+              name="phone"
+              id="phone"
+              defaultValue={warehouse?.contact.phone || ''}
             />
             <div className="error-message">
               {errorMessage?.phoneMessage || errorMessage?.message ? (
@@ -132,6 +133,7 @@ function EditWarehouse({ formInfo, errorMessage }) {
               type="text"
               name="email"
               id="email"
+              defaultValue={warehouse?.contact.email || ''}
             />
             <div className="error-message">
               {errorMessage?.emailMessage || errorMessage?.message ? (
@@ -145,7 +147,11 @@ function EditWarehouse({ formInfo, errorMessage }) {
         </article>
 
         <article className="button">
-          <button type="submit" className="button__cancel">
+          <button
+            onClick={handleClick}
+            type="button"
+            className="button__cancel"
+          >
             Cancel
           </button>
           <button
