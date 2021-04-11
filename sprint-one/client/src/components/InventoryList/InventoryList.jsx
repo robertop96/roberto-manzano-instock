@@ -91,10 +91,12 @@ const InventoryList = (props) => {
               <div className="cardI">
                 <div className="cardI__item">
                   <h4 className="cardI__label">INVENTORY ITEM</h4>
-                  <div className="arrow__align">
-                    <p className="cardI__text--name">{data.itemName}</p>
-                    <img alt="arrow" className="arrow" src={arrow} />
-                  </div>
+                  <Link to={`/inventory/${data.id}`}>
+                    <div className="arrow__align">
+                      <p className="cardI__text--name">{data.itemName}</p>
+                      <img alt="arrow" className="arrow" src={arrow} />
+                    </div>
+                  </Link>
                 </div>
                 <div className="cardI__category">
                   <h4 className="cardI__label">CATEGORY</h4>
