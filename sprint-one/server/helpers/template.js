@@ -47,7 +47,7 @@ const inventory = (obj) => {
 
 const editItem = (object) => {
   return {
-    name: object.name,
+    itemName: object.itemName,
     description: object.description,
     category: object.category,
     status: object.status,

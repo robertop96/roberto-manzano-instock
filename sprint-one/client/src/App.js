@@ -23,7 +23,11 @@ function App() {
             path="/warehouse/modify/:id/"
             component={WarehouseModify}
           />
-          <Route exact path="/inventory/:id" component={InventoryModify} />
+          <Route
+            exact
+            path="/inventory/modify/:id"
+            component={InventoryModify}
+          />
           <Route exact path="/inventory" component={InventoryList} />
         </Switch>
         <Footer />

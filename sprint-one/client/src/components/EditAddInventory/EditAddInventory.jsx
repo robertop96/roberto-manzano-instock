@@ -4,8 +4,15 @@ import { useLocation } from 'react-router-dom';
 import React from 'react';
 import error from '../../Assets/Icons/error-24px.svg';
 
-function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
+function EditInventory({
+  formInfo,
+  errorMessage,
+  handleChange,
+  stock,
+  warehouse
+}) {
   const location = useLocation();
+  console.log(warehouse);
   return (
     <section className="editInv-container">
       <article className="editInv-container__title-cont">
@@ -24,15 +31,15 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
             <h2 className="inv-form__item-details--title">Item Details</h2>
             <label
               className="inv-form__item-details--name-label"
-              htmlFor="item-name"
+              htmlFor="itemName"
             >
               Item Name
             </label>
             <input
               className="inv-form__item-details--name-input"
               type="input"
-              name="item-name"
-              id="item-name"
+              name="itemName"
+              id="itemName"
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -66,10 +73,12 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
               name="category"
               className="inv-form__item-details--category-options"
             >
-              {/* {categories.map((category) => {
-              return <option value={category.category}>{category.category}</option>
-            })} */}
               <option value="choose">Please select</option>
+              <option value="Electronic">Electronic</option>
+              <option value="Gears">Gears</option>
+              <option value="Apparel">Apparel</option>
+              <option value="Accessory">Accessory</option>
+              <option value="Health">Health</option>
             </select>
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -89,8 +98,8 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
                 className="inv-form__item-availability--status-inStock"
                 type="radio"
                 id="in-stock"
-                name="stock"
-                value="in-stock"
+                name="status"
+                value="In Stock"
               />
               <label
                 className="inv-form__item-availability--status-inStock-label"
@@ -102,8 +111,8 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
                 className="inv-form__item-availability--status-outStock"
                 type="radio"
                 id="out-stock"
-                name="stock"
-                value="out-stock"
+                name="status"
+                value="Out-stock"
               />
               <label
                 className="inv-form__item-availability--status-outStock-label"
@@ -118,7 +127,7 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
             </div>
             <label
               className={
-                stock === 'in-stock'
+                stock === 'In Stock'
                   ? 'inv-form__item-availability--quantity-label'
                   : ' hidden'
               }
@@ -129,14 +138,15 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
             <input
               type="text"
               className={
-                stock === 'in-stock'
+                stock === 'In Stock'
                   ? 'inv-form__item-availability--quantity-input'
                   : ' hidden'
               }
               id="quantity"
               name="quantity"
+              defaultValue="0"
             />
-            <div className={stock === 'in-stock' ? 'error-message' : 'hidden'}>
+            <div className={stock === 'In Stock' ? 'error-message' : 'hidden'}>
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
               <h5> {errorMessage?.message}</h5>
             </div>
@@ -147,13 +157,17 @@ function EditInventory({ formInfo, errorMessage, handleChange, stock }) {
               Warehouse
             </label>
             <select
-              id="warehouse"
-              name="warehouse"
+              id="warehouseName"
+              name="warehouseName"
               className="inv-form__item-availability--warehouse-options"
             >
-              {/* {warehouses.map((warehouse) => {
-              return <option value={warehouse.warehouse}>{warehouse.warehouse}</option>
-            })} */}
+              {warehouse?.map((warehouse) => {
+                return (
+                  <option key={warehouse.id} value={warehouse.name}>
+                    {warehouse.name}
+                  </option>
+                );
+              })}
               <option value="choose">Please select</option>
             </select>
             <div className="error-message">

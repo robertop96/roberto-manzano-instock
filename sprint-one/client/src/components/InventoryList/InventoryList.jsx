@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react";
-import del from "../../Assets/Icons/delete_outline-24px.svg";
-import edit from "../../Assets/Icons/edit-24px.svg";
-import sort from "../../Assets/Icons/sort-24px.svg";
-import arrow from "../../Assets/Icons/chevron_right-24px.svg";
-import axios from "axios";
-import "./InventoryList.scss";
+import React, { useEffect, useState, useCallback } from 'react';
+import del from '../../Assets/Icons/delete_outline-24px.svg';
+import edit from '../../Assets/Icons/edit-24px.svg';
+import sort from '../../Assets/Icons/sort-24px.svg';
+import arrow from '../../Assets/Icons/chevron_right-24px.svg';
+import axios from 'axios';
+import './InventoryList.scss';
 // import Header from "../Header/Header"
-import { Link } from "react-router-dom";
-import DeleteModal from "../DeleteModal/DeleteModal";
+import { Link } from 'react-router-dom';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 const InventoryList = (props) => {
   let [responseData, setResponseData] = useState(null);
@@ -16,11 +16,11 @@ const InventoryList = (props) => {
 
   const fetchData = useCallback(() => {
     axios({
-      method: "GET",
-      url: "/api/inventory/list",
+      method: 'GET',
+      url: '/api/inventory/list',
       params: {
-        language_code: "en",
-      },
+        language_code: 'en'
+      }
     })
       .then((response) => {
         setResponseData(response.data);
@@ -42,7 +42,7 @@ const InventoryList = (props) => {
         <DeleteModal setShowModal={setShowModal} data={modalData} />
       )}
       {/* <Header /> */}
-      <div className={showModal ? "inventory hide" : "inventory"}>
+      <div className={showModal ? 'inventory hide' : 'inventory'}>
         <div className="searchI">
           <div>
             <h1 className="searchI__title">Inventory</h1>
@@ -56,8 +56,8 @@ const InventoryList = (props) => {
             />
           </div>
           <div>
-            <Link>
-              {" "}
+            <Link to="/inventory/modify/add">
+              {' '}
               <button className="searchI__button">+ Add New Item </button>
             </Link>
           </div>
@@ -119,7 +119,7 @@ const InventoryList = (props) => {
                   <h4 className="cardI__label">STATUS</h4>
                   <button
                     className={
-                      data.status === "In Stock" ? "status-btn" : "status-out"
+                      data.status === 'In Stock' ? 'status-btn' : 'status-out'
                     }
                   >
                     {data.status}
@@ -136,7 +136,7 @@ const InventoryList = (props) => {
                 <div className="cardI__icons">
                   <div>
                     <Link>
-                      {" "}
+                      {' '}
                       <img
                         className="cardI__img--delete2"
                         src={del}
@@ -147,8 +147,8 @@ const InventoryList = (props) => {
                       />
                     </Link>
                   </div>
-                  <Link to={`/inventory/${data.id}`}>
-                    {" "}
+                  <Link to={`/inventory/modify/${data.id}`}>
+                    {' '}
                     <img className="cardI__img--edit" src={edit} />
                   </Link>
                 </div>
