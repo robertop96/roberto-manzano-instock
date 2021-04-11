@@ -13,7 +13,7 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `/api/${pathname === '/warehouse' ? '/warehouse' : '/inventory'}/${
+        `/api/${pathname === '/warehouses' ? '/warehouses' : '/inventory'}/${
           data.id
         }`
       )
@@ -40,12 +40,12 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
 
             <h1 className="modal__title">
               Delete {data.name} {data.itemName}{' '}
-              {pathname === '/warehouse' ? 'warehouse' : 'inventory item'}?
+              {pathname === '/warehouses' ? 'warehouse' : 'inventory item'}?
             </h1>
 
             <p className="modal__p">
               Please confirm you want to delete {data.name} from the{' '}
-              {pathname === '/warehouse' ? 'warehouse' : 'inventory'} list? You
+              {pathname === '/warehouses' ? 'warehouse' : 'inventory'} list? You
               won't be able to undo this action.
             </p>
           </div>

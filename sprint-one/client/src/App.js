@@ -8,7 +8,10 @@ import InventoryModify from './pages/InventoryModify/InventoryModify';
 import Warehouse from './components/Warehouse/Warehouse';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import DeleteModal from './components/DeleteModal/DeleteModal';
+
+import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
+
+import WarehouseDetails from './components/WarehouseDeatils/WarehouseDetails';
 
 function App() {
   return (

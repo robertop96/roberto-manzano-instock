@@ -25,7 +25,7 @@ function WarehouseEdit(props) {
 
   const axiosPut = async (url, obj) => {
     try {
-      let res = await axios.put(url, obj);
+      await axios.put(url, obj);
     } catch (err) {
       console.log(err);
     }
@@ -33,7 +33,7 @@ function WarehouseEdit(props) {
 
   const axiosPost = async (url, obj) => {
     try {
-      let res = await axios.post(url, obj);
+      await axios.post(url, obj);
     } catch (err) {
       console.log(err);
     }

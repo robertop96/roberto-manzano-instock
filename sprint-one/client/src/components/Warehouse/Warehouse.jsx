@@ -16,7 +16,7 @@ const Warehouse = () => {
   const fetchData = useCallback(() => {
     axios({
       method: 'GET',
-      url: '/api/warehouse/list/all',
+      url: '/api/warehouses/list/all',
       params: {
         language_code: 'en'
       }
@@ -66,7 +66,7 @@ const Warehouse = () => {
         <div className="bar">
           <div className="bar__labels">
             <h4>WAREHOUSE</h4>
-            <img className="bar__arrows--warehouse" src={sort} />
+            <img className="bar__arrows--warehouse" src={sort} alt="sort" />
           </div>
           <div className="bar__labels">
             <h4>ADDRESS</h4>
@@ -91,10 +91,12 @@ const Warehouse = () => {
               <div className="card">
                 <div className="card__warehouse">
                   <h4 className="card__label">WAREHOUSE</h4>
-                  <div className="arrow__align">
-                    <p className="card__text--name">{data.name}</p>
-                    <img className="arrow" src={arrow} />
-                  </div>
+                  <Link to={`/warehouse/${data.id}`}>
+                    <div className="arrow__align">
+                      <p className="card__text--name">{data.name}</p>
+                      <img className="arrow" src={arrow} />
+                    </div>
+                  </Link>
                 </div>
                 <div className="card__address">
                   <h4 className="card__label">ADDRESS</h4>
