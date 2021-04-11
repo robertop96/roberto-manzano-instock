@@ -3,41 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
 import validator from 'validator';
-import axios from 'axios';
 import isEmpty from '../../helpers/isEmpty';
 import isPhone from '../../helpers/isPhone';
+import {
+  axiosPut,
+  axiosPost,
+  axiosGetWarehouse
+} from '../../helpers/axiosCalls';
 
 function WarehouseEdit(props) {
   const location = useLocation();
   const { id } = useParams();
-  const [formInfo, setFormInfo] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [warehouse, SetWarehouse] = useState(null);
-
-  const axiosGet = async (url) => {
-    try {
-      let res = await axios.get(url);
-      SetWarehouse(res.data.warehouse);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const axiosPut = async (url, obj) => {
-    try {
-      await axios.put(url, obj);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const axiosPost = async (url, obj) => {
-    try {
-      await axios.post(url, obj);
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   const edit = {
     title: 'Edit Warehouse',
@@ -47,7 +23,6 @@ function WarehouseEdit(props) {
       setErrorMessage(null);
       const formData = new FormData(e.target);
       const formDataObj = Object.fromEntries(formData);
-      console.log(formDataObj);
       if (isEmpty(formDataObj)) {
         setErrorMessage({ message: 'This field is required' });
       } else if (!isPhone(formDataObj.phone)) {
@@ -55,7 +30,6 @@ function WarehouseEdit(props) {
       } else if (!validator.isEmail(formDataObj.email + '')) {
         setErrorMessage({ emailMessage: 'Invalid Email' });
       } else {
-        console.log(id);
         axiosPut(`/api/warehouse/${id}`, formDataObj);
         setTimeout(() => {
           props.history.push('/warehouses');
@@ -91,14 +65,19 @@ function WarehouseEdit(props) {
     props.history.push('/warehouses');
   };
 
+  //States
+  const [formInfo, setFormInfo] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [warehouse, setWarehouse] = useState(null);
+
   useEffect(() => {
-    axiosGet(`/api/warehouse/${id}`);
+    axiosGetWarehouse(`/api/warehouse/${id}`, setWarehouse);
     if (location.pathname === '/warehouse/modify/add') {
       setFormInfo(add);
     } else {
       setFormInfo(edit);
     }
-  }, []);
+  }, [location]);
 
   return (
     <>

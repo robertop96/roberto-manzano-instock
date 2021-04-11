@@ -13,7 +13,6 @@ const deleteWarehouse = (req, res) => {
         const del = warehouseData.filter(
           (warehouse) => warehouse.id !== req.params.id
         );
-        console.log(del);
         write.writeFile(wareHousesLocation, del);
         res.json(del);
       }

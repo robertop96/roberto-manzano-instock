@@ -23,6 +23,8 @@
   border-radius: 3px;
   height: auto;
   width: 343px;
+  margin-top: 6rem;
+  z-index: 1;
   @include tablet {
     width: 704px;
   }
@@ -51,15 +53,7 @@
       }
     }
     &--title {
-      font-family: Titillium-bold;
-      color: $instock-black;
-      font-size: 28px;
-      line-height: 36px;
-      font-weight: 600;
-      @include desktop {
-        font-size: 32px;
-        line-height: 40px;
-      }
+      @include formMainTitle;
     }
   }
   .form {

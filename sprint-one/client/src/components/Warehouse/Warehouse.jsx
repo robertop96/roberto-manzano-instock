@@ -5,7 +5,6 @@ import sort from '../../Assets/Icons/sort-24px.svg';
 import arrow from '../../Assets/Icons/chevron_right-24px.svg';
 import axios from 'axios';
 import './Warehouse.scss';
-// import Header from "../Header/Header"
 import { Link } from 'react-router-dom';
 import DeleteModal from '../DeleteModal/DeleteModal';
 
@@ -16,7 +15,7 @@ const Warehouse = () => {
   const fetchData = useCallback(() => {
     axios({
       method: 'GET',
-      url: '/api/warehouses/list/all',
+      url: '/api/warehouse/list/all',
       params: {
         language_code: 'en'
       }
@@ -42,7 +41,6 @@ const Warehouse = () => {
           setResponseData={setResponseData}
         />
       )}
-      {/* <Header /> */}
 
       <div className={showModal ? 'warehouse hide' : 'warehouse'}>
         <div className="search">

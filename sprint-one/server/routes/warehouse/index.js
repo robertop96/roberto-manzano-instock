@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const functionExample = require('./functionExample');
 const addWarehouse = require('./addWarehouse');
 const WarehouseDetails = require('./WarehouseDetails');
 const warehouseList = require('./warehouseList');

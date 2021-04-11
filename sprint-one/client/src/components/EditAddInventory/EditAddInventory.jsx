@@ -9,10 +9,11 @@ function EditInventory({
   errorMessage,
   handleChange,
   stock,
-  warehouse
+  warehouse,
+  handleClick,
+  inventoryItem
 }) {
   const location = useLocation();
-  console.log(warehouse);
   return (
     <section className="editInv-container">
       <article className="editInv-container__title-cont">
@@ -40,6 +41,7 @@ function EditInventory({
               type="input"
               name="itemName"
               id="itemName"
+              defaultValue={inventoryItem?.itemName}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -57,6 +59,7 @@ function EditInventory({
               type="text"
               name="description"
               id="description"
+              defaultValue={inventoryItem?.description}
             />
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -73,7 +76,9 @@ function EditInventory({
               name="category"
               className="inv-form__item-details--category-options"
             >
-              <option value="choose">Please select</option>
+              <option defaultValue={inventoryItem?.category}>
+                {inventoryItem?.category}
+              </option>
               <option value="Electronic">Electronic</option>
               <option value="Gears">Gears</option>
               <option value="Apparel">Apparel</option>
@@ -144,7 +149,7 @@ function EditInventory({
               }
               id="quantity"
               name="quantity"
-              defaultValue="0"
+              defaultValue={inventoryItem?.quantity}
             />
             <div className={stock === 'In Stock' ? 'error-message' : 'hidden'}>
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -168,7 +173,9 @@ function EditInventory({
                   </option>
                 );
               })}
-              <option value="choose">Please select</option>
+              <option defaultValue={inventoryItem?.warehouseName}>
+                {inventoryItem?.warehouseName}
+              </option>
             </select>
             <div className="error-message">
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}
@@ -178,7 +185,11 @@ function EditInventory({
         </article>
 
         <article className="button">
-          <button type="submit" className="button__cancel">
+          <button
+            onClick={handleClick}
+            type="button"
+            className="button__cancel"
+          >
             Cancel
           </button>
           <button

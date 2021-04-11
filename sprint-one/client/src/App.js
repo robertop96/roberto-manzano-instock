@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import WarehouseDeatils from '../src/components/WarehouseDeatils/WarehouseDetails.jsx';
 import InventoryList from './components/InventoryList/InventoryList';
 import WarehouseModify from './pages/WarehouseModify/WarehouseModify';
 import InventoryModify from './pages/InventoryModify/InventoryModify';
 import Warehouse from './components/Warehouse/Warehouse';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-
-import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
-
 import WarehouseDetails from './components/WarehouseDeatils/WarehouseDetails';
 
 function App() {
@@ -20,7 +16,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/warehouses" component={Warehouse} />
-          <Route exact path="/warehouse/:id" component={WarehouseDeatils} />
+          <Route exact path="/warehouse/:id" component={WarehouseDetails} />
           <Route
             exact
             path="/warehouse/modify/:id/"

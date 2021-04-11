@@ -2,48 +2,16 @@ import './InventoryModify.sass';
 import EditAddInventory from '../../components/EditAddInventory/EditAddInventory';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import axios from 'axios';
 import isEmpty from '../../helpers/isEmpty';
-import isPhone from '../../helpers/isPhone';
-import validator from 'validator';
+import {
+  axiosPut,
+  axiosPost,
+  axiosGetInventory
+} from '../../helpers/axiosCalls';
 
 function InventoryModify(props) {
   const location = useLocation();
   const { id } = useParams();
-  const [formInfo, setFormInfo] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [warehouse, SetWarehouse] = useState(null);
-  const [stock, setStock] = useState(false);
-
-  const axiosGet = async (url) => {
-    try {
-      let res = await axios.get(url);
-      SetWarehouse(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const axiosPut = async (url, obj) => {
-    try {
-      await axios.put(url, obj);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const axiosPost = async (url, obj) => {
-    try {
-      await axios.post(url, obj);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleChange = (e) => {
-    setStock(e.target.value);
-    console.log(e.target.value);
-  };
 
   const add = {
     title: 'Add New Inventory Item',
@@ -56,7 +24,6 @@ function InventoryModify(props) {
       if (isEmpty(formDataObj)) {
         setErrorMessage({ message: 'This field is required' });
       } else {
-        console.log(id);
         axiosPost(`/api/inventory/`, formDataObj);
         setTimeout(() => {
           props.history.push('/inventory');
@@ -74,11 +41,9 @@ function InventoryModify(props) {
       const formData = new FormData(e.target);
       let formDataObj = Object.fromEntries(formData);
       formDataObj.warehouseID = id;
-      console.log(formDataObj);
       if (isEmpty(formDataObj)) {
         setErrorMessage({ message: 'This field is required' });
       } else {
-        console.log(id);
         axiosPut(`/api/inventory/${id}`, formDataObj);
         setTimeout(() => {
           props.history.push('/inventory');
@@ -87,14 +52,31 @@ function InventoryModify(props) {
     }
   };
 
+  const handleChange = (e) => {
+    setStock(e.target.value);
+  };
+
+  const handleClick = () => {
+    props.history.push('/warehouses');
+  };
+
+  // States
+  const [formInfo, setFormInfo] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [warehouse, setWarehouse] = useState(null);
+  const [stock, setStock] = useState(false);
+  const [inventoryItem, setInventoryItem] = useState(null);
+
   useEffect(() => {
-    axiosGet(`/api/warehouse/list/all`);
+    axiosGetInventory(`/api/warehouse/list/all`, setWarehouse);
+    axiosGetInventory(`/api/inventory/${id}`, setInventoryItem);
+
     if (location.pathname === '/inventory/modify/add') {
       setFormInfo(add);
     } else {
       setFormInfo(edit);
     }
-  }, []);
+  }, [location]);
 
   return (
     <>
@@ -106,6 +88,8 @@ function InventoryModify(props) {
             handleChange={handleChange}
             stock={stock}
             warehouse={warehouse}
+            handleClick={handleClick}
+            inventoryItem={inventoryItem}
           />
         </section>
       ) : (
