@@ -16,11 +16,10 @@ const Warehouse = () => {
   const fetchData = useCallback(() => {
     axios({
       method: "GET",
-      url: "/api/warehouse/list/all",
+      url: "/api/warehouses/list/all",
       params: {
         language_code: "en",
       },
-      
     })
       .then((response) => {
         setResponseData(response.data);
@@ -37,7 +36,11 @@ const Warehouse = () => {
   return (
     <div>
       {showModal && (
-        <DeleteModal setShowModal={setShowModal} data={modalData} setResponseData={setResponseData} />
+        <DeleteModal
+          setShowModal={setShowModal}
+          data={modalData}
+          setResponseData={setResponseData}
+        />
       )}
       {/* <Header /> */}
 
