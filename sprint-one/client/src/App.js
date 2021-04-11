@@ -1,16 +1,14 @@
 import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import WarehouseDeatils from "../src/components/WarehouseDeatils/WarehouseDetails.jsx";
 import InventoryList from "./components/InventoryList/InventoryList";
 import WarehouseModify from "./pages/WarehouseModify/WarehouseModify";
+import InventoryModify from "./pages/InventoryModify/InventoryModify";
 import Warehouse from "./components/Warehouse/Warehouse";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
-import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
-
 import WarehouseDetails from "./components/WarehouseDeatils/WarehouseDetails";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
@@ -19,7 +17,7 @@ function App() {
         <Header />
         <Switch>
           {/* <Route path="/" component={Home} /> */}
-          <Route path='/warehouse/:id' component={WarehouseDeatils} />
+          <Route path='/warehouse/:id' component={WarehouseDetails} />
 
           <Route path='/warehouses' component={Warehouse} />
           <Route path='/warehouse/:action' component={WarehouseModify} />
@@ -28,6 +26,16 @@ function App() {
           <Route
             path='/InventoryItemDetails/:id'
             component={InventoryItemDetails}
+          />
+          <Route
+            exact
+            path='/warehouse/modify/:id/'
+            component={WarehouseModify}
+          />
+          <Route
+            exact
+            path='/inventory/modify/:id'
+            component={InventoryModify}
           />
         </Switch>
         <Footer />

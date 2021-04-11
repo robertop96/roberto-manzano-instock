@@ -2,21 +2,11 @@
 @import '../../partials/mixins';
 @import '../../partials/partials';
 
-.error-message {
-  display: flex;
-  align-items: center;
-  font-family: Titillium Web;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 18px;
-  color: red;
-  margin-left: 24px;
-  margin-top: -10px;
-  margin-bottom: 24px;
+.hidden {
+  display: none;
 }
 
-.edit-container {
+.editInv-container {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
@@ -36,8 +26,8 @@
     display: flex;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    background-color: $white;
     padding-top: 16px;
+    background-color: white;
     @include tablet {
       border-bottom: 1px solid #bdc5d5;
       padding-bottom: 21px;
@@ -56,14 +46,14 @@
       @include formMainTitle;
     }
   }
-  .form {
+  .inv-form {
     &__wrapper {
       @include tablet {
         display: flex;
-        margin-bottom: 32px;
+        // margin-bottom: 32px;
       }
     }
-    &__warehouse {
+    &__item-details {
       display: flex;
       flex-direction: column;
       text-align: left;
@@ -90,38 +80,33 @@
           margin-bottom: 24px;
         }
       }
-      &--address-label {
+      &--description-label {
         @include formLabel;
         margin-bottom: 4px;
       }
-      &--address-input {
+      &--description-input {
         @include formInput;
+        height: 120px;
         @include tablet {
+          height: 120px;
           margin-bottom: 24px;
         }
-      }
-      &--city-label {
-        @include formLabel;
-        margin-bottom: 4px;
-      }
-      &--city-input {
-        @include formInput;
-        @include tablet {
-          margin-bottom: 24px;
+        @include desktop {
+          height: 120px;
         }
       }
-      &--country-label {
+      &--category-label {
         @include formLabel;
         margin-bottom: 4px;
       }
-      &--country-input {
+      &--category-options {
         @include formInput;
         @include tablet {
           margin-bottom: 24px;
         }
       }
     }
-    &__contact {
+    &__item-availability {
       display: flex;
       flex-direction: column;
       text-align: left;
@@ -139,45 +124,64 @@
       &--title {
         @include formTitle;
       }
-      &--name-label {
+      &--status-title {
         @include formLabel;
         margin-bottom: 4px;
       }
-      &--name-input {
-        @include formInput;
+      &--status-inStock {
+        margin-left: 24px;
+        margin-bottom: 16px;
+        margin-right: 12px;
         @include tablet {
-          margin-bottom: 24px;
+          margin-left: 32px;
+          margin-bottom: 27px;
         }
       }
-      &--position-label {
+      &--status-inStock-label {
+        font-family: Titillium Web;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 20px;
+        color: #5c667e;
+        @include tablet {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+      &--status-outStock {
+        margin-left: 94px;
+        margin-right: 12px;
+        @include tablet {
+          margin-left: 40px;
+        }
+      }
+      &--status-outStock-label {
+        font-family: Titillium Web;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 20px;
+        color: #5c667e;
+        @include tablet {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+      &--quantity-label {
         @include formLabel;
-        margin-bottom: 4px;
       }
-      &--position-input {
+      &--quantity-input {
         @include formInput;
-        @include tablet {
-          margin-bottom: 24px;
+        @include desktop {
+          width: 122px;
         }
       }
-      &--phone-label {
+      &--warehouse-label {
         @include formLabel;
-        margin-bottom: 4px;
       }
-      &--phone-input {
+      &--warehouse-options {
         @include formInput;
-        @include tablet {
-          margin-bottom: 24px;
-        }
-      }
-      &--email-label {
-        @include formLabel;
-        margin-bottom: 4px;
-      }
-      &--email-input {
-        @include formInput;
-        @include tablet {
-          margin-bottom: 24px;
-        }
       }
     }
   }
@@ -216,7 +220,6 @@
         margin-top: 0;
       }
       @include desktop {
-        min-width: 72px;
         margin-right: 40px;
       }
     }

@@ -1,13 +1,12 @@
-import React, { useEffect, useState, useCallback } from "react";
-import del from "../../Assets/Icons/delete_outline-24px.svg";
-import edit from "../../Assets/Icons/edit-24px.svg";
-import sort from "../../Assets/Icons/sort-24px.svg";
-import arrow from "../../Assets/Icons/chevron_right-24px.svg";
-import axios from "axios";
-import "./Warehouse.scss";
-// import Header from "../Header/Header"
-import { Link } from "react-router-dom";
-import DeleteModal from "../DeleteModal/DeleteModal";
+import React, { useEffect, useState, useCallback } from 'react';
+import del from '../../Assets/Icons/delete_outline-24px.svg';
+import edit from '../../Assets/Icons/edit-24px.svg';
+import sort from '../../Assets/Icons/sort-24px.svg';
+import arrow from '../../Assets/Icons/chevron_right-24px.svg';
+import axios from 'axios';
+import './Warehouse.scss';
+import { Link } from 'react-router-dom';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 const Warehouse = () => {
   let [responseData, setResponseData] = useState(null);
@@ -15,11 +14,11 @@ const Warehouse = () => {
   let [showModal, setShowModal] = useState(false);
   const fetchData = useCallback(() => {
     axios({
-      method: "GET",
-      url: "/api/warehouses/list/all",
+      method: 'GET',
+      url: '/api/warehouse/list/all',
       params: {
-        language_code: "en",
-      },
+        language_code: 'en'
+      }
     })
       .then((response) => {
         setResponseData(response.data);
@@ -42,9 +41,8 @@ const Warehouse = () => {
           setResponseData={setResponseData}
         />
       )}
-      {/* <Header /> */}
 
-      <div className={showModal ? "warehouse hide" : "warehouse"}>
+      <div className={showModal ? 'warehouse hide' : 'warehouse'}>
         <div className="search">
           <div>
             <h1 className="search__title">Warehouses</h1>
@@ -58,8 +56,7 @@ const Warehouse = () => {
             />
           </div>
           <div>
-            <Link>
-              {" "}
+            <Link to="/warehouse/modify/add">
               <button className="search__button">+ Add New Warehouse </button>
             </Link>
           </div>
@@ -102,14 +99,15 @@ const Warehouse = () => {
                 <div className="card__address">
                   <h4 className="card__label">ADDRESS</h4>
                   <p className="card__text">
-                    {data.address}, {""}
-                    {data.city},{""} {data.country}
+                    {data.address}, {''}
+                    {data.city},{''} {data.country}
                   </p>
                 </div>
                 <div>
                   <img
                     className="card__img--delete"
                     src={del}
+                    alt="delete card"
                     onClick={() => {
                       setModalData(data);
                       setShowModal(true);
@@ -135,10 +133,10 @@ const Warehouse = () => {
                       }}
                       className="card__img--delete2"
                       src={del}
+                      alt="delete card"
                     />
                   </div>
-                  <Link to={`/warehouses/${data.id}`}>
-                    {" "}
+                  <Link to={`/warehouse/modify/${data.id}`}>
                     <img className="card__img--edit" src={edit} />
                   </Link>
                 </div>

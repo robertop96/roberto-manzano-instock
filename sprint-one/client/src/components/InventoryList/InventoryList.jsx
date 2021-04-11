@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react";
-import del from "../../Assets/Icons/delete_outline-24px.svg";
-import edit from "../../Assets/Icons/edit-24px.svg";
-import sort from "../../Assets/Icons/sort-24px.svg";
-import arrow from "../../Assets/Icons/chevron_right-24px.svg";
-import axios from "axios";
-import "./InventoryList.scss";
+import React, { useEffect, useState, useCallback } from 'react';
+import del from '../../Assets/Icons/delete_outline-24px.svg';
+import edit from '../../Assets/Icons/edit-24px.svg';
+import sort from '../../Assets/Icons/sort-24px.svg';
+import arrow from '../../Assets/Icons/chevron_right-24px.svg';
+import axios from 'axios';
+import './InventoryList.scss';
 
-import { Link } from "react-router-dom";
-import DeleteModal from "../DeleteModal/DeleteModal";
+import { Link } from 'react-router-dom';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 const InventoryList = (props) => {
   let [responseData, setResponseData] = useState(null);
@@ -16,11 +16,11 @@ const InventoryList = (props) => {
 
   const fetchData = useCallback(() => {
     axios({
-      method: "GET",
-      url: "/api/inventory/list",
+      method: 'GET',
+      url: '/api/inventory/list',
       params: {
-        language_code: "en",
-      },
+        language_code: 'en'
+      }
     })
       .then((response) => {
         setResponseData(response.data);
@@ -40,7 +40,7 @@ const InventoryList = (props) => {
         <DeleteModal setShowModal={setShowModal} data={modalData} />
       )}
 
-      <div className={showModal ? "inventory hide" : "inventory"}>
+      <div className={showModal ? 'inventory hide' : 'inventory'}>
         <div className="searchI">
           <div>
             <h1 className="searchI__title">Inventory</h1>
@@ -54,8 +54,8 @@ const InventoryList = (props) => {
             />
           </div>
           <div>
-            <Link>
-              {" "}
+            <Link to="/inventory/modify/add">
+              {' '}
               <button className="searchI__button">+ Add New Item </button>
             </Link>
           </div>
@@ -63,23 +63,23 @@ const InventoryList = (props) => {
         <div className="barI">
           <div className="barI__labels">
             <h4>INVENTORY ITEM</h4>
-            <img className="barI__arrows--item" src={sort} />
+            <img alt="icon" className="barI__arrows--item" src={sort} />
           </div>
           <div className="barI__labels">
             <h4>CATEGORY</h4>
-            <img className="barI__arrows--category" src={sort} />
+            <img alt="icon" className="barI__arrows--category" src={sort} />
           </div>
           <div className="barI__labels">
             <h4>STATUS</h4>
-            <img className="barI__arrows--status" src={sort} />
+            <img alt="icon" className="barI__arrows--status" src={sort} />
           </div>
           <div className="barI__labels">
             <h4>QTY</h4>
-            <img className="barI__arrows--qty" src={sort} />
+            <img alt="icon" className="barI__arrows--qty" src={sort} />
           </div>
           <div className="barI__labels">
             <h4>WAREHOUSE</h4>
-            <img className="barI__arrows--warehouse" src={sort} />
+            <img alt="icon" className="barI__arrows--warehouse" src={sort} />
           </div>
           <div className="barI__labels">
             <h4>ACTIONS</h4>
@@ -93,7 +93,7 @@ const InventoryList = (props) => {
                   <h4 className="cardI__label">INVENTORY ITEM</h4>
                   <div className="arrow__align">
                     <p className="cardI__text--name">{data.itemName}</p>
-                    <img className="arrow" src={arrow} />
+                    <img alt="arrow" className="arrow" src={arrow} />
                   </div>
                 </div>
                 <div className="cardI__category">
@@ -103,6 +103,7 @@ const InventoryList = (props) => {
                 <div>
                   <Link to={`/`}>
                     <img
+                      alt="delete icon"
                       className="cardI__img--delete"
                       src={del}
                       onClick={() => {
@@ -117,7 +118,7 @@ const InventoryList = (props) => {
                   <h4 className="cardI__label">STATUS</h4>
                   <button
                     className={
-                      data.status === "In Stock" ? "status-btn" : "status-out"
+                      data.status === 'In Stock' ? 'status-btn' : 'status-out'
                     }
                   >
                     {data.status}
@@ -134,8 +135,9 @@ const InventoryList = (props) => {
                 <div className="cardI__icons">
                   <div>
                     <Link>
-                      {" "}
+                      {' '}
                       <img
+                        alt="delete icon"
                         className="cardI__img--delete2"
                         src={del}
                         onClick={() => {
@@ -145,9 +147,13 @@ const InventoryList = (props) => {
                       />
                     </Link>
                   </div>
-                  <Link to={`/inventory/${data.id}`}>
-                    {" "}
-                    <img className="cardI__img--edit" src={edit} />
+                  <Link to={`/inventory/modify/${data.id}`}>
+                    {' '}
+                    <img
+                      alt="edit-icon"
+                      className="cardI__img--edit"
+                      src={edit}
+                    />
                   </Link>
                 </div>
               </div>
