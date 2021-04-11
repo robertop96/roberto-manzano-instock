@@ -19,14 +19,14 @@ function App() {
         <Header />
         <Switch>
           {/* <Route path="/" component={Home} /> */}
-          <Route path="/warehouse/:id" component={WarehouseDeatils} />
+          <Route path='/warehouse/:id' component={WarehouseDeatils} />
 
-          <Route path="/warehouses" component={Warehouse} />
-          <Route path="/warehouse/:action" component={WarehouseModify} />
-          <Route path="/inventory" component={InventoryList} />
+          <Route path='/warehouses' component={Warehouse} />
+          <Route path='/warehouse/:action' component={WarehouseModify} />
+          <Route path='/inventory' component={InventoryList} />
 
           <Route
-            path="/InventoryItemDetails"
+            path='/InventoryItemDetails/:id'
             component={InventoryItemDetails}
           />
         </Switch>

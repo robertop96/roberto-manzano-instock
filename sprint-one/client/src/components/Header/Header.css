@@ -1,13 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
-@font-face {
-  font-family: titillium-bold;
-  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+* {
+  font-family: "Titillium Web", sans-serif;
 }
-@font-face {
-  font-family: titillium-regular;
-  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,12 +13,16 @@
   display: flex;
   flex-direction: column;
   height: 7rem;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   width: 100vw;
+  height: 10rem;
+  position: absolute;
 }
 @media screen and (min-width: 375px) {
   .nav {
-    height: 12.5rem;
+    height: 10rem;
     position: absolute;
   }
 }
@@ -36,9 +34,6 @@
   }
 }
 
-.nav__logo {
-  padding: 1.899375rem 7.713125rem 0 7.6875rem;
-}
 @media screen and (min-width: 768px) {
   .nav__logo {
     margin-left: 2rem;
@@ -54,7 +49,8 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  font-family: titillium-regular;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
@@ -72,10 +68,11 @@
   color: #bdc5d5;
   text-decoration: none;
   width: 8rem;
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   .nav__link {
-    width: 5rem;
+    width: 7rem;
     padding: 0 1rem;
   }
 }
@@ -90,6 +87,7 @@
   border-radius: 2rem;
   padding-bottom: 0.2rem;
   color: #fff;
+  text-decoration: underline;
 }
 
 .active:hover {

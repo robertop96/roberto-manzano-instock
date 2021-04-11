@@ -16,7 +16,7 @@
     position: absolute;
     left: 4.27%;
     right: 4.27%;
-    top: 5.85%;
+    top: 5%;
     margin: 4.9875rem 0 2.5rem 0;
     background-color: #fff;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
@@ -24,15 +24,13 @@
 }
 @media screen and (min-width: 768px) {
   .warehouse {
-    margin: 0;
-    top: 7%;
+    margin: auto;
+    top: 10%;
   }
 }
 @media screen and (min-width: 1280px) {
   .warehouse {
-    margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
-    top: 5%;
   }
 }
 
