@@ -8,6 +8,7 @@ import './Warehouse.scss';
 import { Link } from 'react-router-dom';
 import DeleteModal from '../DeleteModal/DeleteModal';
 
+
 const Warehouse = () => {
   let [responseData, setResponseData] = useState(null);
   let [modalData, setModalData] = useState(null);
@@ -15,7 +16,7 @@ const Warehouse = () => {
   const fetchData = useCallback(() => {
     axios({
       method: 'GET',
-      url: '/api/warehouse/list/all',
+      url: '/api/warehouses/list/all',
       params: {
         language_code: 'en'
       }
@@ -41,7 +42,7 @@ const Warehouse = () => {
           setResponseData={setResponseData}
         />
       )}
-
+      <div className="big-box">
       <div className={showModal ? 'warehouse hide' : 'warehouse'}>
         <div className="search">
           <div>
@@ -56,7 +57,7 @@ const Warehouse = () => {
             />
           </div>
           <div>
-            <Link to="/warehouse/modify/add">
+            <Link to="/warehouses/modify/add">
               <button className="search__button">+ Add New Warehouse </button>
             </Link>
           </div>
@@ -89,7 +90,7 @@ const Warehouse = () => {
               <div className="card">
                 <div className="card__warehouse">
                   <h4 className="card__label">WAREHOUSE</h4>
-                  <Link to={`/warehouse/${data.id}`}>
+                  <Link to={`/warehouses/${data.id}`}>
                     <div className="arrow__align">
                       <p className="card__text--name">{data.name}</p>
                       <img className="arrow" src={arrow} />
@@ -136,7 +137,7 @@ const Warehouse = () => {
                       alt="delete card"
                     />
                   </div>
-                  <Link to={`/warehouse/modify/${data.id}`}>
+                  <Link to={`/warehouses/modify/${data.id}`}>
                     <img className="card__img--edit" src={edit} />
                   </Link>
                 </div>
@@ -144,6 +145,7 @@ const Warehouse = () => {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

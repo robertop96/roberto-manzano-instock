@@ -57,7 +57,7 @@ function InventoryModify(props) {
   };
 
   const handleClick = () => {
-    props.history.push('/warehouses');
+    props.history.push('/');
   };
 
   // States
@@ -68,7 +68,7 @@ function InventoryModify(props) {
   const [inventoryItem, setInventoryItem] = useState(null);
 
   useEffect(() => {
-    axiosGetInventory(`/api/warehouse/list/all`, setWarehouse);
+    axiosGetInventory(`/api/warehouses/list/all`, setWarehouse);
     axiosGetInventory(`/api/inventory/${id}`, setInventoryItem);
 
     if (location.pathname === '/inventory/modify/add') {

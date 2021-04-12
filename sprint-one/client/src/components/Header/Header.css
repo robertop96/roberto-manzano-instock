@@ -1,24 +1,33 @@
-@import '../../partials/fonts';
-@import '../../partials/_mixins.scss';
-@import '../../partials/partials';
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .nav {
-  background-color: $graphite;
+  background-color: #232940;
   display: flex;
   flex-direction: column;
   height: 7rem;
   justify-content: center;
   align-items: center;
-
   gap: 1rem;
   width: 100vw;
   height: 10rem;
   position: absolute;
-  @include mobile {
+}
+@media screen and (min-width: 375px) {
+  .nav {
     height: 10rem;
     position: absolute;
-    
   }
-  @include tablet {
+}
+@media screen and (min-width: 768px) {
+  .nav {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -26,13 +35,13 @@
   }
 }
 
-
-.nav__logo {
-  @include tablet {
+@media screen and (min-width: 768px) {
+  .nav__logo {
     margin-left: 2rem;
   }
-
-  @include desktop {
+}
+@media screen and (min-width: 1280px) {
+  .nav__logo {
     margin-left: 11.25rem;
   }
 }
@@ -41,39 +50,47 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  @include font-regular;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
   align-items: center;
-
-  @include tablet {
+}
+@media screen and (min-width: 768px) {
+  .nav__links {
     margin-right: 1rem;
   }
-  @include desktop {
+}
+@media screen and (min-width: 1280px) {
+  .nav__links {
     margin-right: 4rem;
   }
 }
 
 .nav__link {
-  color: $cloud;
+  color: #bdc5d5;
   text-decoration: none;
   width: 8rem;
   text-align: center;
-  @include tablet {
+}
+@media screen and (min-width: 768px) {
+  .nav__link {
     width: 7rem;
-
     padding: 0 1rem;
   }
 }
+
 .nav__link:hover {
   text-decoration: underline;
   color: white;
 }
+
 .active {
-  background-color: $instock-black;
+  background-color: #13182c;
   border-radius: 2rem;
   padding-bottom: 0.2rem;
-  color: $white;
+  color: #fff;
   text-decoration: underline;
 }
+
 .active:hover {
   text-decoration: underline;
-}
+}/*# sourceMappingURL=Header.css.map */

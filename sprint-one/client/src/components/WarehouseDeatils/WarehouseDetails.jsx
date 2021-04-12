@@ -17,7 +17,7 @@ const WarehouseDeatils = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/warehouse/${id}`)
+      .get(`/api/warehouses/${id}`)
       .then((resp) => {
         setWarehouse(resp.data.warehouse);
         setInventory(resp.data.warehouseInventory);

@@ -21,6 +21,7 @@ const editWarehouse = (req, res) => {
           const foundWarehouse = warehouseData.find(
             (warehouse) => warehouse.id == req.params.id
           );
+          console.log(foundWarehouse)
           Object.assign(foundWarehouse, templatedBody);
           write.writeFile(wareHousesLocation, warehouseData);
           res.send(foundWarehouse);

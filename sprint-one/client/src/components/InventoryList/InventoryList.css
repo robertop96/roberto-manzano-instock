@@ -1,0 +1,447 @@
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.inventory {
+  z-index: 1;
+}
+@media screen and (min-width: 375px) {
+  .inventory {
+    padding-bottom: 2rem;
+    margin: 8rem 3rem 2.5rem 3rem;
+    background-color: #fff;
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .inventory {
+    margin-top: 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .inventory {
+    width: 63.75rem;
+    margin-top: 6rem;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .searchI {
+    margin: 0 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .searchI {
+    display: flex;
+  }
+}
+@media screen and (min-width: 375px) {
+  .searchI__title {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .searchI__title {
+    font-size: 2rem;
+    margin: 2rem 6.25rem 1.375rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .searchI__title {
+    margin: 2rem 19.4375rem 1.375rem 1rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .searchI__bar {
+    height: 2.25rem;
+    width: 18.4375rem;
+    padding: 0 0 0 1rem;
+    border-radius: 1.25rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    margin: 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .searchI__bar {
+    font-size: 0.875rem;
+    height: 2.375rem;
+    width: 11.5625rem;
+    margin: 2rem 1rem 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .searchI__bar {
+    width: 17.125rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .searchI__button {
+    height: 2.25rem;
+    width: 18.4375rem;
+    padding: 0.5rem 5.25rem;
+    background-color: #2e66e5;
+    border-radius: 1.25rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: #fff;
+    border-style: none;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .searchI__button {
+    font-size: 0.875rem;
+    height: 2.375rem;
+    width: 10.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+  }
+}
+input[type=text] {
+  background-image: url(../../Assets/Icons/search-24px.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 16.125rem;
+}
+@media screen and (min-width: 768px) {
+  input[type=text] {
+    background-position-x: 9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  input[type=text] {
+    background-position-x: 15rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .cardI {
+    border-top: 0.0625rem solid #bdc5d5;
+    height: 14.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI {
+    flex-direction: row;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-bottom: 0.0625rem solid #bdc5d5;
+    border-top: none;
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__label {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    color: #5c667e;
+    margin: 0 0 0.25rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__label {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__text--name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: #2e66e5;
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__text--name {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__text {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__text {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__text--br {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__text--br {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__img--delete {
+    margin: 3.5rem 0 0 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__img--delete {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__img--edit {
+    margin: 10.75rem 0 1.5rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__img--edit {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__category {
+    width: 7.5rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__category {
+    font-size: 0.875rem;
+    width: 4.375rem;
+    margin: 0 2.8rem 0 1.9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cardI__category {
+    margin: 0 6rem 0 6.4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__status {
+    width: 5.75rem;
+    margin-right: 1.7rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cardI__status {
+    margin-right: 4.9rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__qty {
+    width: 2.5rem;
+    margin-right: 1.1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cardI__qty {
+    margin-right: 2.6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__item {
+    width: 7.1875rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__warehouse {
+    width: 4.375rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__warehouse {
+    width: 6.208125rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__icons {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__icons {
+    display: flex;
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cardI__icons {
+    margin-left: 7rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .cardI__img--delete2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cardI__img--delete2 {
+    display: list-item;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card:hover {
+    background-color: #f7f8f9;
+  }
+}
+
+.status-btn {
+  border-radius: 10px;
+  border: none;
+  width: 65px;
+  height: 26px;
+  color: #158463;
+  background: rgba(21, 132, 99, 0.07);
+}
+
+.status-out {
+  border-radius: 10px;
+  border: none;
+  width: 92px;
+  height: 26px;
+  color: #c94515;
+  background: rgba(201, 69, 21, 0.07);
+}
+
+@media screen and (min-width: 375px) {
+  .arrow {
+    height: 20px;
+    width: 20px;
+  }
+  .arrow__align {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .arrow {
+    margin-left: 1px;
+  }
+}
+@media screen and (min-width: 375px) {
+  .barI {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI {
+    display: flex;
+    padding: 0 2rem;
+    background-color: #f7f8f9;
+    width: 44rem;
+    height: 2.5rem;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI {
+    width: 63.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__labels {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    color: #5c667e;
+    display: flex;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--warehouse {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--warehouse {
+    margin-right: 8.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--category {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 2.8125rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--category {
+    margin-right: 6.125rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--status {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 3.875rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--status {
+    margin-right: 7.125rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--item {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 2.4375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--item {
+    margin-right: 6.875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .barI__arrows--qty {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 1.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .barI__arrows--qty {
+    margin-right: 2.875rem;
+  }
+}/*# sourceMappingURL=InventoryList.css.map */

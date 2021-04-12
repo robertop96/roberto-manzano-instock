@@ -1,0 +1,419 @@
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.warehouse {
+  z-index: 1;
+}
+@media screen and (min-width: 375px) {
+  .warehouse {
+    padding-bottom: 2rem;
+    margin: 8rem 3rem 2.5rem 3rem;
+    background-color: #fff;
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .warehouse {
+    margin-top: 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .warehouse {
+    width: 63.75rem;
+    margin-top: 6rem;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .search {
+    margin: 0 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search {
+    display: flex;
+  }
+}
+@media screen and (min-width: 375px) {
+  .search__title {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search__title {
+    font-size: 2rem;
+    margin: 2rem 6.25rem 1.375rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .search__title {
+    margin: 2rem 19.4375rem 1.375rem 1rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .search__bar {
+    height: 2.25rem;
+    width: 18.4375rem;
+    padding: 0 0 0 1rem;
+    border-radius: 1.25rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    margin: 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search__bar {
+    font-size: 0.875rem;
+    height: 2.375rem;
+    width: 11.5625rem;
+    margin: 2rem 1rem 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .search__bar {
+    width: 17.125rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .search__button {
+    height: 2.25rem;
+    width: 18.4375rem;
+    padding: 0.5rem 5.25rem;
+    background-color: #2e66e5;
+    border-radius: 1.25rem;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    color: #fff;
+    border-style: none;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search__button {
+    font-size: 0.875rem;
+    height: 2.375rem;
+    width: 10.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+  }
+}
+input[type=text] {
+  background-image: url(../../Assets/Icons/search-24px.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 16.125rem;
+}
+@media screen and (min-width: 768px) {
+  input[type=text] {
+    background-position-x: 9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  input[type=text] {
+    background-position-x: 15rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .card {
+    border-top: 0.0625rem solid #bdc5d5;
+    height: 12.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-bottom: 0.0625rem solid #bdc5d5;
+    border-top: none;
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__label {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    color: #5c667e;
+    margin: 0 0 0.25rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__label {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__text--name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: #2e66e5;
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__text--name {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__text {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__text {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card__text {
+    width: 14rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__text--br {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__text--br {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__img--delete {
+    margin: 0 0 0 0.3125rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__img--delete {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__img--edit {
+    margin: 1rem 0 0 7.875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__img--edit {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__address {
+    width: 7.5rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__address {
+    font-size: 0.875rem;
+    width: 5.9375rem;
+    margin: 0 1.2rem 0 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card__address {
+    width: 13.0625rem;
+    margin: 0 3.2rem 0 6.32rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__name {
+    width: 6.3125rem;
+    margin-right: 1.9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card__name {
+    margin-right: 5.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__info {
+    width: 9rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__warehouse {
+    width: 6.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__warehouse {
+    width: 7.25rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__icons {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__icons {
+    display: flex;
+    margin-left: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card__icons {
+    margin-left: 3.5rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .card__img--delete2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card__img--delete2 {
+    display: list-item;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card:hover {
+    background-color: #f7f8f9;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .arrow {
+    height: 20px;
+    width: 20px;
+  }
+  .arrow__align {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .arrow {
+    margin-left: 1px;
+  }
+}
+@media screen and (min-width: 375px) {
+  .bar {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar {
+    display: flex;
+    padding: 0 2rem;
+    background-color: #f7f8f9;
+    width: 44rem;
+    height: 2.5rem;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar {
+    width: 63.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar__labels {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    color: #5c667e;
+    display: flex;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar__arrows--warehouse {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar__arrows--warehouse {
+    margin-right: 8.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar__arrows--address {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar__arrows--address {
+    margin-right: 12.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar__arrows--name {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar__arrows--name {
+    margin-right: 5.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bar__arrows--info {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bar__arrows--info {
+    margin-right: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hide {
+    display: block;
+  }
+}/*# sourceMappingURL=Warehouse.css.map */

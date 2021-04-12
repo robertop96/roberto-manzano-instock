@@ -1,0 +1,30 @@
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  height: auto;
+  background-color: #f7f8f9;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  bottom: 0;
+  width: 100vw;
+}
+.footer__text {
+  font-size: 0.6875rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .footer__text {
+    font-size: 12px;
+    color: #5c667e;
+  }
+}/*# sourceMappingURL=Footer.css.map */

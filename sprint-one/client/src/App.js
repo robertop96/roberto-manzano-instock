@@ -15,15 +15,16 @@ function App() {
     <Router>
       <section>
         <Header />
+
         <Switch>
           {/* <Route path="/" component={Home} /> */}
           <Route exact path="/warehouse/:id" component={WarehouseDetails} />
-          <Route exact path="/warehouses" component={Warehouse} />
+          <Route exact path="/" component={Warehouse} />
           <Route exact path="/inventory" component={InventoryList} />
           <Route exact path="/inventory/:id" component={InventoryItemDetails} />
           <Route
             exact
-            path="/warehouse/modify/:id/"
+            path="/warehouses/modify/:id/"
             component={WarehouseModify}
           />
           <Route
@@ -33,6 +34,7 @@ function App() {
           />
         </Switch>
         <Footer />
+
       </section>
     </Router>
   );

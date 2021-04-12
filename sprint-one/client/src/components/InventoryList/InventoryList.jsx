@@ -37,9 +37,9 @@ const InventoryList = (props) => {
   return (
     <div>
       {showModal && (
-        <DeleteModal setShowModal={setShowModal} data={modalData} />
+        <DeleteModal setShowModal={setShowModal} data={modalData}  setResponseData={setResponseData} />
       )}
-
+     <div className="big-box">
       <div className={showModal ? 'inventory hide' : 'inventory'}>
         <div className="searchI">
           <div>
@@ -162,6 +162,7 @@ const InventoryList = (props) => {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

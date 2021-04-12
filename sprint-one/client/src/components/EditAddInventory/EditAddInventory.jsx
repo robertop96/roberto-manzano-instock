@@ -149,7 +149,8 @@ function EditInventory({
               }
               id="quantity"
               name="quantity"
-              defaultValue={inventoryItem?.quantity}
+              defaultValue={inventoryItem?.quantity
+              || 0}
             />
             <div className={stock === 'In Stock' ? 'error-message' : 'hidden'}>
               {errorMessage?.message ? <img src={error} alt="error" /> : ''}

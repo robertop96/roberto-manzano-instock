@@ -30,9 +30,9 @@ function WarehouseEdit(props) {
       } else if (!validator.isEmail(formDataObj.email + '')) {
         setErrorMessage({ emailMessage: 'Invalid Email' });
       } else {
-        axiosPut(`/api/warehouse/${id}`, formDataObj);
+        axiosPut(`/api/warehouses/${id}`, formDataObj);
         setTimeout(() => {
-          props.history.push('/warehouses');
+          props.history.push('/');
         }, 1000);
       }
     }
@@ -53,16 +53,16 @@ function WarehouseEdit(props) {
       } else if (!validator.isEmail(formDataObj.email + '')) {
         setErrorMessage({ emailMessage: 'Invalid Email' });
       } else {
-        axiosPost(`/api/warehouse/`, formDataObj);
+        axiosPost(`/api/warehouses/`, formDataObj);
         setTimeout(() => {
-          props.history.push('/warehouses');
+          props.history.push('/');
         }, 1000);
       }
     }
   };
 
   const handleClick = () => {
-    props.history.push('/warehouses');
+    props.history.push('/');
   };
 
   //States
@@ -71,8 +71,8 @@ function WarehouseEdit(props) {
   const [warehouse, setWarehouse] = useState(null);
 
   useEffect(() => {
-    axiosGetWarehouse(`/api/warehouse/${id}`, setWarehouse);
-    if (location.pathname === '/warehouse/modify/add') {
+    axiosGetWarehouse(`/api/warehouses/${id}`, setWarehouse);
+    if (location.pathname === '/warehouses/modify/add') {
       setFormInfo(add);
     } else {
       setFormInfo(edit);
