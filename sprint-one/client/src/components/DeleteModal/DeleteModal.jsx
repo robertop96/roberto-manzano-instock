@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 
-import "./DeleteModal.scss";
-import closeIcon from "../../Assets/Icons/close-24px.svg";
+import './DeleteModal.scss';
+import closeIcon from '../../Assets/Icons/close-24px.svg';
 
-import axios from "axios";
+import axios from 'axios';
 
 const DeleteModal = ({ data, setShowModal, setResponseData }) => {
   const { pathname } = useLocation();
-  const history= useHistory()
+  const history = useHistory();
 
   const handleDelete = () => {
-    axios.delete(
-      `/api/${pathname === "/warehouse" ? "/warehouse" : "/inventory"}/${
-        data.id
-      }`
-    )
-    .then((response) => {
-      setResponseData(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
+    axios
+      .delete(
+        `/api/${pathname === '/' ? '/warehouses' : '/inventory'}/${
+          data.id
+        }`
+      )
+      .then((response) => {
+       
+        setResponseData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     setShowModal(false);
-
   };
 
   return (
@@ -40,13 +40,13 @@ const DeleteModal = ({ data, setShowModal, setResponseData }) => {
             />
 
             <h1 className="modal__title">
-              Delete {data.name} {data.itemName}{" "}
-              {pathname === "/warehouse" ? "warehouse" : "inventory item"}?
+              Delete {data.name} {data.itemName}{' '}
+              {pathname === '/' ? 'warehouse' : 'inventory item'}?
             </h1>
 
             <p className="modal__p">
-              Please confirm you want to delete {data.name} from the{" "}
-              {pathname === "/warehouse" ? "warehouse" : "inventory"} list? You
+              Please confirm you want to delete {data.name} from the{' '}
+              {pathname === '/' ? 'warehouse' : 'inventory'} list? You
               won't be able to undo this action.
             </p>
           </div>

@@ -1,42 +1,26 @@
-@mixin tablet {
-    @media screen and (min-width: 768px) {
-      @content;
+@import '../../partials/fonts';
+@import '../../partials/mixins';
+@import '../../partials/partials';
+
+
+.footer {
+  height: auto;
+  background-color: $light-grey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  // position: absolute;
+  bottom: 0;
+  width: 100vw;
+
+  &__text{
+    font-size: 0.6875rem;
+    @include font-regular;
+    @include tablet {
+      font-size: 12px;
+      color: $slate;
+    }
+    @include desktop {
     }
   }
-  @mixin desktop {
-    @media screen and (min-width: 1280px) {
-      @content;
-    }
-  }
-  @font-face {
-    font-family: titillium-regular;
-    src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
-  }
-
-$instock-black: #13182c;
-$instock-indigo: #2e66e5;
-$white: #fff;
-$slate: #5c667e;
-$cloud: #bdc5d5;
-$graphite: #232940;
-$light-grey: #f7f8f9;
-$green: #158463;
-$red: #c94515;
-
-$font-bold: titillium-bold;
-$font-regular: titillium-regular;
-
-.footer{
-        font-family: $font-regular;
-        font-size: .6875rem;
-        color:$slate;
-        background-color: $light-grey;
-        display: flex;
-        justify-content: center;
-    @include tablet{
-        font-size: .75rem;
-    }
-    @include desktop{
-
-    }
 }

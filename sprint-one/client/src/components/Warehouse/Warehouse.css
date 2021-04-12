@@ -9,30 +9,30 @@
 }
 
 .warehouse {
-  height: auto;
+  z-index: 1;
 }
 @media screen and (min-width: 375px) {
   .warehouse {
-    position: absolute;
-    left: 4.27%;
-    right: 4.27%;
-    top: 5.85%;
-    margin: 4.9875rem 0 2.5rem 0;
+    padding-bottom: 2rem;
+    margin: 8rem 3rem 2.5rem 3rem;
     background-color: #fff;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
   }
 }
 @media screen and (min-width: 768px) {
   .warehouse {
-    margin: 0;
-    top: 7%;
+    margin-top: 6rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .warehouse {
-    margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
-    top: 5%;
+    margin-top: 6rem;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
   }
 }
 

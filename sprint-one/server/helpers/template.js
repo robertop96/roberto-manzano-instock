@@ -1,4 +1,4 @@
-const uniqid = require("uniqid");
+const uniqid = require('uniqid');
 const id = uniqid();
 
 const warehouse = (object) => {
@@ -9,11 +9,11 @@ const warehouse = (object) => {
     city: object.city,
     country: object.country,
     contact: {
-      name: object.contact.name,
-      position: object.contact.position,
-      phone: object.contact.phone,
-      email: object.contact.email,
-    },
+      name: object.cname,
+      position: object.position,
+      phone: object.phone,
+      email: object.email
+    }
   };
 };
 
@@ -24,11 +24,11 @@ const editWarehouse = (object) => {
     city: object.city,
     country: object.country,
     contact: {
-      name: object.contact.name,
-      position: object.contact.position,
-      phone: object.contact.phone,
-      email: object.contact.email,
-    },
+      name: object.cname,
+      position: object.position,
+      phone: object.phone,
+      email: object.email
+    }
   };
 };
 
@@ -41,17 +41,18 @@ const inventory = (obj) => {
     description: obj.description,
     category: obj.category,
     status: obj.status,
-    quantity: obj.quantity,
+    quantity: obj.quantity
   };
 };
 
 const editItem = (object) => {
   return {
-    name: object.name,
+    itemName: object.itemName,
     description: object.description,
     category: object.category,
     status: object.status,
     warehouse: object.warehouse,
+    quantity: object.quantity || 0
   };
 };
 

@@ -1,23 +1,21 @@
-import './WarehouseModify.scss';
+import './InventoryModify.sass';
+import EditAddInventory from '../../components/EditAddInventory/EditAddInventory';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
-import validator from 'validator';
 import isEmpty from '../../helpers/isEmpty';
-import isPhone from '../../helpers/isPhone';
 import {
   axiosPut,
   axiosPost,
-  axiosGetWarehouse
+  axiosGetInventory
 } from '../../helpers/axiosCalls';
 
-function WarehouseEdit(props) {
+function InventoryModify(props) {
   const location = useLocation();
   const { id } = useParams();
 
-  const edit = {
-    title: 'Edit Warehouse',
-    button: 'save',
+  const add = {
+    title: 'Add New Inventory Item',
+    button: '+ Add item',
     handleSubmit: (e) => {
       e.preventDefault();
       setErrorMessage(null);
@@ -25,54 +23,55 @@ function WarehouseEdit(props) {
       const formDataObj = Object.fromEntries(formData);
       if (isEmpty(formDataObj)) {
         setErrorMessage({ message: 'This field is required' });
-      } else if (!isPhone(formDataObj.phone)) {
-        setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
-      } else if (!validator.isEmail(formDataObj.email + '')) {
-        setErrorMessage({ emailMessage: 'Invalid Email' });
       } else {
-        axiosPut(`/api/warehouses/${id}`, formDataObj);
+        axiosPost(`/api/inventory/`, formDataObj);
         setTimeout(() => {
-          props.history.push('/');
+          props.history.push('/inventory');
         }, 1000);
       }
     }
   };
 
-  const add = {
-    title: 'Add New Warehouse',
-    button: '+ Add Warehouse',
+  const edit = {
+    title: 'Edit Inventory Item',
+    button: 'save',
     handleSubmit: (e) => {
       e.preventDefault();
       setErrorMessage(null);
       const formData = new FormData(e.target);
-      const formDataObj = Object.fromEntries(formData);
+      let formDataObj = Object.fromEntries(formData);
+      formDataObj.warehouseID = id;
       if (isEmpty(formDataObj)) {
         setErrorMessage({ message: 'This field is required' });
-      } else if (!isPhone(formDataObj.phone)) {
-        setErrorMessage({ phoneMessage: 'Invalid Phone Number' });
-      } else if (!validator.isEmail(formDataObj.email + '')) {
-        setErrorMessage({ emailMessage: 'Invalid Email' });
       } else {
-        axiosPost(`/api/warehouses/`, formDataObj);
+        axiosPut(`/api/inventory/${id}`, formDataObj);
         setTimeout(() => {
-          props.history.push('/');
+          props.history.push('/inventory');
         }, 1000);
       }
     }
+  };
+
+  const handleChange = (e) => {
+    setStock(e.target.value);
   };
 
   const handleClick = () => {
     props.history.push('/');
   };
 
-  //States
+  // States
   const [formInfo, setFormInfo] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [warehouse, setWarehouse] = useState(null);
+  const [stock, setStock] = useState(false);
+  const [inventoryItem, setInventoryItem] = useState(null);
 
   useEffect(() => {
-    axiosGetWarehouse(`/api/warehouses/${id}`, setWarehouse);
-    if (location.pathname === '/warehouses/modify/add') {
+    axiosGetInventory(`/api/warehouses/list/all`, setWarehouse);
+    axiosGetInventory(`/api/inventory/${id}`, setInventoryItem);
+
+    if (location.pathname === '/inventory/modify/add') {
       setFormInfo(add);
     } else {
       setFormInfo(edit);
@@ -83,11 +82,14 @@ function WarehouseEdit(props) {
     <>
       {formInfo ? (
         <section className="position">
-          <EditAddWarehouse
+          <EditAddInventory
             formInfo={formInfo}
             errorMessage={errorMessage}
+            handleChange={handleChange}
+            stock={stock}
             warehouse={warehouse}
             handleClick={handleClick}
+            inventoryItem={inventoryItem}
           />
         </section>
       ) : (
@@ -97,4 +99,4 @@ function WarehouseEdit(props) {
   );
 }
 
-export default WarehouseEdit;
+export default InventoryModify;

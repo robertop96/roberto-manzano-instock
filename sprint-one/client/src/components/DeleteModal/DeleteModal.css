@@ -1,0 +1,105 @@
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal__bg {
+  background: linear-gradient(rgba(51, 51, 51, 0.5), rgba(0, 0, 0, 0.2));
+  z-index: 3;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__box {
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .modal__box {
+    width: 30rem;
+    height: 15rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal__box {
+    width: 40rem;
+    height: 15rem;
+  }
+}
+
+h1.modal__title {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  color: #13182c;
+  font-size: 1.5rem;
+}
+
+.modal__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+@media screen and (min-width: 768px) {
+  .modal__buttons {
+    justify-content: flex-end;
+  }
+}
+
+button {
+  width: 50%;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  border-radius: 12px;
+  height: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 4rem;
+    height: 2rem;
+  }
+}
+
+.modal__delete {
+  background-color: #c94515;
+  border: none;
+  color: white;
+}
+
+.modal__cancel {
+  background-color: white;
+  border: 1px solid #bdc5d5;
+  color: #5c667e;
+}
+
+.modal__p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.modal__close {
+  width: 1rem;
+  justify-self: flex-end;
+}/*# sourceMappingURL=DeleteModal.css.map */

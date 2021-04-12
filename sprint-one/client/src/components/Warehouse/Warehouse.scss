@@ -3,28 +3,28 @@
 @import "../../partials/partials";
 
 .warehouse {
-  height: auto;
+  z-index: 1;
+ 
   @include mobile {
-    position: absolute;
-    left: 4.27%;
-    right: 4.27%;
-    top: 5.85%;
 
-    margin: 4.9875rem 0 2.5rem 0;
+    padding-bottom: 2rem;
+  
+    margin: 8rem 3rem 2.5rem 3rem;
     background-color: $white;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
   }
   @include tablet {
-    margin: 0;
-    top: 7%;
+    margin-top: 6rem;
   }
   @include desktop {
-    margin: 0 8.125rem 0 5rem;
     width: 63.75rem;
-    // left: 10.16%;
-    // right: 10.16%;
-    top: 5%;
-
+    // margin-bottom:3rem;
+    margin-top: 6rem;
+    min-height:fit-content;
+    display: flex;
+    flex-direction: column;
+    
+    
   }
 }
 
@@ -176,7 +176,7 @@ input[type="text"] {
       margin: 0;
     }
     @include desktop {
-      width: 14rem
+      width: 14rem;
     }
   }
 
@@ -370,7 +370,7 @@ input[type="text"] {
       width: 1rem;
       margin-right: 4rem;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 4.5rem;
     }
   }

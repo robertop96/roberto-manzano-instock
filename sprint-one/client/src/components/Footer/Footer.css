@@ -1,17 +1,30 @@
-@font-face {
-  font-family: titillium-regular;
-  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+* {
+  font-family: "Titillium Web", sans-serif;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .footer {
-  font-family: titillium-regular;
-  font-size: 0.6875rem;
-  color: #5c667e;
+  height: auto;
   background-color: #f7f8f9;
   display: flex;
   justify-content: center;
+  padding-bottom: 1rem;
+  bottom: 0;
+  width: 100vw;
+}
+.footer__text {
+  font-size: 0.6875rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
-  .footer {
-    font-size: 0.75rem;
+  .footer__text {
+    font-size: 12px;
+    color: #5c667e;
   }
 }/*# sourceMappingURL=Footer.css.map */
