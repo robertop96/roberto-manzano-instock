@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Roberto´s Manzano InStock.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+InStock is a Full Stack Inventory Management System meant for a Fortune 500 client. 
 
-## Available Scripts
+InStock allows you to display, add, edit or delete Inventory items associated with  different warehouses. As well as to display, add, edit and delete any of the warehouses within Instock.
 
-In the project directory, you can run:
+It is built on React and Express.
 
-### `npm start`
+*This is the Third project assigned by the BrainStation Team, this is a group based project built on agile methodology.*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*Git/GitHub, JIRA and the Scrum methodology was used to manage the collaborative workflow.*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project itself consist only on a single sprint.
 
-### `npm test`
+* **Sprint 1** : Creation of the website structure, layout and styling and logic on the front end as well as a server side with an CRUD API structure. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install`
 
-### `npm run eject`
+On the client and the server side.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To Start client:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To Start Server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`node sever` or `nodemon server`
 
-## Learn More
+To Visit App:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+localhost:3000/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* React
+* Express
+* SCSS / SASS
+* Axios
+* React Router Dom
+* Moment js
+* Loader
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Disclaimer
 
-### Making a Progressive Web App
+*This project was for educational purpose only and all images used were royalty free*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+*All the design, mockups, assets, folder Structure layout were provided by BrainStation.*
 
-### Advanced Configuration
+The actual code, logic and syuling of the following were made by Roberto Manzano.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Pages:
 
-### Deployment
+* WarehouseModify
+* InventoryModify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Components
 
-### `npm run build` fails to minify
+* EditAddInventory
+* EditWarehouse
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Helpers:
+
+* axiosCalls.js
+* isEmpty.js
+* isPhone.js
+* isCheck.js
+* template.js
+* writeFile.js
+
+#### Routes
+
+* addWarehouse.js
+* editWarehouse.js
+* addInventory.js
+* editInventory.js
+
+#### Structure
+
+* Server structure 
+* routes structure
+* helper structure
