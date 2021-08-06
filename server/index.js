@@ -1,12 +1,28 @@
-const express = require("express");
-const routes = require("./routes");
-const PORT = 5050;
+require('dotenv').config();
+const express = require('express');
+const routes = require('./routes');
 const app = express();
-const morgan = require("morgan");
-morgan("dev");
-app.use(express.json());
-app.use("/", routes);
+// const PORT = 5050;
+const morgan = require('morgan');
 
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+const knex = require('knex')(require('./knexfile').development);
+
+morgan('dev');
+app.use(express.json());
+app.use('/', routes);
+
+console.log(process.env.DB_NAME);
+
+app.get('/try', (req, res) => {
+  knex
+    .select('*')
+    .from('inventories')
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => res.send('Error getting warehouses data'));
+});
+
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });
