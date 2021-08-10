@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('contacts', (table) => {
     table.uuid('id').primary();
-    table.string('name').notNull();
+    table.string('fullName').notNull();
     table.string('position').notNull();
     table.string('phone').notNull();
     table.string('email').notNull();

@@ -3,7 +3,7 @@ const uniqid = require('uniqid');
 module.exports = [
   {
     id: uniqid(),
-    name: 'Parmin Aujla',
+    fullName: 'Parmin Aujla',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'paujla@instock.com',
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Greame Lyon',
+    fullName: 'Greame Lyon',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'glyon@instock.com',
@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Brad MacDonald',
+    fullName: 'Brad MacDonald',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'bmcdonald@instock.com',
@@ -27,7 +27,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Gary Wong',
+    fullName: 'Gary Wong',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'gwong@instock.com',
@@ -35,7 +35,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Sharon Ng',
+    fullName: 'Sharon Ng',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'sng@instock.com',
@@ -43,7 +43,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Daniel Bachu',
+    fullName: 'Daniel Bachu',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'dbachu@instock.com',
@@ -51,7 +51,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Alana Thomas',
+    fullName: 'Alana Thomas',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'athomas@instock.com',
@@ -59,7 +59,7 @@ module.exports = [
   },
   {
     id: uniqid(),
-    name: 'Vanessa Mendoza',
+    fullName: 'Vanessa Mendoza',
     position: 'Warehouse Manager',
     phone: '+1 (646) 123-1234',
     email: 'vmendoza@instock.com',

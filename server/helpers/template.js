@@ -12,8 +12,8 @@ const warehouse = (object) => {
       name: object.cname,
       position: object.position,
       phone: object.phone,
-      email: object.email
-    }
+      email: object.email,
+    },
   };
 };
 
@@ -27,8 +27,8 @@ const editWarehouse = (object) => {
       name: object.cname,
       position: object.position,
       phone: object.phone,
-      email: object.email
-    }
+      email: object.email,
+    },
   };
 };
 
@@ -41,7 +41,7 @@ const inventory = (obj) => {
     description: obj.description,
     category: obj.category,
     status: obj.status,
-    quantity: obj.quantity
+    quantity: obj.quantity,
   };
 };
 
@@ -52,7 +52,7 @@ const editItem = (object) => {
     category: object.category,
     status: object.status,
     warehouse: object.warehouse,
-    quantity: object.quantity || 0
+    quantity: object.quantity || 0,
   };
 };
 
