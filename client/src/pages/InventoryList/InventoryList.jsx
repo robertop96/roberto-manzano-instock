@@ -1,13 +1,13 @@
+import './InventoryList.scss';
 import React, { useEffect, useState, useCallback } from 'react';
 import del from '../../Assets/Icons/delete_outline-24px.svg';
 import edit from '../../Assets/Icons/edit-24px.svg';
 import sort from '../../Assets/Icons/sort-24px.svg';
 import arrow from '../../Assets/Icons/chevron_right-24px.svg';
 import axios from 'axios';
-import './InventoryList.scss';
+import DeleteModal from '../../components/DeleteModal';
 
 import { Link } from 'react-router-dom';
-import DeleteModal from '../DeleteModal/DeleteModal';
 
 const InventoryList = (props) => {
   let [responseData, setResponseData] = useState(null);

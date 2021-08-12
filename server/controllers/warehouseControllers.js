@@ -1,6 +1,5 @@
 const Warehouse = require('../models/Warehouse');
 const Contact = require('../models/Contact');
-const fetch = require('../helpers/fetch');
 const { v4: uuidv4 } = require('uuid');
 
 // Gets all warehouses in the Database.
@@ -64,4 +63,14 @@ const editWarehouse = async (req, res) => {
   }
 };
 
-module.exports = { getWarehouses, getWarehouse, addWarehouse, editWarehouse };
+// Deletes warehouse
+const deleteWarehouse = async (req, res) => {
+  try {
+    const warehouse = await Warehouse.where({ id: req.params.id }).destroy();
+    res.status(200).json(warehouse);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { getWarehouses, getWarehouse, addWarehouse, editWarehouse, deleteWarehouse };

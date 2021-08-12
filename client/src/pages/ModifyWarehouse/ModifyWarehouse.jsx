@@ -1,15 +1,11 @@
-import './WarehouseModify.scss';
+import './ModifyWarehouse.scss';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import EditAddWarehouse from '../../components/EditWarehouse/EditAddWarehouse';
+import WarehouseForm from '../../components/WarehouseForm/WarehouseForm';
 import validator from 'validator';
 import isEmpty from '../../helpers/isEmpty';
 import isPhone from '../../helpers/isPhone';
-import {
-  axiosPut,
-  axiosPost,
-  axiosGetWarehouse
-} from '../../helpers/axiosCalls';
+import { axiosPut, axiosPost, axiosGetWarehouse } from '../../helpers/axiosCalls';
 
 function WarehouseEdit(props) {
   const location = useLocation();
@@ -35,7 +31,7 @@ function WarehouseEdit(props) {
           props.history.push('/');
         }, 1000);
       }
-    }
+    },
   };
 
   const add = {
@@ -58,7 +54,7 @@ function WarehouseEdit(props) {
           props.history.push('/');
         }, 1000);
       }
-    }
+    },
   };
 
   const handleClick = () => {
@@ -83,12 +79,7 @@ function WarehouseEdit(props) {
     <>
       {formInfo ? (
         <section className="position">
-          <EditAddWarehouse
-            formInfo={formInfo}
-            errorMessage={errorMessage}
-            warehouse={warehouse}
-            handleClick={handleClick}
-          />
+          <WarehouseForm formInfo={formInfo} errorMessage={errorMessage} warehouse={warehouse} handleClick={handleClick} />
         </section>
       ) : (
         ''

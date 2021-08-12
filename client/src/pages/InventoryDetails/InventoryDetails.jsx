@@ -1,11 +1,10 @@
+import './InventoryDetails.scss';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './InventoryD.css';
 import arrowBack from '../../Assets/Icons/arrow_back-24px.svg';
-import Header from '../Header/Header';
 import axios from 'axios';
 
-const InventoryItemDetails = () => {
+const InventoryDetails = () => {
   const { id } = useParams();
   const [itemDetail, setItemDetail] = useState(null);
   useEffect(() => {
@@ -21,14 +20,12 @@ const InventoryItemDetails = () => {
 
   return (
     <div className="Details">
-      <Header />
       <div className="space"></div>
       <div className="main-box">
         <div className="main-box__header">
           <div className="main-box__Big-text">
             <h1>
-              <img src={arrowBack} alt="back arrow"></img>{' '}
-              {itemDetail?.itemName}
+              <img src={arrowBack} alt="back arrow"></img> {itemDetail?.itemName}
             </h1>
           </div>
           <div>
@@ -73,4 +70,4 @@ const InventoryItemDetails = () => {
     </div>
   );
 };
-export default InventoryItemDetails;
+export default InventoryDetails;

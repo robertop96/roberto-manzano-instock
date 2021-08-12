@@ -1,6 +1,6 @@
+import './WarehouseDetails.scss';
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import './warehouseDeatils.scss';
+import { useParams, Link } from 'react-router-dom';
 import sort from '../../Assets/Icons/sort-24px.svg';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import chevronRight from '../../Assets/Icons/chevron_right-24px.svg';
@@ -14,6 +14,8 @@ const WarehouseDeatils = () => {
 
   const [warehouse, setWarehouse] = useState([]);
   const [inventory, setInventory] = useState([]);
+
+  console.log(id);
 
   useEffect(() => {
     axios
@@ -95,9 +97,9 @@ const WarehouseDeatils = () => {
                   <div className="item-container">
                     <h4 className="mobile-info">INVENTORY ITEM</h4>
                     <div className="chevron-box">
-                      <a href="http://picsum.com">
+                      <Link to={`/inventory/${inv.id}`}>
                         <h3>{inv.itemName}</h3>
-                      </a>
+                      </Link>
                       <img src={chevronRight} alt="chevron" />
                     </div>
                   </div>
@@ -110,13 +112,7 @@ const WarehouseDeatils = () => {
                 <div className="inv-stat-flex">
                   <div className="staus-container">
                     <h4 className="mobile-info"> STATUS</h4>
-                    <button
-                      className={
-                        inv.status === 'In Stock' ? 'status-btn' : 'status-out'
-                      }
-                    >
-                      {inv.status}
-                    </button>
+                    <button className={inv.status === 'In Stock' ? 'status-btn' : 'status-out'}>{inv.status}</button>
                   </div>
                   <div className="qty-container">
                     <h4 className="mobile-info">QTY</h4>

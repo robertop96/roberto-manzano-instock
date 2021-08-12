@@ -1,0 +1,188 @@
+@import '../../partials/fonts';
+@import '../../partials/_mixins.scss';
+@import '../../partials/partials';
+
+.card {
+  &:hover {
+    @include desktop {
+      background-color: $light-grey;
+    }
+  }
+  @include mobile {
+    border-top: 0.0625rem solid $cloud;
+    height: 12.25rem;
+    // width: fit-content;
+    // margin: 0 1rem;
+    display: flex;
+    // justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    // align-items: center;
+  }
+  @include tablet {
+    flex-direction: row;
+    height: fit-content;
+    // justify-content: space-between;
+    border-bottom: 0.0625rem solid $cloud;
+    border-top: none;
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+  }
+
+  &__label {
+    @include mobile {
+      @include font-regular;
+      font-size: 0.6875rem;
+      line-height: 1rem;
+      color: $slate;
+      margin: 0 0 0.25rem 0;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+    }
+  }
+
+  &__text--name {
+    @include mobile {
+      @include font-regular;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+      color: $instock-indigo;
+      margin: 0 0 1rem 0;
+    }
+    @include tablet {
+      font-size: 0.875rem;
+    }
+    @include desktop {
+    }
+  }
+  &__text {
+    @include mobile {
+      @include font-regular;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+      margin: 0 0 1rem 0;
+    }
+    @include tablet {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    @include desktop {
+      width: 14rem;
+    }
+  }
+  &__text--br {
+    @include mobile {
+      @include font-regular;
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+      margin: 0;
+    }
+    @include tablet {
+      font-size: 0.875rem;
+    }
+    @include desktop {
+    }
+  }
+  &__img--delete {
+    @include mobile {
+      margin: 0 0 0 0.3125rem;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+    }
+  }
+  &__img--edit {
+    @include mobile {
+      margin: 1rem 0 0 7.875rem;
+    }
+    @include tablet {
+      margin: 0;
+    }
+    @include desktop {
+    }
+  }
+  &__address {
+    @include mobile {
+      width: 7.5rem;
+      margin-right: 2rem;
+    }
+    @include tablet {
+      font-size: 0.875rem;
+      width: 5.9375rem;
+      margin: 0 1.2rem 0 1rem;
+    }
+    @include desktop {
+      width: 13.0625rem;
+      margin: 0 3.2rem 0 6.32rem;
+    }
+  }
+  &__name {
+    @include tablet {
+      width: 6.3125rem;
+      margin-right: 1.9rem;
+    }
+    @include desktop {
+      margin-right: 5.2rem;
+    }
+  }
+  &__info {
+    @include tablet {
+      width: 9rem;
+    }
+    @include desktop {
+    }
+  }
+  &__warehouse {
+    @include mobile {
+      width: 6.25rem;
+    }
+    @include tablet {
+      width: 7.25rem;
+    }
+  }
+  &__icons {
+    @include mobile {
+      margin: 0;
+    }
+    @include tablet {
+      display: flex;
+      margin-left: 3rem;
+    }
+    @include desktop {
+      margin-left: 3.5rem;
+    }
+  }
+  &__img--delete2 {
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: list-item;
+      margin-right: 1rem;
+    }
+    @include desktop {
+    }
+  }
+}
+
+.arrow {
+  @include mobile {
+    height: 20px;
+    width: 20px;
+    &__align {
+      display: flex;
+    }
+  }
+  @include tablet {
+    margin-left: 1px;
+  }
+  @include desktop {
+  }
+}

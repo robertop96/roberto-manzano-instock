@@ -1,13 +1,9 @@
-import './InventoryModify.sass';
-import EditAddInventory from '../../components/EditAddInventory/EditAddInventory';
+import './ModifyInventory.sass';
+import InventoryForm from '../../components/InventoryForm/InventoryForm';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import isEmpty from '../../helpers/isEmpty';
-import {
-  axiosPut,
-  axiosPost,
-  axiosGetInventory
-} from '../../helpers/axiosCalls';
+import { axiosPut, axiosPost, axiosGetInventory } from '../../helpers/axiosCalls';
 
 function InventoryModify(props) {
   const location = useLocation();
@@ -29,7 +25,7 @@ function InventoryModify(props) {
           props.history.push('/inventory');
         }, 1000);
       }
-    }
+    },
   };
 
   const edit = {
@@ -49,7 +45,7 @@ function InventoryModify(props) {
           props.history.push('/inventory');
         }, 1000);
       }
-    }
+    },
   };
 
   const handleChange = (e) => {
@@ -82,7 +78,7 @@ function InventoryModify(props) {
     <>
       {formInfo ? (
         <section className="position">
-          <EditAddInventory
+          <InventoryForm
             formInfo={formInfo}
             errorMessage={errorMessage}
             handleChange={handleChange}
