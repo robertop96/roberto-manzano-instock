@@ -16,7 +16,6 @@
   @include mobile {
     height: 10rem;
     position: absolute;
-    
   }
   @include tablet {
     flex-direction: row;
@@ -25,7 +24,6 @@
     padding-top: 1rem;
   }
 }
-
 
 .nav__logo {
   @include tablet {

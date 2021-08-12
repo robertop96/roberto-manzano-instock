@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const addWarehouse = require('./addWarehouse');
-const WarehouseDetails = require('./WarehouseDetails');
 const warehouseList = require('./warehouseList');
+const WarehouseDetails = require('./WarehouseDetails');
+const addWarehouse = require('./addWarehouse');
 const editWarehouse = require('./editWarehouse');
 const deleteWarehouse = require('./deleteWarehouse');
 

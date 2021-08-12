@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Warehouse from './pages/Warehouse';
 import WarehouseDetails from './pages/WarehouseDetails';
-import InventoryList from './pages/InventoryList';
+import Inventory from './pages/Inventory';
 import InventoryDetails from './pages/InventoryDetails';
 import ModifyWarehouse from './pages/ModifyWarehouse';
 import ModifyInventory from './pages/ModifyInventory';
@@ -17,7 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Warehouse} />
         <Route exact path="/warehouse/:id" component={WarehouseDetails} />
-        <Route exact path="/inventory" component={InventoryList} />
+        <Route exact path="/inventory" component={Inventory} />
         <Route exact path="/inventory/:id" component={InventoryDetails} />
         <Route exact path="/warehouses/modify/:id/" component={ModifyWarehouse} />
         <Route exact path="/inventory/modify/:id" component={ModifyInventory} />
