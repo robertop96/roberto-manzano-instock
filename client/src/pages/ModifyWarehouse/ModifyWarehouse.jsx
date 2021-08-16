@@ -32,15 +32,22 @@ function WarehouseEdit({ match, history }) {
     setContact({ ...contact, [input]: e.target.value });
   };
 
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const cat = { ...warehouse, contact: contact };
+    console.log(cat);
+  };
+
   return (
     <>
       {warehouse && (
         <section className="position">
           <WarehouseForm
             warehouse={warehouse}
-            handleWarehouse={handleWarehouse}
             contact={contact}
+            handleWarehouse={handleWarehouse}
             handleContact={handleContact}
+            handleOnSubmit={handleOnSubmit}
             errorMessage={errorMessage}
             history={history}
             match={match}

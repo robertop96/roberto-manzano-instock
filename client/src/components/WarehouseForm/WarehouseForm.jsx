@@ -3,7 +3,16 @@ import { useLocation } from 'react-router-dom';
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import error from '../../Assets/Icons/error-24px.svg';
 
-function WarehouseForm({ warehouse, contact, handleWarehouse, handleContact, errorMessage, history, match }) {
+function WarehouseForm({
+  warehouse,
+  contact,
+  handleWarehouse,
+  handleContact,
+  errorMessage,
+  history,
+  match,
+  handleOnSubmit,
+}) {
   const location = useLocation();
 
   return (
@@ -12,7 +21,7 @@ function WarehouseForm({ warehouse, contact, handleWarehouse, handleContact, err
         <img className="edit-container__title-cont--img" src={backArrow} alt="back arrow icon" />
         <h2 className="edit-container__title-cont--title">{match.params.id ? 'Edit Warehouse' : 'Add Warehouse'}</h2>
       </article>
-      <form className="form">
+      <form className="form" onSubmit={handleOnSubmit}>
         <article className="form__wrapper">
           <article className="form__warehouse">
             <h2 className="form__warehouse--title">Warehouse Details</h2>
