@@ -1,9 +1,10 @@
-fs = require("fs");
-const warehouseArray = __dirname + "/../../data/warehouses.json";
-const inventoryArray = __dirname + "/../../data/inventories.json";
+fs = require('fs');
+const warehouseArray = __dirname + '/../../data/warehouses.json';
+const inventoryArray = __dirname + '/../../data/inventories.json';
 
 const warehouseDetails = (req, res) => {
   const { id } = req.params;
+  console.log(req.params);
   fs.readFile(warehouseArray, (error, data) => {
     if (error) {
       console.log(error);
@@ -15,9 +16,7 @@ const warehouseDetails = (req, res) => {
           console.log(error);
         } else {
           const invetoryData = JSON.parse(data);
-          const warehouseInventory = invetoryData.filter(
-            (item) => item.warehouseID === id
-          );
+          const warehouseInventory = invetoryData.filter((item) => item.warehouseID === id);
           res.json({ warehouse, warehouseInventory });
         }
       });

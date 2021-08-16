@@ -208,8 +208,7 @@ button:focus {
 }
 
 .edit {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(70deg)
-    brightness(200%) contrast(200%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(70deg) brightness(200%) contrast(200%);
 }
 
 .contact-container {
@@ -257,7 +256,7 @@ button:focus {
 }
 
 // Items Styling
-.invetory-container {
+.inventory-container {
   width: 343px;
   display: flex;
   flex-direction: column;
@@ -345,7 +344,7 @@ button:focus {
   }
 }
 
-.staus-container {
+.status-container {
   width: 141.5px;
   display: flex;
   flex-direction: column;

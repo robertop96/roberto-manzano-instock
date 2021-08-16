@@ -37,7 +37,7 @@ const inventory = (obj) => {
     id: id,
     warehouseID: obj.warehouseID,
     warehouseName: obj.warehouseName,
-    itemName: obj.itemName,
+    name: obj.itemName,
     description: obj.description,
     category: obj.category,
     status: obj.status,
@@ -47,7 +47,7 @@ const inventory = (obj) => {
 
 const editItem = (object) => {
   return {
-    itemName: object.itemName,
+    name: object.itemName,
     description: object.description,
     category: object.category,
     status: object.status,

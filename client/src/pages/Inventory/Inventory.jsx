@@ -1,43 +1,38 @@
 import './Inventory.scss';
-import React, { useEffect, useState, useCallback } from 'react';
-import del from '../../Assets/Icons/delete_outline-24px.svg';
-import edit from '../../Assets/Icons/edit-24px.svg';
+import React, { useEffect, useState } from 'react';
 import sort from '../../Assets/Icons/sort-24px.svg';
-import arrow from '../../Assets/Icons/chevron_right-24px.svg';
-import axios from 'axios';
 import DeleteModal from '../../components/DeleteModal';
 import InventoryList from '../../components/InventoryList';
-
+import { getInventoryItems, deleteInventoryItem } from '../../helpers/axiosCalls';
 import { Link } from 'react-router-dom';
 
 const Inventory = () => {
-  let [InventoryItems, setInventoryItems] = useState(null);
-  let [modalData, setModalData] = useState('');
-  let [showModal, setShowModal] = useState(false);
-
-  const fetchData = useCallback(() => {
-    axios({
-      method: 'GET',
-      url: '/api/inventory/list',
-      params: {
-        language_code: 'en',
-      },
-    })
-      .then((response) => {
-        setInventoryItems(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const [inventoryItems, setInventoryItems] = useState(null);
+  const [modalData, setModalData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    getInventoryItems()
+      .then((res) => setInventoryItems(res.data))
+      .then(() => console.log('I ran'))
+      .catch((error) => console.log(error));
+  }, [render]);
 
+  // Opens Modal and Sets The modal data to be the item clicked.
+  const handleOnClick = (inventoryData) => {
+    setShowModal(!showModal);
+    setModalData(inventoryData);
+  };
+  // Deletes the item clicked then changes the showModal to false.
+  const handleOnDelete = (itemId) => {
+    deleteInventoryItem(itemId);
+    setShowModal(!showModal);
+    setRender(!render);
+  };
   return (
-    <div>
-      {<DeleteModal setShowModal={setShowModal} data={modalData} setInventoryItems={setInventoryItems} showModal={showModal} />}
+    <>
+      {<DeleteModal showModal={showModal} setShowModal={setShowModal} modalData={modalData} handleOnDelete={handleOnDelete} />}
       <div className="big-box">
         <div className={showModal ? 'inventory hide' : 'inventory'}>
           <div className="searchI">
@@ -78,10 +73,10 @@ const Inventory = () => {
               <h4>ACTIONS</h4>
             </div>
           </div>
-          <InventoryList InventoryItems={InventoryItems} setShowModal={setShowModal} setModalData={setModalData} />
+          <InventoryList inventoryItems={inventoryItems} setModalData={setModalData} handleOnClick={handleOnClick} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

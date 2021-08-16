@@ -1,41 +1,35 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import del from '../../Assets/Icons/delete_outline-24px.svg';
-import edit from '../../Assets/Icons/edit-24px.svg';
-import sort from '../../Assets/Icons/sort-24px.svg';
-import arrow from '../../Assets/Icons/chevron_right-24px.svg';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import './Warehouse.scss';
+import sort from '../../Assets/Icons/sort-24px.svg';
 import { Link } from 'react-router-dom';
 import DeleteModal from '../../components/DeleteModal';
 import WarehouseList from '../../components/WarehouseList';
+import { getWarehouses, deleteWarehouse } from '../../helpers/axiosCalls';
 
 const Warehouse = () => {
   let [warehouseList, setWarehouseList] = useState(null);
   let [modalData, setModalData] = useState(null);
   let [showModal, setShowModal] = useState(false);
-  const fetchData = useCallback(() => {
-    axios({
-      method: 'GET',
-      url: '/api/warehouses/list/all',
-      params: {
-        language_code: 'en',
-      },
-    })
-      .then((response) => {
-        setWarehouseList(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    getWarehouses()
+      .then((res) => setWarehouseList(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+
+  const handleOnClick = (warehouseData) => {
+    setShowModal(!showModal);
+    setModalData(warehouseData);
+  };
+
+  const handleOnDelete = (warehouseId) => {
+    deleteWarehouse(warehouseId).then((res) => setWarehouseList(res.data));
+    setShowModal(!showModal);
+  };
 
   return (
     <div>
-      {showModal && <DeleteModal setShowModal={setShowModal} data={modalData} setWarehouseList={setWarehouseList} />}
+      {<DeleteModal handleOnDelete={handleOnDelete} showModal={showModal} setShowModal={setShowModal} modalData={modalData} />}
       <div className="big-box">
         <div className={showModal ? 'warehouse hide' : 'warehouse'}>
           <div className="search">
@@ -58,21 +52,21 @@ const Warehouse = () => {
             </div>
             <div className="bar__labels">
               <h4>ADDRESS</h4>
-              <img className="bar__arrows--address" src={sort} />
+              <img className="bar__arrows--address" alt="Sort icon" src={sort} />
             </div>
             <div className="bar__labels">
               <h4>CONTACT NAME</h4>
-              <img className="bar__arrows--name" src={sort} />
+              <img className="bar__arrows--name" alt="Sort icon" src={sort} />
             </div>
             <div className="bar__labels">
               <h4>CONTACT INFORMATION</h4>
-              <img className="bar__arrows--info" src={sort} />
+              <img className="bar__arrows--info" alt="Sort icon" src={sort} />
             </div>
             <div className="bar__labels">
               <h4>ACTIONS</h4>
             </div>
           </div>
-          <WarehouseList warehouseList={warehouseList} setModalData={setModalData} setShowModal={setShowModal} />
+          <WarehouseList warehouseList={warehouseList} handleOnClick={handleOnClick} setShowModal={setShowModal} />
         </div>
       </div>
     </div>

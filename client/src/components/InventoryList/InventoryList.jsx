@@ -5,10 +5,10 @@ import edit from '../../Assets/Icons/edit-24px.svg';
 import arrow from '../../Assets/Icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-function InventoryList({ InventoryItems, setShowModal, setModalData }) {
+function InventoryList({ inventoryItems, handleOnClick }) {
   return (
     <div>
-      {InventoryItems?.map((data) => {
+      {inventoryItems?.map((data) => {
         return (
           <div key={data.id}>
             <div className="cardI">
@@ -16,7 +16,7 @@ function InventoryList({ InventoryItems, setShowModal, setModalData }) {
                 <h4 className="cardI__label">INVENTORY ITEM</h4>
                 <Link to={`/inventory/${data.id}`}>
                   <div className="arrow__align">
-                    <p className="cardI__text--name">{data.itemName}</p>
+                    <p className="cardI__text--name">{data.name}</p>
                     <img alt="arrow" className="arrow" src={arrow} />
                   </div>
                 </Link>
@@ -27,18 +27,9 @@ function InventoryList({ InventoryItems, setShowModal, setModalData }) {
               </div>
               <div>
                 <Link to={`/`}>
-                  <img
-                    alt="delete icon"
-                    className="cardI__img--delete"
-                    src={del}
-                    onClick={() => {
-                      setModalData(data);
-                      setShowModal(true);
-                    }}
-                  />
+                  <img alt="delete icon" className="cardI__img--delete" src={del} onClick={() => handleOnClick(data)} />
                 </Link>
               </div>
-
               <div className="cardI__status">
                 <h4 className="cardI__label">STATUS</h4>
                 <button className={data.status === 'In Stock' ? 'status-btn' : 'status-out'}>{data.status}</button>
@@ -54,15 +45,7 @@ function InventoryList({ InventoryItems, setShowModal, setModalData }) {
               <div className="cardI__icons">
                 <div>
                   <Link>
-                    <img
-                      alt="delete icon"
-                      className="cardI__img--delete2"
-                      src={del}
-                      onClick={() => {
-                        setModalData(data);
-                        setShowModal(true);
-                      }}
-                    />
+                    <img alt="delete icon" className="cardI__img--delete2" src={del} onClick={() => handleOnClick(data)} />
                   </Link>
                 </div>
                 <Link to={`/inventory/modify/${data.id}`}>

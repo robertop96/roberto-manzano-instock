@@ -72,7 +72,7 @@ function InventoryModify(props) {
     } else {
       setFormInfo(edit);
     }
-  }, [location]);
+  }, []);
 
   return (
     <>
