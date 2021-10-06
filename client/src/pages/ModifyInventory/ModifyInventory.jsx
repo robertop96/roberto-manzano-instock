@@ -1,6 +1,7 @@
-import './ModifyInventory.sass';
+import './ModifyInventory.scss';
 import InventoryForm from '../../components/InventoryForm/InventoryForm';
 import React, { useState, useEffect } from 'react';
+import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import isEmpty from '../../helpers/isEmpty';
 import { getItem, getWarehouses } from '../../helpers/axiosCalls';
 
@@ -31,22 +32,33 @@ function InventoryModify({ match, history }) {
     e.preventDefault();
     console.log(inventoryItem);
   };
+
+  const trail = () => {
+    setErrorMessage(false);
+  };
   return (
-    <>
+    <section className="inventory-modify">
+      <article className="inventory-modify__header">
+        <img
+          className="inventory-modify__icon"
+          src={backArrow}
+          alt="back arrow icon"
+          onClick={() => history.goBack()}
+        />
+        <h2 className="inventory-modify__title">{match.params.id ? 'Edit Inventory' : 'Add Inventory'}</h2>
+      </article>
       {inventoryItem && (
-        <section className="position">
-          <InventoryForm
-            inventoryItem={inventoryItem}
-            warehouse={warehouse}
-            handleInventoryItem={handleInventoryItem}
-            handleOnSubmit={handleOnSubmit}
-            errorMessage={errorMessage}
-            history={history}
-            match={match}
-          />
-        </section>
+        <InventoryForm
+          inventoryItem={inventoryItem}
+          warehouse={warehouse}
+          handleInventoryItem={handleInventoryItem}
+          handleOnSubmit={handleOnSubmit}
+          errorMessage={errorMessage}
+          history={history}
+          match={match}
+        />
       )}
-    </>
+    </section>
   );
 }
 

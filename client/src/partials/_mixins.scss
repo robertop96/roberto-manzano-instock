@@ -1,3 +1,10 @@
+@use "./partials" as *;
+
+// BREAKPOINTS
+$tablet: 768px;
+$desktop: 1084px;
+$padding-increment: 0.5rem;
+
 * {
   margin: 0;
   padding: 0;
@@ -10,13 +17,14 @@
   }
 }
 
+//MEDIA QUERIES
 @mixin tablet {
-  @media screen and (min-width: 768px) {
+  @media (min-width: $tablet) {
     @content;
   }
 }
 @mixin desktop {
-  @media screen and (min-width: 1280px) {
+  @media (min-width: $desktop) {
     @content;
   }
 }
@@ -96,16 +104,41 @@
 }
 
 @mixin button {
+  cursor: pointer;
+  text-decoration: none;
+  height: 2.25rem;
+  display: flex;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
-  min-width: 139px;
-  width: auto;
-  height: 36px;
-  border: none;
-  border-radius: 20px;
+  width: 100%;
+
   @include tablet {
-    min-width: 72px;
-    width: 72px;
-    height: 38px;
+    width: auto;
+  }
+
+  &--primary {
+    background-color: $primary-blue;
+    border: 1px solid $primary-blue;
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #232940;
+      border-color: #232940;
+    }
+  }
+  &--secondary {
+    background-color: white;
+    border: 1px solid $secondary-light;
+    color: $secondary-dark;
+
+    &:hover {
+      text-decoration: none;
+      color: $primary-blue;
+      border-color: $primary-blue;
+    }
   }
 }
 
@@ -117,4 +150,119 @@
 @mixin font-regular {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
+}
+
+// *************************************888
+
+// /TYPOGRAPHY MIXINS
+@mixin header {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@mixin subhead {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@mixin label {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@mixin table-header {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  color: $secondary-dark;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+@mixin body-large {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+@mixin body-medium {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@mixin body-small {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+//INPUT MIXIN
+@mixin input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid $secondary-light;
+  outline: none;
+}
+
+@mixin link {
+  @include label;
+  color: $primary-blue;
+  text-decoration: none;
+}
+
+// ******************************************************************************************
+@mixin details-head {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid $secondary-light;
+  padding: $padding-increment * 4 $padding-increment * 3 $padding-increment * 3 $padding-increment * 3;
+  align-items: center;
+  justify-content: space-between;
+  @include tablet {
+    height: 5.875rem;
+    padding: $padding-increment * 4;
+  }
+  & a:first-child {
+    height: 24px;
+    margin-right: 0.75rem;
+  }
+  &__header {
+    @include header;
+    margin-right: auto;
+    margin-left: $padding-increment;
+  }
+  &__button {
+    @include button;
+    &--circle {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &__icon {
+    &--light {
+      filter: brightness(0) invert(1);
+    }
+  }
 }

@@ -1,58 +1,48 @@
 import React from 'react';
 import './WarehouseList.scss';
-import del from '../../Assets/Icons/delete_outline-24px.svg';
-import edit from '../../Assets/Icons/edit-24px.svg';
-import arrow from '../../Assets/Icons/chevron_right-24px.svg';
+import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
+import editIcon from '../../Assets/Icons/edit-24px.svg';
+import chevron from '../../Assets/Icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-function WarehouseList({ warehouseList, handleOnClick, setShowModal }) {
+function WarehouseList({ warehouseList, handleOnClick }) {
   return (
-    <>
-      {warehouseList?.map((warehouse) => {
-        return (
-          <div key={warehouse.id}>
-            <div className="card">
-              <div className="card__warehouse">
-                <h4 className="card__label">WAREHOUSE</h4>
-                <Link to={`/warehouse/${warehouse.id}`}>
-                  <div className="arrow__align">
-                    <p className="card__text--name">{warehouse.name}</p>
-                    <img className="arrow" alt="simple back arrow" src={arrow} />
-                  </div>
-                </Link>
-              </div>
-              <div className="card__address">
-                <h4 className="card__label">ADDRESS</h4>
-                <p className="card__text">
-                  {warehouse.address}, {''}
-                  {warehouse.city},{''} {warehouse.country}
-                </p>
-              </div>
-              <div>
-                <img className="card__img--delete" src={del} alt="delete card" onClick={() => handleOnClick(warehouse)} />
-              </div>
-              <div className="card__name">
-                <h4 className="card__label">CONTACT NAME</h4>
-                <p className="card__text">{warehouse.contact.name}</p>
-              </div>
-              <div className="card__info">
-                <h4 className="card__label">CONTACT INFORMATION</h4>
-                <p className="card__text--br">{warehouse.contact.phone}</p>
-                <p className="card__text--br">{warehouse.contact.email}</p>
-              </div>
-              <div className="card__icons">
-                <div>
-                  <img onClick={() => handleOnClick(warehouse)} className="card__img--delete2" src={del} alt="delete card" />
-                </div>
-                <Link to={`/warehouses/modify/${warehouse.id}`}>
-                  <img className="card__img--edit" alt="Simple pencil icon to edit warehouse" src={edit} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </>
+    <section className="warehouse-list">
+      {warehouseList?.map((warehouse) => (
+        <article className="warehouse-list__container" key={warehouse.id}>
+          <article className="warehouse-list__item warehouse-list__item--big-width">
+            <h3 className="warehouse-list__title">WAREHOUSE</h3>
+            <Link className="warehouse-list__link" to={`/warehouse/${warehouse.id}`}>
+              <p className="warehouse-list__text">{warehouse.name}</p>
+              <img src={chevron} alt="view warehouse" className="warehouse-list__chevron" />
+            </Link>
+          </article>
+          <article className="warehouse-list__item warehouse-list__item--big-width">
+            <h3 className="warehouse-list__title">ADDRESS</h3>
+            <p className="warehouse-list__text">
+              {warehouse.address}, {warehouse.city}, {warehouse.country}
+            </p>
+          </article>
+          <article className="warehouse-list__item warehouse-list__item--big-width">
+            <h3 className="warehouse-list__title">CONTACT NAME</h3>
+            <p className="warehouse-list__text">{warehouse.contact.name}</p>
+          </article>
+          <article className="warehouse-list__item warehouse-list__item--big-width">
+            <h3 className="warehouse-list__title">CONTACT INFORMATION</h3>
+            <p className="warehouse-list__text">{warehouse.contact.phone}</p>
+            <p className="warehouse-list__text">{warehouse.contact.email}</p>
+          </article>
+          <article className="warehouse-list__modify warehouse-list__item--small-width">
+            <figure className="warehouse-list__figure">
+              <img src={deleteIcon} alt="delete" onClick={() => handleOnClick(warehouse)} />
+            </figure>
+            <Link to={`/warehouses/modify/${warehouse.id}`}>
+              <img src={editIcon} alt="edit" />
+            </Link>
+          </article>
+        </article>
+      ))}
+    </section>
   );
 }
 

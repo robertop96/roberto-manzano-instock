@@ -1,7 +1,9 @@
 import './InventoryDetails.scss';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import arrowBack from '../../Assets/Icons/arrow_back-24px.svg';
+import arrowBackIcon from '../../Assets/Icons/arrow_back-24px.svg';
+import editIcon from '../../Assets/Icons/edit-24px.svg';
+import { Link } from 'react-router-dom';
 import { getItem } from '../../helpers/axiosCalls';
 
 const InventoryDetails = ({ history }) => {
@@ -15,23 +17,18 @@ const InventoryDetails = ({ history }) => {
         .catch((error) => console.log(error)),
     [id]
   );
-
   return (
     itemDetails && (
-      <div className="Details">
-        <div className="space"></div>
-        <div className="main-box">
-          <div className="main-box__header">
-            <div className="main-box__Big-text">
-              <img src={arrowBack} alt="back arrow" onClick={history.goBack}></img>
-              <h1>{itemDetails.name}</h1>
-            </div>
-            <div>
-              <a href="/" className="main-box__btn">
-                <i className="fas fa-pen"></i> Edit
-              </a>
-            </div>
-          </div>
+      <section>
+        <div className="item-details-header">
+          <img className="item-details-header__icon" src={arrowBackIcon} alt="Back" onClick={history.goBack} />
+          <h1 className="item-details-header__header">{itemDetails.itemName}</h1>
+          <Link
+            className="item-details-header__button item-details-header__button--primary item-details-header__button--circle"
+            to={`/warehouses/modify/${itemDetails.id}`}
+          >
+            <img className="item-details-header__icon item-details-header__icon--light" src={editIcon} alt="Edit" />
+          </Link>
         </div>
         <div className="box-2">
           <div className="box-2__details">
@@ -65,7 +62,7 @@ const InventoryDetails = ({ history }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   );
 };

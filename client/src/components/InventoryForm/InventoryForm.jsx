@@ -1,5 +1,4 @@
 import './InventoryForm.scss';
-import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import { useLocation } from 'react-router-dom';
 import React from 'react';
 import error from '../../Assets/Icons/error-24px.svg';
@@ -16,15 +15,6 @@ function InventoryForm({
   const location = useLocation();
   return (
     <section className="editInv-container">
-      <article className="editInv-container__title-cont">
-        <img
-          className="editInv-container__title-cont--img"
-          src={backArrow}
-          alt="back arrow icon"
-          onClick={() => history.goBack()}
-        />
-        <h2 className="editInv-container__title-cont--title">{match.params.id ? 'Edit Inventory' : 'Add Inventory'}</h2>
-      </article>
       <form className="inv-form" onSubmit={handleOnSubmit}>
         <article className="inv-form__wrapper">
           <article className="inv-form__item-details">
@@ -167,7 +157,7 @@ function InventoryForm({
         </article>
 
         <article className="button">
-          <button type="button" className="button__cancel">
+          <button onClick={() => history.goBack()} type="button" className="button__cancel">
             Cancel
           </button>
           <button type="submit" className={location.pathname === '/inventory/edit' ? 'button__save' : 'button__add'}>

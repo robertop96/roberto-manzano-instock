@@ -1,6 +1,5 @@
 import './WarehouseForm.scss';
 import { useLocation } from 'react-router-dom';
-import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import error from '../../Assets/Icons/error-24px.svg';
 
 function WarehouseForm({
@@ -12,15 +11,12 @@ function WarehouseForm({
   history,
   match,
   handleOnSubmit,
+  setErrorMessage,
 }) {
   const location = useLocation();
 
   return (
     <section className="edit-container">
-      <article className="edit-container__title-cont">
-        <img className="edit-container__title-cont--img" src={backArrow} alt="back arrow icon" />
-        <h2 className="edit-container__title-cont--title">{match.params.id ? 'Edit Warehouse' : 'Add Warehouse'}</h2>
-      </article>
       <form className="form" onSubmit={handleOnSubmit}>
         <article className="form__wrapper">
           <article className="form__warehouse">
@@ -152,7 +148,7 @@ function WarehouseForm({
         </article>
 
         <article className="button">
-          <button onClick={() => history.goBack()} type="button" className="button__cancel">
+          <button onClick={() => setErrorMessage(false)} type="button" className="button__cancel">
             Cancel
           </button>
           <button type="submit" className={location.pathname === '/warehouse/edit' ? 'button__save' : 'button__add'}>

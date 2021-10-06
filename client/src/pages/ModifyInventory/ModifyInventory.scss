@@ -1,11 +1,10 @@
-@use "../../partials/fonts" as *;
 @use "../../partials/partials" as *;
+@use "../../partials/fonts" as *;
 @use "../../partials/mixins" as *;
 
-.warehouses-modify {
+.inventory-modify {
   &__header {
     display: flex;
-    align-items: center;
     padding: 2rem 2rem 1.3125rem 2rem;
 
     @include tablet {
@@ -18,6 +17,7 @@
   &__title {
     @include header;
   }
+
   a {
     display: flex;
     align-items: center;

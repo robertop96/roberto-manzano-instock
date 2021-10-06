@@ -1,0 +1,49 @@
+@import '../../partials/fonts';
+@import '../../partials/_mixins.scss';
+@import '../../partials/partials';
+@import '../../partials/colors';
+
+.sorting-bar {
+  display: none;
+  @include tablet {
+    display: flex;
+    padding: 0 2rem;
+    background-color: $light-grey;
+    height: 2.5rem;
+    align-items: center;
+  }
+  @include desktop {
+    width: 63.75rem;
+  }
+
+  &__item {
+    @include font-regular;
+    display: flex;
+    align-items: center;
+    color: $slate;
+    display: flex;
+    font-size: 0.75rem;
+    &--small-width {
+      width: 16%;
+    }
+    &--big-width {
+      width: 25%;
+    }
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  &__label {
+    margin-right: $padding-increment * 2;
+  }
+}
+
+.hide {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: block;
+  }
+}

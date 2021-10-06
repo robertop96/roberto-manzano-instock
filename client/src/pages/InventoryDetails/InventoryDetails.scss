@@ -1,66 +1,9 @@
-@import "../../partials/fonts.scss";
-@import "../../partials/_mixins.scss";
-@import "../../partials/partials.scss";
+@import '../../partials/fonts.scss';
+@import '../../partials/_mixins.scss';
+@import '../../partials/partials.scss';
 
-// // Responsive properties
-// @mixin for-phone-only {
-//   @media (max-width: 599px) {
-//     @content;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Helvetica, sans-serif;
-}
-.space {
-  padding: 80px 0px;
-}
-.main-box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  &__header {
-    background: #fff;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 30px;
-    margin-top: -50px;
-    z-index: 9;
-    border-bottom: 2px solid #e1e1e1;
-    @mixin mobile {
-      flex-direction: column;
-      width: 100%;
-      padding: 25px 10px;
-
-      h1 {
-        padding-bottom: 25px;
-      }
-    }
-  }
-  &__btn {
-    background: #2e66e5;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-weight: 500;
-  }
-  .fa-arrow-left {
-    color: #2e66e5;
-    font-size: 22px;
-  }
-  .fa-pen {
-    margin-right: 5px;
-  }
+.item-details-header {
+  @include details-head;
 }
 .box-2 {
   width: 100%;

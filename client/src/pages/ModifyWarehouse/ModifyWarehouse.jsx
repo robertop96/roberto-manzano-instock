@@ -1,6 +1,7 @@
 import './ModifyWarehouse.scss';
 import React, { useState, useEffect } from 'react';
 import WarehouseForm from '../../components/WarehouseForm/WarehouseForm';
+import backArrow from '../../Assets/Icons/arrow_back-24px.svg';
 import validator from 'validator';
 import isEmpty from '../../helpers/isEmpty';
 import isPhone from '../../helpers/isPhone';
@@ -39,22 +40,29 @@ function WarehouseEdit({ match, history }) {
   };
 
   return (
-    <>
+    <section className="warehouse-modify">
+      <article className="warehouses-modify__header">
+        <img
+          className="warehouses-modify__icon"
+          src={backArrow}
+          alt="back arrow icon"
+          onClick={() => history.goBack()}
+        />
+        <h2 className="warehouses-modify__title">{match.params.id ? 'Edit Warehouse' : 'Add Warehouse'}</h2>
+      </article>
       {warehouse && (
-        <section className="position">
-          <WarehouseForm
-            warehouse={warehouse}
-            contact={contact}
-            handleWarehouse={handleWarehouse}
-            handleContact={handleContact}
-            handleOnSubmit={handleOnSubmit}
-            errorMessage={errorMessage}
-            history={history}
-            match={match}
-          />
-        </section>
+        <WarehouseForm
+          warehouse={warehouse}
+          contact={contact}
+          handleWarehouse={handleWarehouse}
+          handleContact={handleContact}
+          handleOnSubmit={handleOnSubmit}
+          errorMessage={errorMessage}
+          history={history}
+          match={match}
+        />
       )}
-    </>
+    </section>
   );
 }
 
